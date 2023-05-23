@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap");
 // Font variables
 $font-name: "akularegular";
-$font-path-file-name: /assets/fonts/Akula-webfont;
+$font-path-file-name: /assets/fonts/Shnobel-Regular;
 
-// Akula - Regular
+// Shnobel - Regular
 @font-face {
   font-family: $font-name;
   src: url($font-path-file-name + ".eot"); /* IE9 Compat Modes */
   src: url($font-path-file-name + ".eot?#iefix") format("embedded-opentype"),
-    /* IE6-IE8 */ url($font-path-file-name + ".woff2") format("woff2"),
+    // /* IE6-IE8 */ url($font-path-file-name + ".woff2") format("woff2"),
     /* Super Modern Browsers */ url($font-path-file-name + ".woff")
       format("woff"),
     /* Pretty Modern Browsers */ url($font-path-file-name + ".ttf")
@@ -22,164 +22,366 @@ $font-path-file-name: /assets/fonts/Akula-webfont;
 .container {
   width: 100%;
 }
+
+/// Landing grid layout
+.landing-dactrtr {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  @include media-small {
+    display: grid;
+    grid-template-columns: 1fr 328px;
+    grid-template-rows: 1fr;
+    height: 100dvh;
+  }
+  @include media-medium {
+    grid-template-columns: 1fr 400px;
+    grid-template-rows: 1fr;
+  }
+  .main-header {
+    overflow: auto;
+    @include media-small {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      height: 100dvh;
+    }
+    @include media-medium {
+      height: auto;
+    }
+  }
+  .container {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    height: 40vh;
+    scroll-behavior: smooth;
+    @include media-small {
+      grid-column: 2/3;
+      height: 100vh;
+      overflow: scroll;
+    }
+  }
+}
+// font color utility
+.blinkypinky {
+  color: $blinkyPinky;
+}
+.cyantyrant {
+  color: $cyanTyrant;
+}
+.purpleback {
+  color: $purpleBack;
+}
+/// header main
+.main-header {
+  // @include debug();
+  position: relative;
+  width: 100%;
+  height: 85dvh;
+  overflow: hidden;
+  background-color: $bonedThrone;
+  background-size: cover;
+  display: flex;
+  @include media-small {
+  }
+  @include media-medium {
+    height: 100%;
+  }
+  .header-inner {
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    background-color: $bonedThrone;
+    grid-template-rows: 8px 3fr 1fr 1fr 8px;
+    grid-template-columns: 8px 1fr 8px;
+    @include media-small {
+      grid-template-rows: 8px 1fr 1fr 8px;
+      grid-template-columns: 8px 1fr 1fr 8px;
+    }
+    @include media-medium {
+      grid-template-rows: 16px 1fr 1fr 16px;
+      grid-template-columns: 8px 1fr 1fr 8px;
+    }
+  }
+  .illustration {
+    grid-column: 2/3;
+    grid-row: 1/3;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    @include media-small {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 3fr 1fr 1fr 32px auto;
+      grid-column: 1/4;
+      grid-row: 1/4;
+    }
+    @include media-medium {
+      grid-column: 3/4;
+      grid-row: 2/4;
+    }
+    @include media-xlarge {
+      grid-template-rows: 1fr 1fr 1fr 32px auto;
+    }
+    .illu-me {
+      grid-column: 1/4;
+      grid-row: 1/4;
+      z-index: 2;
+      align-self: center;
+      justify-self: center;
+      width: 100%;
+      @include media-xsmall {
+        grid-row: 2/4;
+      }
+      @include media-small {
+        width: 80%;
+        grid-column: 3/5;
+      }
+      @include media-medium {
+        grid-column: 1/5;
+        grid-row: 1/4;
+      }
+    }
+    .illu-code {
+      grid-column: 1/4;
+      grid-row: 3/5;
+      align-self: center;
+      justify-self: center;
+      width: 100%;
+      @include media-small {
+        grid-row: -1/-5;
+        align-self: end;
+        width: 65%;
+      }
+      @include media-medium {
+        grid-row: 1/4;
+        align-self: center;
+      }
+      @include media-xlarge {
+        grid-row: 1/3;
+      }
+    }
+  }
+  p.who-iam {
+    grid-column: 1/5;
+    grid-row: 4/6;
+    margin: 0;
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+    @include media-xsmall {
+      font-size: 20px;
+      align-self: center;
+      justify-self: center;
+      width: 75%;
+    }
+    @include media-small {
+      margin: 0 0 16px 0;
+    }
+    @include media-medium {
+    }
+    @include media-xlarge {
+      grid-column: 3/4;
+      grid-row: 3/4;
+      margin: 32px 0 0 0;
+    }
+    @include media-xxlarge {
+      margin-bottom: 7rem;
+      align-self: end;
+    }
+    span {
+      font-weight: 900;
+      text-align: left;
+      margin-top: 24px;
+    }
+  }
+  .logo {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-self: center;
+    justify-content: center;
+    @include media-small {
+      grid-column: 2/3;
+      grid-row: 2/3;
+      z-index: 3;
+    }
+    @include media-medium {
+      grid-row: 2/4;
+    }
+    @include media-xlarge {
+      grid-row: 2/4;
+    }
+    @include media-xxlarge {
+      transform: scale(1.5);
+    }
+    h1 {
+      font-family: Inter;
+      text-shadow: 2px 2px 0px #f95ba7, -2px -2px 0px #06d2ff;
+      text-transform: uppercase;
+      margin: 0;
+      transform: rotate(-2deg);
+    }
+    h2 {
+      font-size: 12px;
+      font-family: Inter;
+      font-weight: normal;
+      margin: 0;
+      letter-spacing: 0.008rem; // yeah I know
+    }
+    .what {
+      font-family: Inter;
+      font-weight: 900;
+      margin: 0;
+      display: none;
+      @include media-medium {
+        display: block;
+      }
+    }
+    .mind {
+      font-family: $font-name;
+      margin: 0px;
+      display: none;
+      @include media-medium {
+        display: block;
+      }
+    }
+  }
+  .float-window {
+    display: flex;
+    width: 56px;
+    background-color: $blackestNight;
+    flex-direction: column;
+    gap: 16px;
+    border-radius: 4px;
+    padding: 8px 8px 16px 8px;
+    grid-column: 4/5;
+    grid-row: 3/5;
+    align-self: center;
+    justify-self: center;
+    z-index: 5;
+    @include media-small {
+      grid-row: 2/3;
+    }
+    @include media-medium {
+      grid-row: 1/4;
+    }
+    .controls {
+      display: flex;
+      width: 100%;
+      gap: 4px;
+
+      span {
+        display: flex;
+        height: 8px;
+        width: 8px;
+        border-radius: 16px;
+        &.red {
+          background-color: #dd4b4b;
+        }
+        &.yellow {
+          background-color: #fce412;
+        }
+        &.green {
+          background-color: #50f475;
+        }
+      }
+    }
+    .links {
+      gap: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      a {
+        width: 24px;
+        height: 24px;
+        &.icon-code {
+          background-image: url("../assets/icons/Icon-code.svg");
+        }
+        &.icon-ig {
+          background-image: url("../assets/icons/Icon-ig.svg");
+        }
+        &.icon-pizza {
+          background-image: url("../assets/icons/Icon-pizza.svg");
+        }
+      }
+    }
+  }
+  span.dots {
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/dots.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    grid-row: 3/4;
+    align-self: center;
+    justify-self: center;
+    grid-column: 2/3;
+    display: none;
+    opacity: 0.2;
+    @include media-xsmall {
+    }
+    @include media-small {
+      grid-row: 2/4;
+      width: 100%;
+      height: 100%;
+    }
+    @include media-medium {
+      grid-row: 3/4;
+      display: flex;
+    }
+    @include media-large {
+    }
+    @include media-xlarge {
+      width: 500px;
+      height: 500px;
+    }
+  }
+}
+
+/// Posts
+.blog-title {
+  // text-shadow: 2px 2px 0px #f95ba7, -2px -2px 0px #06d2ff;
+  font-family: $font-name;
+  margin: 0;
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+  margin-top: 8px;
+}
 .posts {
   display: flex;
   width: 100%;
   justify-content: flex-start;
   flex-flow: row wrap;
+  padding: 2px;
 }
-
-/// header main
-.main-header {
-  position: relative;
-  width: 100%;
-  height: 70%;
-  overflow: hidden;
-  background: url(http://i.imgur.com/Jo4q5Gl.jpg) no-repeat center center; //  Find a more sutile way to do this
-  background-size: cover;
-  display: flex;
-  @include mobile-small {
-    height: 50%;
-  }
-}
-.portfolio {
-  position: absolute;
-}
-.header-inner {
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @include mobile-small {
-    width: 100%;
-  }
-}
-.logo-holder {
-  position: relative;
-  margin: 0 auto;
-  height: 200px;
-  text-align: center;
-  @include mobile-small {
-    margin-top: 20%;
-  }
-}
-.logo {
-  width: 300px;
-  height: auto;
-  position: relative;
-  z-index: 3;
-  @include mobile-small {
-    width: 200px;
-  }
-}
-.main-header .img-header {
-  width: 100%;
-  height: auto;
-}
-ul.rs {
-  list-style: none;
-  bottom: 0px;
-  right: 50px;
-  position: absolute;
-  z-index: 3;
-  @include mobile-small {
-    width: 100%;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    right: 0;
-    margin-bottom: 10px;
-  }
-}
-.rs li {
-  float: left;
-  margin: 5px;
-  list-style: none;
-}
-.rs li a {
-  float: left;
-  list-style: none;
-  padding: 5px 6px 0px 6px;
-  overflow: hidden;
-  transition: all ease 0.3s;
-  text-decoration: none;
-  color: #fff;
-  width: 30px;
-  height: 30px;
-  @include mobile-small {
-    font-size: 3rem;
-    overflow: visible;
-    border: none;
-    margin: 10px;
-  }
-}
-.rs li a:hover {
-  transition: all ease-in 0.3s;
-}
-.rs a.icons-about {
-  font-size: 2.5rem;
-  height: 36px;
-  transition: all ease-out 0.2s;
-}
-.rs a.icons-about:hover {
-  color: rgb(41, 173, 235);
-  transition: all ease-in 0.3s;
-}
-.rs a.icons-twitter:hover {
-  color: $tw;
-}
-.rs a.icons-instagram:hover {
-  color: $ig;
-}
-.rs a.icons-behance:hover {
-  color: $be;
-}
-.rs a.icons-linkedin:hover {
-  color: $ln;
-}
-.rs a.about {
-  font-family: akularegular;
-  font-size: 2rem;
-  width: 80px;
-}
-.rs a.about:hover {
-  color: $pink;
-  font-size: 2rem;
-}
-
-/// Posts
 #main article.post {
   background: #000000;
-  height: 200px;
+  height: 112px;
   align-self: auto;
   overflow: hidden;
   padding: 0px;
-  flex: 1 0 25%;
-  @include mobile-small {
+  flex: 1 0 100%;
+  border-radius: 8px;
+  margin: 1px 0px;
+  @include media-large {
     flex: 1 0 100%;
-  }
-  @include mobile-tablet {
-    flex: 1 0 50%;
   }
 }
 #main article.post:first-child {
-  flex: 1 0 100%;
-  height: 300px;
-  @include mobile-small {
-    height: 200px;
-  }
-  h1 {
-    margin-top: 120px;
-    font-size: 5rem;
-    @include mobile-small {
-      margin-top: 70px;
-      font-size: 4rem;
+  @include media-medium {
+    flex: 1 0 100%;
+    height: 300px;
+    h1 {
+      font-size: 5rem;
+      @include mobile-small {
+        font-size: 4rem;
+      }
     }
-  }
-  a:hover h1.title {
-    font-size: 4.9rem;
+    a:hover h1.title {
+      font-size: 4.9rem;
+    }
   }
 }
 #main article.post a {
@@ -192,7 +394,7 @@ ul.rs {
   border: 0px solid rgba(0, 0, 0, 0);
 }
 #main article.post a:hover {
-  border: 10px solid rgba(252, 30, 134, 1);
+  border: 4px solid rgba(252, 30, 134, 1);
   transition: all ease-in 0.3s;
 }
 #main article.post a:hover h1.title {
@@ -207,26 +409,10 @@ ul.rs {
   opacity: 0.4;
   transition: all ease-in 0.3s;
 }
-.gradient {
-  background-image: linear-gradient(
-    45deg,
-    rgba(252, 30, 134, 0.5) 0%,
-    rgba(41, 173, 235, 0.5) 100%
-  );
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  top: 0px;
+#main article.post a:hover .language {
+  transition: all ease-in 0.3s;
 }
-.gradient:before {
-  background: url(../images/coolpattern80.png) repeat;
-  content: " ";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  opacity: 0.5;
-}
+
 .cover {
   background: url(../images/coolpattern80.png) repeat;
   position: absolute;
@@ -241,11 +427,31 @@ article.post .data-post {
   align-items: center;
   flex-direction: column;
   width: 100%;
+  height: 100%;
+  gap: 0;
   @include mobile-small {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+  }
+  span.language,
+  span.content {
+    border: 1px solid white;
+    color: white;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-family: "Open sans";
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .tags-holder {
+    top: 4px;
+    right: 4px;
+    position: absolute;
+    display: flex;
+    gap: 6px;
   }
 }
 h1.title {
@@ -254,7 +460,6 @@ h1.title {
   position: relative;
   font-size: 4rem;
   text-align: center;
-  margin-top: 70px;
   margin-bottom: 0px;
   width: 100%;
   float: left;
@@ -283,6 +488,7 @@ h3.date {
   text-align: center;
   font-size: 1rem;
   font-weight: normal;
+  margin: 0;
 }
 article.post a img.feat {
   top: 0px;
@@ -297,6 +503,7 @@ article.post a img.feat {
   margin-top: 5px;
   margin-bottom: 5px;
   height: 30px;
+  display: none;
 }
 .pagination span {
   width: 50%;
@@ -423,8 +630,6 @@ article.post a img.feat {
     url(../images/coolpattern80.png) repeat;
   background-attachment: fixed;
   display: flex;
-  .gradient {
-  }
   .container-project {
     width: 100%;
     height: 100%;
@@ -511,6 +716,7 @@ article.post a img.feat {
 .wrapper-footer {
   background: #a8a5a5;
   width: 100%;
+  display: none;
 }
 .footer {
   font-family: $body;
@@ -540,9 +746,6 @@ header.single-header {
   clip-path: polygon(100% 0, 100% 69%, 0 100%, 0 0);
   @include mobile-small {
     height: 40%;
-  }
-  @include mobile-small-land {
-    height: 55%;
   }
 }
 header.single-header img {
