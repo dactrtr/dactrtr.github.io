@@ -877,12 +877,12 @@ header a.home:hover {
   }
 }
 #single-post article.post-content {
-  width: 640px;
+  width: 100%;
   padding: 0 10px 0 10px;
   margin: auto;
   position: relative;
-  @include mobile-small {
-    width: 100%;
+  @include media-small {
+    width: 640px;
   }
 }
 #single-post article .date {
