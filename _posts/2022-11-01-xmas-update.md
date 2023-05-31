@@ -57,7 +57,7 @@ And by mistake I throw my iPad to my Macbook and broke my screen.
 
 Here things start to get **bad and dizzy**, the next months where just harder and harder, 6 days into March and we crashed our **tuk tuk**, nothing terrible happened to us, the **tuk tuk** was wasted, this wasn't the first accident, the first day I drive it, flipped it, that moment was just scary but really nothing happened, this time we got some injuries, nothing serious, gotta admit that I got the "worse" part, and im glad, don't mind having a few scars. A few days later her computer broke, so I handed her mine and kept studying from the iPad.
 
-During March I kinda loss interest in "_work_", or at least working for someone else. And started to spend my "**working hours**" into learning **SwiftUI** and at that point determined to become a _iOS developer_ and at some point make my own game(since January was spending a little of time in the [playdate SDK](https://play.date/dev/).
+During March I kinda loss interest in "_work_", or at least working for someone else. And started to spend my "**working hours**" into learning **SwiftUI** and at that point determined to become a _iOS developer_ and at some point make my own game, since January was spending a little of time in the [playdate SDK](https://play.date/dev/).
 
 At the end of the month we managed to get my screen replaced, and checked my GF computer, but we didn't fix hers.
 
