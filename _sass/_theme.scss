@@ -916,17 +916,7 @@ header a.home:hover {
   }
 }
 #single-post .figimg img {
-  --a: 8deg;
-  transform: perspective(400px) rotate3d(var(--i, 1, -1), 0, var(--a));
-  -webkit-mask: linear-gradient(135deg, #000c 40%, #000, #000c 60%) 100% 100%/240%
-    240%;
-  transition: 0.4s;
-  cursor: pointer;
   @include border;
-  &:hover {
-    --i: -1, 1;
-    -webkit-mask-position: 0 0;
-  }
 }
 #single-post a {
   color: #29adeb;
@@ -1058,6 +1048,19 @@ header a.home:hover {
     transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
+.card {
+  --a: 8deg;
+  transform: perspective(400px) rotate3d(var(--i, 1, -1), 0, var(--a));
+  -webkit-mask: linear-gradient(135deg, #000c 40%, #000, #000c 60%) 100% 100%/240%
+    240%;
+  transition: 0.4s;
+  cursor: pointer;
+  &:hover {
+    --i: -1, 1;
+    -webkit-mask-position: 0 0;
   }
 }
 // This is the end my friend...
