@@ -304,6 +304,13 @@ $font-path-file-name: /assets/fonts/Shnobel-Regular;
         &.icon-pizza {
           background-image: url("../assets/icons/Icon-pizza.svg");
         }
+        &.icon-tangara {
+        background-image: url("../assets/icons/Icon-tangara.svg");
+        }
+        & img{
+          width: 24px;
+          height: 24px;
+        }
       }
     }
   }
