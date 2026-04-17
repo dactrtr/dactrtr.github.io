@@ -14,21 +14,32 @@ about: gamedev
 
 ---
 
-**disclaimer:** _this will be a long post since I had done a lot of improvements but didn't have the time or energy to post about it_ or I'm just lazy.
+**disclaimer:** _this will be a short post since I had done a lot of improvements but didn't have the time or energy to post about it_ and I had been super busy this last month.
 
 ---
-
+first of all
 ## I got married
 
-Yes folks, I've found love, or love found me dunno how it works but I'm happy. Don't ask me how I did it, it happened.
+Yes folks, I've found love, or love found me dunno how it works but I'm happy. Don't ask me how I did it, it happened. well it happened in December, the actual process and soon we will have a celebration.
 
-## itchi.io
+## Improved ... all
 
-The demo is in itchio, didnt make much noise about it, kinda shadow dropped it, and call it a day. To be honest wanted to focus in the unity game, so this demo was more of a close event, a moment were I can let it go and move on.
+To be honest I lost track of all the changes I've been doing to the game, so only for what I can remember...
+- started using [Pixquare](https://www.pixquare.art/) for the assets
+- ditched my custom tool for level creation to [LDTK](https://ldtk.io/)
+- added a credit scene
+- changed from tiles to create the levels to images
+- changed how the levels and props are rendered, instead of sprites im using the images for the backgrounds
+- added two new skills
+- created a new in game menu
+- added pickups characters
+- added npcs
+- added conditional dialogues
+- added a shrinking skill
 
-## surprise
+besides all this changes also im using [Claude Code](https://claude.ai/code), to port all my LUA code ([Playdate SDK](https://play.date/dev/)) to LUA code ([love2d](https://www.love2d.org/)) so the pc port is taking shape(to be more accurate is a macos port).
 
-To my surprise, some one paid for the demo, never thought someone was willing to pay for my game.
+
 </div>
 
 <div class="panel-esp lang-panel" markdown="1">
@@ -37,21 +48,31 @@ To my surprise, some one paid for the demo, never thought someone was willing to
 
 ---
 
-**aviso:** _este va a ser un post largo porque hice un montón de mejoras pero no tuve el tiempo ni la energía para escribir sobre ello_ o simplemente soy un flojo.
+**aviso:** _este va a ser un post corto porque hice un montón de mejoras pero no tuve tiempo ni energía para escribir sobre ello_ y el último mes estuve muy ocupado.
 
 ---
-
+antes que nada
 ## Me casé
 
-Sí, gente, encontré el amor, o el amor me encontró a mí, no sé bien cómo funciona eso, pero soy feliz. No me pregunten cómo lo hice, simplemente pasó.
+Sí, gente, encontré el amor, o el amor me encontró a mí, no sé bien cómo funciona eso, pero soy feliz. No me pregunten cómo lo hice, simplemente pasó. Fue en diciembre, el trámite ya está y pronto tendremos la celebración.
 
-## itchi.io
+## Mejoré... todo
 
-La demo está en itchio, no hice mucho ruido al respecto, más o menos la solté en silencio y ya. La verdad es que quería enfocarme en el juego de Unity, así que esta demo fue más un cierre, un momento para poder soltarla y seguir adelante.
+La verdad es que perdí la cuenta de todos los cambios que le fui haciendo al juego, así que solo lo que recuerdo...
+- empecé a usar [Pixquare](https://www.pixquare.art/) para los assets
+- abandoné mi herramienta custom para creación de niveles y pasé a [LDTK](https://ldtk.io/)
+- agregué una escena de créditos
+- cambié de usar tiles para los niveles a usar imágenes
+- cambié cómo se renderizan los niveles y los props, en vez de sprites uso las imágenes como fondos
+- agregué dos nuevas habilidades
+- creé un nuevo menú dentro del juego
+- agregué personajes recolectables
+- agregué NPCs
+- agregué diálogos condicionales
+- agregué una habilidad de encogerse
 
-## sorpresa
+además de todos estos cambios, también estoy usando [Claude Code](https://claude.ai/code) para portar todo mi código LUA ([Playdate SDK](https://play.date/dev/)) a código LUA ([love2d](https://www.love2d.org/)), así que el port para PC está tomando forma (para ser más preciso, es un port para macOS).
 
-Para mi sorpresa, alguien pagó por la demo. Nunca pensé que alguien estaría dispuesto a pagar por mi juego.
 </div>
 
 <div class="panel-jp lang-panel" markdown="1">
@@ -60,19 +81,29 @@ Para mi sorpresa, alguien pagó por la demo. Nunca pensé que alguien estaría d
 
 ---
 
-**注記:** _改善点がたくさんあったのに、それについて書く時間もエネルギーもなかったので、このポストは長くなります_ まあ、単純に怠け者なだけかもしれませんが。
+**注記:** _改善点がたくさんあったのに書く時間もエネルギーもなかったので短いポストになります_、先月はとにかく忙しかったです。
 
 ---
-
+まず最初に
 ## 結婚しました
 
-みなさん、愛を見つけました。正確には愛に見つけてもらったというか、どういう仕組みなのかよくわかりませんが、とにかく幸せです。どうやったのか聞かないでください、そうなったんです。
+みなさん、愛を見つけました。正確には愛に見つけてもらったというか、どういう仕組みなのかよくわかりませんが、とにかく幸せです。どうやったのか聞かないでください、そうなったんです。12月のことで、手続きは済んでいて、もうすぐお祝いをする予定です。
 
-## itchi.io
+## 全部改善しました
 
-デモをitchioに公開しました。あまり大々的には告知せず、こっそりリリースしてそのままにしました。正直なところ、Unityのゲームに集中したかったので、このデモはある種の区切りでした。手放して次に進むためのタイミングです。
+正直、ゲームに加えた変更をすべて把握しきれていないので、覚えている範囲で...
+- アセット制作に [Pixquare](https://www.pixquare.art/) を使い始めた
+- レベル制作の自作ツールをやめて [LDTK](https://ldtk.io/) に移行した
+- クレジットシーンを追加した
+- レベル作成をタイルからイメージに変更した
+- レベルや小道具のレンダリング方法を変更し、スプライトの代わりに背景としてイメージを使うようにした
+- 新スキルを2つ追加した
+- ゲーム内の新しいメニューを作成した
+- ピックアップキャラクターを追加した
+- NPCを追加した
+- 条件付きダイアログを追加した
+- 縮小スキルを追加した
 
-## サプライズ
+これらの変更に加えて、[Claude Code](https://claude.ai/code) を使って LUA コード（[Playdate SDK](https://play.date/dev/)）を LUA コード（[love2d](https://www.love2d.org/)）に移植しています。PC版が形になってきました（正確にはmacOS版ですが）。
 
-驚いたことに、誰かがデモにお金を払ってくれました。自分のゲームにお金を出してくれる人がいるとは思っていなかったので、本当に嬉しかったです。
 </div>
