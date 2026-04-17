@@ -1,0 +1,43 @@
+// Hide radios and all panels by default
+.tab-radio { display: none; }
+.panel-eng,
+.panel-esp,
+.panel-jp { display: none; }
+
+// Tab bar
+.tab-labels {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+
+  label {
+    cursor: pointer;
+    padding: 4px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all ease-in 0.2s;
+  }
+}
+
+// Hover state on inactive tabs
+.tab-labels label:hover {
+  border-color: $pink;
+}
+
+// Show active panel — :has() because radios live inside .lang-tabs-container
+.entry:has(#tab-eng:checked) .panel-eng,
+.entry:has(#tab-esp:checked) .panel-esp,
+.entry:has(#tab-jp:checked) .panel-jp { display: block; }
+
+// Active tab label highlight
+.entry:has(#tab-eng:checked) label[for="tab-eng"],
+.entry:has(#tab-esp:checked) label[for="tab-esp"],
+.entry:has(#tab-jp:checked) label[for="tab-jp"] {
+  background: $pink;
+  color: white;
+  border-color: $pink;
+}
