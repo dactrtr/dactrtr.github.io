@@ -31,12 +31,18 @@
 // Show active panel — :has() because radios live inside .lang-tabs-container
 .entry:has(#tab-eng:checked) .panel-eng,
 .entry:has(#tab-esp:checked) .panel-esp,
-.entry:has(#tab-jp:checked) .panel-jp { display: block; }
+.entry:has(#tab-jp:checked) .panel-jp,
+.scream:has(#tab-eng:checked) .panel-eng,
+.scream:has(#tab-esp:checked) .panel-esp,
+.scream:has(#tab-jp:checked) .panel-jp { display: block; }
 
 // Active tab label highlight
 .entry:has(#tab-eng:checked) label[for="tab-eng"],
 .entry:has(#tab-esp:checked) label[for="tab-esp"],
-.entry:has(#tab-jp:checked) label[for="tab-jp"] {
+.entry:has(#tab-jp:checked) label[for="tab-jp"],
+.scream:has(#tab-eng:checked) label[for="tab-eng"],
+.scream:has(#tab-esp:checked) label[for="tab-esp"],
+.scream:has(#tab-jp:checked) label[for="tab-jp"] {
   background: $pink;
   color: white;
   border-color: $pink;
