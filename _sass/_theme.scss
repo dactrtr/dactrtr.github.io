@@ -1072,12 +1072,36 @@ header a.home:hover {
 }
 // This is the end my friend...
 
+@keyframes badge-shine {
+  0%       { left: -100%; }
+  60%, 100% { left: 150%; }
+}
+
 .original-badge {
-  display: inline-block;
-  background: red;
+  display: table;
+  margin: 0 auto 1em;
+  position: relative;
+  overflow: hidden;
+  background: $pink;
   color: white;
-  padding: 2px 8px;
+  padding: 4px 16px;
   font-size: 0.75em;
+  font-weight: bold;
   border-radius: 3px;
-  margin-bottom: 1em;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      transparent 100%
+    );
+    animation: badge-shine 2.5s ease-in-out infinite;
+  }
 }
