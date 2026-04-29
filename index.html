@@ -18,10 +18,10 @@ layout: default
               <h3 class="date">{{ post.date | date: "%B %e, %Y" }}</h3>
               <div class="tags-holder">
                 <span class="language">
-                  {% if post.lang %}
-                    {{ post.lang }}
+                  {% if post.about == "life" %}
+                    life
                   {% else %}
-                    none
+                    devblog
                   {% endif %}
                 </span>
               </div>

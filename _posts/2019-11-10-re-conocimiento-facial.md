@@ -331,6 +331,167 @@ _siempre pienso en que debería tener alguna especie de despedida a lo truman sh
 
 </div>
 
+<div class="panel-kor lang-panel" markdown="1">
+
+## 우리를 보고 있어
+
+---
+
+**면책 조항:** _이 포스트는 아마 너드 정보, **용어**, **횡설수설**이 가득할 테지만, 지식이야말로 어떤 것들을 이해하고 **속이기** 위해 필요한 거예요._
+
+---
+
+이제 다들 얼굴 인식이 뭔지 알죠. TV 시리즈, 영화에서 봤고, 카메라에서 써봤고, 심지어 폰 잠금 해제에도 써봤잖아요. _"내 폰이 내 얼굴을 인식하는 건지, 감지하는 건지?"_ 오! 아주 좋은 질문이에요.
+
+## 감지 vs 인식?
+
+**네**, **같은 게 아니에요**. 하지만 하나는 다른 하나에 필수적이에요. 사진을 찍을 때 카메라가 하는 건 얼굴 **감지**예요. 즉, 얼굴의 그 음공간 안에서 눈, 코, 입 같은 **인식 가능한 패턴**을 찾아요. 일련의 테스트를 통해, 일종의 의사결정 트리로, 정의된 구역의 직사각형 안에서 이 패턴을 찾다가 "네, 이건 얼굴이에요"라고 말할 수 있을 때까지 반복해요. 이 프로세스는 📼[Viola-Jones 알고리즘](https://www.youtube.com/watch?v=uEJ71VlUmMQ)이라고 알려진 알고리즘으로, **딥러닝**, **머신러닝**, 또는 다른 **무슨무슨러닝**보다 여전히 쓰일 만큼 효과적이에요.
+
+얼굴이 감지되면 **인식** 프로세스가 시작돼요. 익숙하게 들리죠. 당연히 우리가 친구들을 알아볼 때 항상 하는 거잖아요. 결국 알고리즘은 우리가 매일 하는 프로세스를 _수학화_한 버전이에요. 얼굴을 인식하고 보는 능력은 인간으로서 <s>몇 년</s>몇 세기 동안 해온 거예요. 오늘 아침 먹은 토스트처럼요, 그 위에 <s>Karol Dance</s> Kike Morandé 얼굴이 있었어요 (야호).
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/t4DT3tQqgRM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+> " I think my blackness is interfiring with..."
+
+HP COMPUTERS ARE RACIST
+
+오늘날 이 기술은 처음과 비교해 많이 발전해 우리 삶에 완전히 통합되어 있어요. 얼굴 인식의 역사에 대한 [지루한 포스트](https://www.welivesecurity.com/la-es/2015/08/27/tecnologia-de-reconocimiento-facial/)는 [쓰지 않을 거예요](https://medium.com/@spot_blog/una-breve-historia-del-reconocimiento-facial-vision-blog-5a76fdfe4865). 이미 많은 사람들이 했으니까요. 하지만 이 기술이 어떻게 작동하는지, 그리고 어떻게 속이는지는 가볍게 설명할게요. 글 쓸 이유와 gif 쓸 이유가 생기니까요, 제가 제일 좋아하는 **3**가지 중 **2**가지예요.
+
+**교훈:** 얼굴을 감지할 수 없으면 인식도 할 수 없어요 (당연하죠). 그리고 gif는 최고예요.
+
+## 어떻게 작동해?
+
+### 이마 두 손가락
+
+모든 얼굴에는 고유한 특징이 있어요. 우리 뇌의 일부가 <s>몇 년</s>몇 세기 동안 이걸 하도록 훈련돼왔어요. 어떤 사람들은 더 못해서 사람을 헷갈리기도 하지만, [뇌가 얼굴을 어떻게 인식하는지](https://www.wired.com/2012/01/brain-face-recognition/)에 대해 [장황하게 늘어놓지](https://www.smithsonianmag.com/science-nature/how-does-your-brain-recognize-faces-180963583/) 않을게요. [Pareidolia](https://es.wikipedia.org/wiki/Pareidolia)에 대한 [링크 몇 개](https://www.bbc.com/future/article/20140730-why-do-we-see-faces-in-objects)만 남겨둘게요.
+
+<figure class="figimg">
+   <img src="https://miro.medium.com/max/1500/0*Uaq5M_Vh35yI1i1I" alt="수학은 학교 밖에서도 쓰임, 아이들아">
+<figcaption>
+"학교 끝나면 수학 안 쓸 거야" — 네, 실제로 엄청 써요.
+</figcaption>
+</figure>
+
+얼굴 인식 소프트웨어는 우리가 하는 것처럼 이 특징들을 인식해요. 하지만 훨씬 더... 맞아요, **수학적인** 방식으로요. 고등학교 졸업하면 다시는 안 쓸 거라고 맹세했고 **쓸모없다고 생각했던** 그것 말이에요. 총 급여, 실수령액, 건강보험료 비율 같은 _멋진 이름이 붙은_ 각종 갈취를 계산해야 할 때까지는요. 소프트웨어가 인식하는 특징들:
+
+- **눈** 사이의 거리.
+- **코**의 너비.
+- **눈 소켓**의 깊이.
+- **볼**의 형태.
+- **턱**의 길이.
+
+등등, 60~80개의 얼굴 특징들이 있어요. 알아요, 그 재미있는 **인스타그램** 필터 생각하고 있겠죠. **Felipito**처럼 보이게 하거나 **꽃 왕관**을 씌워주는 거요. 그건 얼굴 감지예요 — "얼굴을 감지"하는 거지 "**당신의** 얼굴을 감지"(인식)하는 게 아니에요.
+
+이 거리들은 수식으로 변환되고, 데이터베이스가 있으면——**있어요**——비교가 이루어지고, 짠: 수학의 힘에 따르면, 이번이 당신이 이 공항을 처음 통과하는 게 아니에요.
+
+**데이터베이스**가 있다고 해서 편집증이 될 필요는 없지만, [Facebook은 매우 큰 데이터베이스를 보유하고 있어요](https://www.theguardian.com/technology/2019/aug/09/facebook-facial-recognition-lawsuit-can-proceed-us-court). 친구를 태그하거나 친구가 당신을 태그할 때마다 그 데이터베이스가 커지고 더 정밀해지는 걸 돕는 거예요. 네, 우리 스스로가 이 알고리즘들을 훈련시키고 개선시켜왔어요.
+
+### 미래는 3D
+
+요즘 트렌드는 3D예요. 2D 이미지 대신 얼굴 표면의 3D 모델을 사용해요. 이게 기본적으로 **Apple의 FaceID**가 작동하는 방식이에요. 여기서 저는 진짜 너드 본색이 나오는데, 기본적으로 소형 📼[Xbox Kinect](https://www.youtube.com/watch?v=uq9SEJxZiUg)로, 수백 개의 _미니 레이저_를 사용해 얼굴의 3D 모델을 생성해요. 훨씬 더 정밀하고 _와 진짜 멋진거_예요.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/g4m6StzUcOw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+**3D 얼굴 인식**은 동영상으로도 할 수 있어요. 얼굴 특징의 프레임 단위 분석을 통해 작동해요. 기본적으로 2D 분석을 여러 번 반복하는 거예요.
+
+두 시스템 모두 대비와 특정 얼굴 특징 감지를 기반으로 작동해요. **"얼굴 인식은 대비를 기반으로 한다"고 처음부터 말하면 됐었는데**, 조금 더 자세한 걸 설명하는 걸 좋아해서요. 이제 재미있는 부분으로 가볼게요.
+
+## 나 보여? 이제 안 보여! 👀
+
+<figure class="figimg">
+   <img src="https://media.giphy.com/media/fceh5CXz9mjHa/source.gif" alt="TINFOIL">
+<figcaption>
+양철 모자는 항상 효과가 있어요.
+</figcaption>
+</figure>
+
+자, 이제 얼굴 감지와 얼굴 인식이 어떻게 작동하는지 기본적으로 알았어요. 세계의 얼굴 데이터베이스를 파괴할 수 있는 해커 집단이 아닌 이상, 우리 얼굴이 감지되는 걸 막는 것밖에 할 수 없어요.
+
+#### 서바이버 스타터 키트
+
+##### 모자와 선글라스 쓰기.
+
+<figure class="figimg">
+   <img src="https://media.giphy.com/media/U8MnmuVDpK264/source.gif" alt="오류 404 인간 없음">
+<figcaption>
+"인간을 감지할 수 없음, 시스템 전체 실패".
+</figcaption>
+</figure>
+
+**악의적인 로봇이 당신을 감지하는 걸 막는** 것 외에도, 여름 시즌에 완벽하게 어울려요. **선글라스**를 고글로 바꾸면, 감지를 피하고 햇빛을 막으면서 **눈도 보호할 수 있어요**.
+
+##### EMO 뿌리로 돌아가기
+
+<figure class="figimg">
+   <img src="https://media.giphy.com/media/Tj7m9HrHaPmQE/source.gif" alt="에모 머리로 얼굴 가리기">
+<figcaption>
+"야 MCR 돌아왔대"
+"그래서 RATM은?".
+</figcaption>
+</figure>
+
+맞아요, **에모 헤어스타일로 돌아가면** 얼굴의 일부를 가려서 인식하기 더 어렵게 만들 수 있어요. **+10 스텔스**, **+5 우울감**, **+4 MCR**, **-15 기동성**. 게다가 [MCR이 돌아오고 있어요](https://www.distractify.com/p/is-my-chemical-romance-back-together) — 뿌리로 돌아갈 이보다 좋은 타이밍이 없죠.
+
+##### 메이크업
+
+<figure class="figimg">
+   <img src="https://pbs.twimg.com/media/DhDrCwdVAAAwvEW?format=jpg&name=medium" alt="인세인 클라운 포즈">
+<figcaption>
+Miracles!.
+</figcaption>
+</figure>
+
+맞아요, 메이크업을 쓰세요. 단, 턱, 눈썹, 콧등 같은 얼굴의 일부를 재정의하는 패턴으로요. 아니면 확실한 [Juggalo](https://twitter.com/tahkion/status/1013304616958607360?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1013304616958607360&ref_url=https%3A%2F%2Fconsequenceofsound.net%2F2019%2F07%2Fjuggalo-makeup-facial-recognition%2F) 룩 📼[Insane Clown Posse](https://www.youtube.com/watch?v=8GyVx28R9-s) 스타일로 가거나, 좀 더 표현적으로 [다음 레벨](https://cvdazzle.com/)로 가는 것도 좋아요.
+
+#### 서바이버 프로 키트
+
+##### NIR LED가 달린 옷이나 액세서리
+
+<figure class="figimg">
+   <img src="https://www.survivopedia.com/wp-content/uploads/2016/04/goggles.jpg" alt="NIR LED 고글로 얼굴 인식 차단">
+<figcaption>
+구글 글래스 돌아왔네.
+</figcaption>
+</figure>
+
+이건 **프로**라고 했죠. 디지털 카메라의 광 센서를 과부하시켜서, 얼굴 인식에 쓸 수 없는 이미지를 만드는 **근적외선(Near Infra Red)** 빛이 달린 안경 이야기예요.
+
+##### 재귀 반사 소재 옷
+
+<figure class="figimg">
+   <img src="https://www.survivopedia.com/wp-content/uploads/2016/04/android1.jpg" alt="snapchat 렌즈 기본형">
+<figcaption>
+DAT STYLE.
+</figcaption>
+</figure>
+
+노란 재킷 입을 핑계는 아니지만, **터무니없지만** 효과적인 안경 낄 핑계는 돼요. **테크노 고글**과 같은 방식으로 광 센서를 과부하시켜요.
+
+카메라 감지기나 <s>제임스 본드</s> Snake 스타일의 다른 가젯을 쓰는 방법도 있어요. 속이기보다는 회피하는 쪽에 더 가까운 방법들이에요. 아주 편집증적인 _[Mitnick](https://www.youtube.com/watch?v=K-96JmC2AkE)의 책을 전부 읽었어_ 느낌이에요.
+
+이제 <s>디스코그래피</s> **참고 문헌**을 드릴게요. 피자 표시가 있는 게 흥미로운 글이나 영상이에요.
+
+### 참고 문헌
+
+- [How Facial recognition software works](https://us.norton.com/internetsecurity-iot-how-facial-recognition-software-works.html)
+- [Facial Recognition](https://electronics.howstuffworks.com/gadgets/high-tech-gadgets/facial-recognition.htm)
+- [6 ways to defeat facial recognition](https://www.survivopedia.com/6-ways-to-defeat-facial-recognition/)
+- [Anti-Surveillance Camouflage for Your Face](https://www.theatlantic.com/technology/archive/2014/07/makeup/374929/)
+- [Anti-facial recognition-makeup](https://www.popsci.com/read/anti-facial-recognition-makeup)
+- [How to avoid facial recognition in public](https://www.technadu.com/how-to-avoid-facial-recognition-in-public/29462/)
+- 🍕📼[Detecting Faces (Viola Jones Algortihm)](https://www.youtube.com/watch?v=uEJ71VlUmMQ&)
+- 📼[How Face ID works... Probably](https://www.youtube.com/watch?v=mwTaISbA87A&)
+- 🍕[How your brain recognize all those faces](https://www.smithsonianmag.com/science-nature/how-does-your-brain-recognize-faces-180963583/)
+- [Why do we see faces in objects](https://www.bbc.com/future/article/20140730-why-do-we-see-faces-in-objects)
+- 📼[How the kinect depth sensor works in 2 minutes](https://www.youtube.com/watch?v=uq9SEJxZiUg)
+- 📼[12.1 What is the Kinect? - Kinect and Processing tutorial](https://www.youtube.com/watch?v=QmVNgdapJJM)
+
+댓글 섹션은 열려있어요. 혐오를 남기거나, 내가 빠뜨린 것들을 지적하거나, 인터넷의 그 고전적인 것들을 해도 좋아요.
+
+_항상 트루먼 쇼 스타일의 마무리 인사가 있어야 한다고 생각해요_
+
+</div>
+
 <div class="panel-jp lang-panel" markdown="1">
 
 ## 見られてる

@@ -107,6 +107,55 @@ Escribe escribe escribe
 
 </div>
 
+<div class="panel-kor lang-panel" markdown="1">
+
+## 챔피언처럼 포스팅하기
+
+_iPad Pro_를 산 이후로 모든 습관을 조금씩 작은 화면과 작은 연필로 옮기려 했어요. 지금 Editorial과 그 워크플로우 덕분에 정말로 해냈는지 테스트하는 중이에요.
+
+<figure class="figimg">
+	<img src="https://i.imgur.com/v7gT2rE.gif" alt="내 발">
+<figcaption>
+분위기 파악 중이고 이미지가 어떻게 포스팅되는지 테스트 중
+</figcaption>
+</figure>
+
+모르는 분들을 위해 말하자면, 제 블로그와 포트폴리오는 제가 _쥐 블로그_라고 부르는 거예요 — CMS도, 호스팅도 없고, 그냥 정적 파일 묶음과 **GitHub Pages**의 관대한 선물, 그리고 **Jekyll**의 약간의 도움이에요.
+제 인터넷 콤보 브레이커를 살펴볼게요:
+
+- 도메인: [namecheap](Http://www.namecheap.com) — 저렴하고 쿨한 도메인.
+- 호스팅: [github Pages](https://pages.github.com/) — 내 사이트가 사는 곳.
+- cms (없지만 이 조합이 같은 걸 해줘요):
+  - [markdown](https://daringfireball.net/projects/markdown/syntax) — 이 문법 모르면 링크 클릭하세요.
+  - [brackets](http://brackets.io/) — 텍스트 에디터.
+  - [editorial ](http://omz-software.com/editorial/) — 워크플로우 생성을 지원하는 iOS 텍스트 에디터 (나중에 더 설명할게요)
+  - [github desktop ](https://desktop.github.com/) — 존재하는 방법 중 가장 알파메일스럽지 않은 방식으로 파일을 GitHub에 올리는 거.
+
+> 어떻게 하는 거예요?
+
+순진한 작은 비둘기.
+
+GitHub Pages를 Jekyll로 설정하는 부분은 프로젝트를 클론하는 것만큼 쉬우니까 — _ezpz_ — 건너뛰고 **모바일** 블로깅 버전으로 바로 가볼게요.
+
+### editorial
+
+이 단순한 플레인 텍스트 편집 앱에는 _워크플로우_라는 게 있어요. 얘들아, **이게 최고예요** — 말 그대로 **if**, **while** 같은 **너드 프로그래밍 것들** 다 넣어서 액션을 프로그래밍할 수 있어요. 블로깅을 위해 특별히 설계된 GitHub 워크플로우가 있는 [사이트](https://www.editorial-workflows.com)도 있어요. 잘 작동시키진 못했어요 — API 토큰을 받아야 했는데, 받았지만, 그냥 — 사실 Safari에서 파일을 올리거나 그냥 복붙하는 게 너무 간단해요. 왜 API를 써요.
+
+**editorial**의 큰 장점은 제가 Jekyll과 CSS에 추가한 커스터마이징에 맞는 스니펫을 만들 수 있다는 거예요. 다른 에디터들은 이걸 지원 안 해요. 키보드에 익숙한 오랜 바다의 늑대로서, _figure_ 태그 같은 **HTML**을 손으로 입력하는 건 불가능해요.
+
+**오전 3시 15분**이에요, 이제 블로깅 그만. 게다가 이건 그냥 테스트 포스트예요.
+
+Test test test test test test.
+
+<figure class="figimg">
+	<img src="https://media.giphy.com/media/XIqCQx02E1U9W/giphy-downsized.gif" alt="타이핑 중">
+<figcaption>
+써써써 써라
+</figcaption>
+</figure>
+
+</div>
+
 <div class="panel-jp lang-panel" markdown="1">
 
 ## チャンピオンみたいにポストする

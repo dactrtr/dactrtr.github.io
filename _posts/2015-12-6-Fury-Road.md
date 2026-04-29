@@ -157,6 +157,80 @@ Esta fue nuestra primera parada donde nos comportamos como monos sin ningún tip
 ¡Prepárense! porque todavía hay más aventuras que contar, en el **próximo post**...
 </div>
 
+<div class="panel-kor lang-panel" markdown="1">
+
+_면책: 이건 매드맥스 퓨리로드에 관한 이야기가 아니라, 남섬 로드트립 이야기예요. 매드맥스 미니 리뷰로 말하자면, 눈을 위한 카페인 같은 것, 그냥 놀라울 뿐이에요._
+
+## 우리는 웃고, 죽고, 또 웃는다
+
+먼저 이 여행의 전부를 담은 이 영상으로 시작하고 싶어요...
+
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/NGF6Z4Z5jMA" frameborder="0" allowfullscreen></iframe>
+ 
+ 솔직히 말하면 우리가 어떤 장소를 방문했는지 **전혀 모르겠어요**, 저는 그냥 사진 찍는 아시안 원숭이였고 *지명도 정말 못 외워요*. 그래서 _tinkukurapomimu_가 대단한 곳이라고 구체적으로 말할 수가 없어요, 그 장소가 존재하지도 않는 것 같고요.
+ 
+### 레이더스
+ 
+<figure class="figimg">
+<img src="http://i.imgur.com/dqlbp7A.jpg" alt="Jure-나-Jeremy">
+<figcaption>
+Jure - 나 - Jeremy
+</figcaption>
+</figure>
+
+삶의 영원한 무작위성 속에서 우리는 **블레넘**에서 만났어요. **Jeremy**는 _소나무 농장_에서 일하고 있었고 **Jure**를 파티에 데려왔죠(맞아요, _RPG 파티_ 처럼요). 처음에는 여행할 계획이 전혀 없었고, 그 당시 계획은 그들이 이렇게 말할 때까지 블레넘에 머무는 거였어요:
+
+> Sebastian we don't need you anymore
+
+마음속으로 생각한 것들
+
+그런데 어느 날 **블레넘에서 최고의 장소**, 도미노피자에서, 이 _의사 인간_ 커플이 말했어요... _You can come with us in our ROAD TRIP, it will be really funny travel with you_
+
+그래서 맞아요, 내가 좋은 사람이어서가 아니라 _대단한 생존 기술_ 때문도 아니라([Don't Starve](https://www.kleientertainment.com/games/dont-starve)에서처럼), 오직 **내가 사람들을 웃길 수 있기 때문에**...
+
+충분한 이유이고, 사실이기도 해요.
+
+### 여행
+
+**키스 키스, 잘 있어 블레넘** 그리고 **넬슨**으로 출발. 우리가 스스로 **퓨리** 로드 **트립**이라고 부른 이 여행의 하이라이트 중 하나는, 빠르게 이동하는 것 외에도 **금 찾기**였어요.
+
+### 넬슨
+
+**넬슨**에서는, 진짜 **넬슨**처럼, 별일 없었으니 중요한 걸로 넘어가요... 금.
+
+<figure class="figimg">
+<img src="http://i.imgur.com/l4WHUup.jpg" alt="금">
+<figcaption>
+일 같은 건 잊어, 우리는 부자가 될 거야.
+</figcaption>
+</figure>
+
+금 찾기에 관심 있어요? 그럼 젊은 goldpadawan **Jeremy**와 GoldJedi 마스터 **Jure**의 금 찾기 강좌를 놓치면 안 돼요. 그냥 접시를 흔들어서 부자가 되는 세계로 가는 첫 번째 발걸음이에요. 저는 카메라맨을 맡았어요.
+
+_이 영상 편집은 정말 엉망이에요, 늘 그렇듯 캐나다 탓을 할게요._
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8GzP3N_dlZ0" frameborder="0" allowfullscreen></iframe>
+
+물론 양, 새끼 양, 소, 도로 말고는 아무것도 못 찾았어요. 정말 길고 지루한 도로들, 그리고 통조림 치킨, ~3달러에 살 수 있는 최고의 음식이에요.
+
+**넬슨** 이후에는 **그레이마우스**로 갔어요(사진의 GPS 데이터에 따르면), 그리고 첫 번째 밤을 **야생에서** 보냈어요. 3명이서 2인용 텐트에...
+
+<figure class="figimg">
+<img src="http://i.imgur.com/PmUBoov.jpg" alt="텐트">
+<figcaption>
+오, 이 모든 사치스러움.
+</figcaption>
+</figure>
+
+### 아서 패스
+
+[사진을 올려야 하는데, 내 형편없는 하스스톤 덱 사진 보고 싶어요?](https://twitter.com/Dactrtr/status/669629793671876608)
+
+여기가 기술 없이 원숭이처럼 행동한 첫 번째 정류장이었어요. 차에서 내려서 핸드폰과 배터리 쓰는 것들을 전부 충전하기 시작했어요. 무료 **와이파이 스팟**도 있어서 Jeremy와 저는 카페 한복판에서 **하스스톤**을 하게 됐어요.
+
+각오하세요! 아직 더 많은 모험이 남아 있으니, **다음 포스트**에서...
+</div>
+
 <div class="panel-jp lang-panel" markdown="1">
 
 _免責事項: これはマッドマックス フューリーロードの話じゃなくて、南島のロードトリップの話です。マッドマックスのミニレビューとして言うなら、目にとってのカフェインみたいなもの、ただただすごい。_

@@ -237,6 +237,120 @@ _El primero de la serie_, la idea era manejar una **animación con retraso**, lo
 ---
 </div>
 
+<div class="panel-kor lang-panel" markdown="1">
+
+# 디자인에서 SwiftUI로
+
+---
+
+**disclaimer:** _이건 진행 중인 작업이에요. 곧 이 프로젝트들을 각자의 "프로젝트"로 옮기고 다른 레포지토리에서 관리할 거예요_ 아니면 절대 안 할 수도 있고요.
+
+---
+
+## 아이디어
+
+**SwiftUI** 출시 후, _Storyboard_와 _UIKit_을 이것저것 해보고 나서, Apple의 인터페이스 개발이 **디자이너도 이해할 수 있는** 수준에 도달했고, 디자인-개발 작업 흐름으로 충분히 받아들일 만한 "충분한 코딩"이 됐다는 느낌이 들었어요 (개발 쪽에 더 파고들기 위해 지금 _Swift_를 배우고 있어요).
+
+이 블로그 포스트는 _Dribbble에서 SwiftUI로 복제_해온 몇 가지 프로젝트들의 작은 **쇼룸**이에요. 오래된 프로젝트들은 실제로 망가진 상태예요. _iPad용 Playgrounds_에서 코딩했는데 어느 업데이트에서 어떻게 망가졌고, 당시 Playgrounds의 오류 처리는 아주 기본적이었어요.
+
+## 프로젝트들
+
+---
+
+### Fintech
+
+오리지널 디자인: [Fintech Dark Theme](https://dribbble.com/shots/15668611-Fintech-Dark-Theme)
+
+<video width="320" height="auto" controls>
+    <source src="https://cdn.dribbble.com/users/332219/screenshots/15668611/media/8ce3dbec9f3cf51e82974e23c9fc4833.mp4">
+</video>
+
+SwiftUI: [Github 레포지토리](https://github.com/dactrtr/Fintech)
+
+<video width="320" height="auto" controls>
+    <source src="https://i.imgur.com/3zyQkGM.mp4">
+</video>
+
+이 뷰의 주요 목표는 "_뷰 안의 뷰_"를 관리하는 거였어요. 이를 위해 몇 가지 디자인적인 결정을 했는데, 주로 이미지로 프로젝트를 _부풀리고_ 싶지 않았기 때문이에요. 아이콘과 이미지 몇 개가 완전히 같지는 않더라도, 뷰의 _아이디어와 흐름_은 전달될 거예요.
+
+---
+
+### Finance App
+
+오리지널 디자인: [Finance App](https://dribbble.com/shots/15162092-Finance-App-Visual-Exploration)
+
+<figure class="figimg">
+   <img src="https://cdn.dribbble.com/users/1212733/screenshots/15162092/media/0af4dfcdfeeb2fcc7bdf3f90fc5be192.png" alt="Finance app UI 디자인">
+</figure>
+
+SwiftUI: [Github 레포지토리](https://github.com/dactrtr/financeApp)
+
+<figure class="figimg">
+   <img src="https://i.imgur.com/2wTzdUJ.jpg" alt="Finance app UI 디자인">
+<figcaption>
+네, 이게 실제로 제 배경화면이에요
+</figcaption>
+</figure>
+
+이번에는 **새로운 수정자와 뷰를 따라잡는 것**이 도전 과제였어요. 일이 좀 바빠서 SwiftUI로 돌아오게 됐는데, 멋진 인터랙션보다는 그냥 예쁜 UI예요.
+
+---
+
+### Team Management
+
+오리지널 디자인: [Team Management](https://dribbble.com/shots/13623650-Team-Management-App-Interaction)
+
+<video width="320" height="auto" controls>
+    <source src="https://cdn.dribbble.com/users/345970/screenshots/13623650/media/bf2782d9ef9a9130c8c3179cf9691a9a.mp4">
+</video>
+
+SwiftUI: [Github 레포지토리](https://github.com/dactrtr/TeamManagement)
+
+<video width="320" height="auto" controls>
+    <source src="https://i.imgur.com/G4vr9oI.mp4">
+</video>
+
+이 뷰의 주요 목표는 복잡한 _풀사이즈 뷰_를 구현하고 작은 _데이터 모델_을 관리하는 거였어요.
+
+---
+
+### Clean Bank UI [망가짐]
+
+오리지널 디자인: [Clean Bank UI](https://dribbble.com/shots/12310592-Clean-Bank-UI)
+
+<video width="320" height="auto" controls>
+    <source src="https://cdn.dribbble.com/users/32512/screenshots/12310592/media/2bc9ff5d134acf75fe6378093f3e2b47.mp4">
+</video>
+
+SwiftUI: [Github 레포지토리](https://github.com/dactrtr/Design-to-Swift)
+
+<video width="320" height="auto" controls>
+    <source src="https://i.imgur.com/350e0BG.mp4">
+</video>
+
+이 프로젝트에서 **iPad용 Playgrounds에서 복잡한 UI**를 재현했는데, 작동했다는 건 믿어주셔야 해요. Mac용 Playgrounds 업데이트에서 코드가 망가졌고, 오류 처리가 그다지 좋지 않아서 _뭐가 망가진지 전혀 모르겠어요_.
+
+---
+
+### Lekan Menu [망가짐]
+
+오리지널 디자인: [Lekan Menu](https://twitter.com/lalaekan/status/1285923482195419136)
+
+<video width="320" height="auto" controls>
+    <source src="https://i.imgur.com/g1I0FS7.mp4">
+</video>
+
+SwiftUI: [Github 레포지토리](https://github.com/dactrtr/Design-to-Swift)
+
+<video width="320" height="auto" controls>
+    <source src="https://i.imgur.com/wbX9tFG.mp4">
+</video>
+
+_시리즈의 첫 번째_예요. **딜레이 애니메이션**을 관리하는 게 목적이었는데, 이상한 boolean 관리로 해결했다가, 나중에 올바른 방법이 **animation 수정자**를 사용하는 거라는 걸 알게 됐어요.
+
+---
+</div>
+
 <div class="panel-jp lang-panel" markdown="1">
 
 # デザインからSwiftUIへ

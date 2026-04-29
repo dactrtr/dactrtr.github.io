@@ -55,6 +55,29 @@ Y sí, estoy súper emocionado, y bueno eso es todo, ahora necesito organizarme 
     <inserta alguna frase de despedida ingeniosa>
 </div>
 
+<div class="panel-kor lang-panel" markdown="1">
+
+## 또 다른 날, 또 다른 페이지
+
+제 **_#noshareDecember_**는 처음 며칠 동안 순조로웠어요. 작은 [Chrome 확장 프로그램](https://chrome.google.com/webstore/detail/stayfocusd/laankejkbhbdhmipfmgcngdelahlfoji)의 도움을 받아서, 처음 5일 동안 Facebook에 2분만 있을 수 있었는데 정말 대단했어요. 사실 아무것도 놓치지 않고 있다는 걸 깨달았어요 — 무례하게 들릴 수 있지만, 제 Facebook 피드는 밈, 정부를 비판하는 게시물, 재미있는 동영상뿐이에요. _뉴스_는 하나도 놓치지 않았고, 아무것도 게시하거나 공유하지 않아서 알림도 없었어요 (대부분의 알림은 그냥 **좋아요**뿐이고, 토론이나 대화는 없어요).
+
+제 계획은 이 사랑스럽고 방치된 블로그에서 공유할 필요가 있는 모든 것을 공유하는 거였어요. "뒤로" 버튼이 없다는 걸 알아요 (이미 "home"이라고 쓰인 시시한 텍스트로 구현된 건 방금 깨달았어요). 모든 걸 깔끔하게 유지하려면 태그 같은 것도 있어야 하는데, 지금은 "어수선해질" 만큼의 콘텐츠도, 찾아야 할 만큼 중요한 것도 없어요. 코드에 대해 좀 쓰겠다고 했고, 아마 **Processing**에 대해서도 쓰겠다고 했지만, 게으름이 이기고 있어요. 그 외에도 그림을 그리고, 제 바보 같은 만화를 그리고, 뭐 **Monster Hunter**도 하고 있어요. 거기에 **OP1**의 최신 업데이트도 제대로 안 해봤고요.
+
+## 변명 끝
+
+뭐, 그때까지는 12월 무공유 생활이 순조로웠어요. 그런데 스파이더맨이 왔어요...
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YowSQ5uBwMQ" frameborder="0" allowfullscreen></iframe>
+
+저는 스파이디의 열렬한 팬이라서, 그 _내일_은 YouTube 메인 페이지 앞에서 원숭이처럼 **cmd+r**을 연타하는 것으로 끝났어요. 그리고 확장 프로그램을 끄고 _facebook_과 _twitter_로 돌아가서 답을 찾고, 지식을 찾고, **Tom Holland**가 스파이더맨 복장을 하고 있는 걸 찾았어요!!!. 하루를 완전히 날린 후 예고편을 손에 넣었어요:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WWfz3Yri_o4" frameborder="0" allowfullscreen></iframe>
+
+그리고, 네, 엄청 기대돼요. 뭐 그게 다예요. 이제 이렇게 _소셜_한 것을 그만두고 그림, 음악, 코드를 더 하기 위해 정리할 필요가 있어요 (아직 다 동시에는 아니지만).
+
+    <여기에 적당히 기억에 남는 작별 인사를 넣어요>
+</div>
+
 <div class="panel-jp lang-panel" markdown="1">
 
 ## また別の日、また別のページ

@@ -107,3 +107,36 @@ además de todos estos cambios, también estoy usando [Claude Code](https://clau
 これらの変更に加えて、[Claude Code](https://claude.ai/code) を使って LUA コード（[Playdate SDK](https://play.date/dev/)）を LUA コード（[love2d](https://www.love2d.org/)）に移植しています。PC版が形になってきました（正確にはmacOS版ですが）。
 
 </div>
+
+<div class="panel-kor lang-panel" markdown="1">
+
+# 그래픽 개선, 새로운 메카닉, PC 버전
+
+---
+
+**공지:** _개선한 게 많았는데 글 쓸 시간도 에너지도 없었기 때문에 짧은 포스트가 될 거예요_ 지난 한 달이 정말 바빴습니다.
+
+---
+먼저
+## 결혼했어요
+
+네, 여러분, 사랑을 찾았습니다. 아니면 사랑이 저를 찾은 건지, 어떻게 되는 건지 잘 모르겠지만 행복합니다. 어떻게 했는지는 묻지 마세요, 그냥 그렇게 됐어요. 12월에 있었던 일이고, 절차는 다 끝났고 곧 축하 파티를 할 예정입니다.
+
+## 전부 개선했습니다
+
+솔직히 게임에 가한 모든 변경 사항을 다 기억하지 못해서, 기억나는 것만...
+- 에셋 작업에 [Pixquare](https://www.pixquare.art/) 사용 시작
+- 레벨 제작 커스텀 툴 포기하고 [LDTK](https://ldtk.io/)로 전환
+- 크레딧 씬 추가
+- 레벨 생성 방식을 타일에서 이미지로 변경
+- 레벨과 소품 렌더링 방식 변경, 스프라이트 대신 이미지를 배경으로 사용
+- 새로운 스킬 2개 추가
+- 새로운 인게임 메뉴 제작
+- 픽업 캐릭터 추가
+- NPC 추가
+- 조건부 대화 추가
+- 축소 스킬 추가
+
+이 모든 변경 외에도, [Claude Code](https://claude.ai/code)를 사용해서 LUA 코드([Playdate SDK](https://play.date/dev/))를 LUA 코드([love2d](https://www.love2d.org/))로 포팅하고 있어서 PC 버전이 점점 모습을 갖춰가고 있습니다(더 정확히는 macOS 버전이지만요).
+
+</div>

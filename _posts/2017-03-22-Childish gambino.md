@@ -25,6 +25,14 @@ me va a tomar una eternidad, porque mira ese pixel, y mira este otro, y eso podr
 
 </div>
 
+<div class="panel-kor lang-panel" markdown="1">
+
+# 5월 1일 리부트 준비 중
+
+시간이 엄청 걸릴 것 같아요. 왜냐면, 저 픽셀 봐요, 그리고 이 픽셀도, 저건 영상이 될 수도 있고, 오 그리고...
+
+</div>
+
 <div class="panel-jp lang-panel" markdown="1">
 
 # 5月1日のリブートに向けて準備中

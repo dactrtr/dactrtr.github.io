@@ -84,6 +84,43 @@ Ahora necesito ir al baño, llevo **siglos** frente a la computadora.
 
 </div>
 
+<div class="panel-kor lang-panel" markdown="1">
+
+## 블로그 만들기는 어렵다
+
+이게 사실은 블로그의 _첫 번째_ 포스트예요. 처음에는 사용한 _플러그인_에 대해 쓰거나, [Ghost](http://ghost.org)에서 [Jekyll Now](https://github.com/barryclark/jekyll-now)로 _모든 포스트를 어떻게 이전했는지_ 쓰려고 **생각하고** 있었는데 물론, 생각대로 _되지 않았어요_.
+
+<figure class="figimg">
+   <img src="http://i.giphy.com/adhuPKADfzrDG.gif" alt="handle">
+<figcaption>
+이 코드 전부 다루려는 나.
+</figcaption>
+</figure>
+저 사진처럼 됐어요, 왜냐면 **FORK**하는 단계에서 바로 *아무것도 읽지 않고* *sass와 루비의 멋진 플러그인 속으로 뛰어들었으니까요*. 보통은 제일 먼저 **매뉴얼을 읽는** 부류인데, 이번엔 아니었어요. 그래서 결국 플러그인이 어떻게 작동하는지 (사실 지원되는 게 5개 정도예요)와 *어려운* 방식으로, 모든 걸 폭발시키면서 sass에서 mixins가 어떻게 작동하는지 배웠어요. **sass** 파일에 간단한 `mediaqueries`를 넣는 [여러 가지 방법](https://css-tricks.com/approaches-media-queries-sass/)을 보는 건 *코드지옥* 그 자체였어요.
+
+<figure class="figimg">
+   <img src="http://i.giphy.com/jvu00LhbjzAJi.gif" alt="EZ PZ">
+<figcaption>
+지금의 나. 3시간 동안 수정하려고 노력하고, commit/merge 실수 3번 하고, 블로그 삭제하고 다시 올리고, CSS 전체를 손으로 merge한 후...
+</figcaption>
+</figure>
+내 멍청함에 더해서, [Ghost](http://ghost.org)가 *labs*의 내보내기 옵션을 사용할 때 만드는 `json` 파일을 보고 있었는데, **놀랍게도** 완전히 사람이 읽을 수 없는 형식이었어요, 맞아요, 저는 인간이라서 그런 **쓰레기**는 읽을 수가 없어요...
+
+그래서 _똑똑한 척하며_, **로컬 Ghost**를 다시 올리고 각 포스트의 내용을 직접 복사 붙여넣기 했어요, 최선의 방법은 아니었지만 적어도 문제에서 빠져나갈 출구처럼 보였어요...
+
+한 가지, 여러분, **labs** 카테고리에 있는 기능들을 사용할 때 꽤 흔하게 일어나는 건... 바로... 실패예요. 그래서 `json`에서 오류가 나서 이전 포스트들을 전부 "잃었어요", 사실 별로 중요한 건 아니었어요. 이제 블로그를 모바일용으로 **CSS 작업**하고 몇 가지를 더 수정해야 해요...
+
+하지만 이제부터는 꽤 _쉬워질_ 것 같아요.
+나중에 다음 _멋진_ 포스트에서 블로그 만들기라는 이 황야에 대해 더 이야기할 수도 있어요.
+
+> "인내심이 필요해, 젊은 파다완이여"
+
+요다
+
+이제 화장실 가야 해요, **몇 세기 동안** 컴퓨터 앞에 앉아 있었어요.
+
+</div>
+
 <div class="panel-jp lang-panel" markdown="1">
 
 ## ブログを作るのは難しい

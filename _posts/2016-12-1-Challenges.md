@@ -81,6 +81,43 @@ Voy a postear el link en cuanto tenga suficientes páginas o al menos parte de l
 PD: también tengo esa sensación (no la canción) de rediseñar el blog, de nuevo.
 </div>
 
+<div class="panel-kor lang-panel" markdown="1">
+
+## Inktober, Dinovember, 그리고 다음 것.
+
+_면책 조항: 알아요, Napier (뉴질랜드)에서의 생활도, 가족과의 올랜도도, 사랑스러운 캐나다에서의 가장 이상했던 3개월도 아무것도 안 썼어요. 아마 그 포스트들은 몇 주 안에 올라올 거예요. 그리고 제 블로그 아무나 읽어요?_
+
+예술가이거나 일러스트레이터이거나 예술과 조금이라도 관련된 사람이라면 [Inktober](http://mrjakeparker.com/inktober)에 대해 들어봤을 거예요. 10월 내내 잉크만으로 그림을 그려야 해요. 이건 커뮤니티 지향의 훌륭한 연습이고, 자칭 _일러스트레이터_로서 매년 잉크만으로 30개의 그림을 그려보려고 시도해왔어요.
+
+<figure class="figimg">
+   <img src="http://i.imgur.com/pxQfB8P.gif" alt="그리기 루프">
+<figcaption>
+나, 그리는 중. 
+</figcaption>
+</figure>
+
+재미있는 건, 거의 10년 전에 모든 종류의 지우기 방법을 그림에서 없앴다는 거예요. 네, 그 말은 **지난 10년 동안 잉크만으로 그림을 그려왔다**는 뜻이에요. 지난 30년 동안 영원한 **inktobers** 루프 속에 살아왔는데, 왜인지 모르지만 매년 10월에 30개의 그림을 연속으로 할 수가 없어요. 올해는 가장 끔찍한 방식으로 실패해서, 고작 3개만 했어요, 아니 3개도 아니고 2개만.
+
+## 실패의 기술, 혹은 기술의 실패.
+
+그래서, 실패의 모험에 완전히 빠져들어, 또 다른 종류의 도전을 해보기로 했어요. **11월** 것으로요. 아니, **movember** 얘기가 아니에요. 면도는 제가 좋아하는 스포츠가 아니고 면도한 적도... 사실 한 번도 없어요, 그냥 다듬기만 해요. **Dinovember**에 대해 얘기하는 거예요. 이건 실제로는 도전이 아니고, 공룡에 대한 사랑을 축하하기 좋은 달이에요. 근데 뭔지 알아요? 해냈어요. **공룡 두개골 30개를 그렸어요**. 이제 두개골이 59개 다른 종류가 있어요 (나머지 29개는 이전 대학교 프로젝트에서). 그리고 이 **도전의 맛**이 정말 좋아요. 그런데 21일 규칙에 따르면, 21일 동안 무언가를 하면 습관이 된대요.
+
+<blockquote class="instagram-media" data-instgrm-version="7" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/BNdK1jUD6zh/" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A photo posted by Sebastian Zuñiga (@dactrtrs)</a> on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2016-12-01T01:17:02+00:00">Nov 30, 2016 at 5:17pm PST</time></p></div></blockquote>
+<script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
+
+그리고 물론 지금은 또 다른 도전을 시도하고 있어요. 이번엔 **Processing**을 (항상처럼) 다시 배우고 _Facebook_과 그 "소셜 네트워크" 쓰레기를 버리기 시작하고 싶어요. 최소한 [Twitter](http://www.twitter.com/dactrtr)나 [Instagram](http://www.instagram.com/dactrtrs)보다 더 따분하고 쓰레기 같은 _facebook_만이라도요. Instagram에서 팔로우하는 멋진 일러스트레이터들과 그 사랑스러운 _러시아 여자들_은 놓지 않을 거예요.
+
+러시아어도 다시 시작하고 싶어요. 미안해 일본어, 근데 요즘 너무 트렌드야...
+
+**만화 하고 있다고 했나요?**
+
+충분한 페이지가 모이거나 적어도 이야기의 일부가 완성되면 링크를 올릴게요...
+
+**12월 무공유 시작!**
+
+추신: 블로그를 다시 디자인하고 싶은 느낌이 (노래가 아니라) 또 오고 있어요.
+</div>
+
 <div class="panel-jp lang-panel" markdown="1">
 
 ## インクトーバー、ダイノベンバー、そして次のやつ。

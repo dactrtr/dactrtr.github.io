@@ -59,6 +59,31 @@ De todas formas, tengo que ir a cazar un **Kulve Taroth** antes de que termine e
 
 </div>
 
+<div class="panel-kor lang-panel" markdown="1">
+
+## 방치 중
+
+이 포스트의 **원래** 제목이 됐어야 했어요. 딱 그대로거든요 — 블로그를 정말 방치했어요. 얼마 전 (6개월 전) 아주 힘든 직장을 그만뒀고 자유 시간을 다시 찾는 중이에요. 백수는 아니고요, 그냥 제 여가 시간과 정말 좋은 _ps4_ 게임들과 깊이 재회하는 중이에요.
+
+<figure class="figimg">
+	<img src="https://media.giphy.com/media/PCEADsVBRWD16/giphy-downsized-large.gif" alt ="요즘 빛을 못 보는 주된 이유, 몬스터헌터 월드">
+<figcaption>
+요즘 빛을 못 보는 주된 이유, 몬스터헌터 월드
+</figcaption>
+</figure>
+
+솔직히 창의적이지 않은 방식으로 자유 시간을 즐기는 것 말고는 변명이 많지 않아요 — 그냥 소비하고 Monster Hunter 엄청 하는 거죠. 친구들이 이렇게 빠져들 줄은 몰랐어요.
+
+그리고 _소셜 미디어_에서 잠깐 벗어나려는 두 번째 시도 중이에요. 주로 그 쓰레기통 같은 **facebook**과 혐오의 소굴인 **twitter**요. **instagram**은 훌륭한 영감의 원천이고 재능 있는 아티스트들이 많아서 계속 쓰고 있어요.
+
+더 크지만 덜 최근의 요인으로, _Kevin Mitnick_의 책 **The art of invisibility**를 손에 넣었어요. 인터넷 보안과 프라이버시에 관한 책이에요. 그 독서가 이미 영향을 미쳤어요 — 이제 암호화된 이메일 계정이 있고, 하드 드라이브를 암호화했고, 비밀번호를 업데이트했고, 가끔 tor로 브라우징해요.
+
+더 자주 포스팅하거나 그런 말을 하려는 게 **아니에요**. 하지만 인터넷의 이 작은 구석이 너무 외롭지 않게 하고 싶어요. 특히 거미줄이 쳐진 제 포트폴리오요.
+
+어쨌든, 이번 주 이벤트 끝나기 전에 **Kulve Taroth** 사냥하러 가야 해요.
+
+</div>
+
 <div class="panel-jp lang-panel" markdown="1">
 
 ## 放置中

@@ -2,7 +2,8 @@
 .tab-radio { display: none; }
 .panel-eng,
 .panel-esp,
-.panel-jp { display: none; }
+.panel-jp,
+.panel-kor { display: none; }
 
 // Tab bar
 .tab-labels {
@@ -37,17 +38,21 @@
 .entry:has(#tab-eng:checked) .panel-eng,
 .entry:has(#tab-esp:checked) .panel-esp,
 .entry:has(#tab-jp:checked) .panel-jp,
+.entry:has(#tab-kor:checked) .panel-kor,
 .scream:has(#tab-eng:checked) .panel-eng,
 .scream:has(#tab-esp:checked) .panel-esp,
-.scream:has(#tab-jp:checked) .panel-jp { display: block; }
+.scream:has(#tab-jp:checked) .panel-jp,
+.scream:has(#tab-kor:checked) .panel-kor { display: block; }
 
 // Active tab label highlight
 .entry:has(#tab-eng:checked) label[for="tab-eng"],
 .entry:has(#tab-esp:checked) label[for="tab-esp"],
 .entry:has(#tab-jp:checked) label[for="tab-jp"],
+.entry:has(#tab-kor:checked) label[for="tab-kor"],
 .scream:has(#tab-eng:checked) label[for="tab-eng"],
 .scream:has(#tab-esp:checked) label[for="tab-esp"],
-.scream:has(#tab-jp:checked) label[for="tab-jp"] {
+.scream:has(#tab-jp:checked) label[for="tab-jp"],
+.scream:has(#tab-kor:checked) label[for="tab-kor"] {
   color: $blackestNight;
   border-bottom: 2px solid $pink;
   background: transparent;
