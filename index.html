@@ -1,45 +1,62 @@
 ---
 layout: default
 ---
-<div class="posts">
-  <h2 class="blog-title">↓blog↓</h2>
-  {% for post in paginator.posts %}
-    <article class="post"> 
-      {% if post.feature %}
-        <a href="{{ site.baseurl }}{{ post.url }}" 
-        style="background:url({{ post.feature}});background-size:cover;background-position-y: center;">
-      {% else %}
-        <a href="{{ site.baseurl }}{{ post.url }}" style="background:url(http://i.giphy.com/FRmOsocKhM1xK.gif);background-size:cover;background-position-y: center;">
-        {% endif %}
-            <span class="cover"></span>
-            <div class="data-post">
-              <h1 class="title">{{ post.title }}</h1>
-              <h4 class="desc">{{ post.titledesc }}</h4>
-              <h3 class="date">{{ post.date | date: "%B %e, %Y" }}</h3>
-              <div class="tags-holder">
-                <span class="language">
-                  {% if post.about == "life" %}
-                    life
-                  {% else %}
-                    devblog
-                  {% endif %}
-                </span>
-              </div>
-            </div>
-        </a>
-  </article>
-  {% endfor %}
-</div>
+<div class="portfolio-home">
 
-<!-- Pagination links -->
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <span class="prev-c"><a href="{{ paginator.previous_page_path }}" class="icons-prev"></a></span>
-  {% else %}
+  {% assign featured = site.portfolio | where: "featured", true | first %}
+  {% if featured %}
+  <div class="portfolio-featured">
+    <a href="{{ featured.url }}">
+      <div class="featured-screenshot">
+        {% if featured.screenshot and featured.screenshot != "" %}
+          <img src="{{ featured.screenshot }}" alt="{{ featured.title }}">
+        {% else %}
+          <div class="placeholder-screenshot" style="width:100%;height:400px;background:#A0C8F0;border-radius:8px;"></div>
+        {% endif %}
+      </div>
+      <div class="featured-meta">
+        {% if featured.logo and featured.logo != "" %}
+          <img src="{{ featured.logo }}" alt="{{ featured.title }} logo" class="featured-logo">
+        {% else %}
+          <div class="placeholder-logo" style="width:60px;height:60px;background:#C0F0A0;border-radius:8px;"></div>
+        {% endif %}
+        <h2 class="featured-title">{{ featured.title }}</h2>
+        <p class="featured-role">{{ featured.role }} &middot; {{ featured.place }}</p>
+      </div>
+    </a>
+  </div>
   {% endif %}
-  {% if paginator.next_page %}
-   <span class="next-c"><a href="{{ paginator.next_page_path }}" class="icons-next"></a></span>
-  {% else %}
-<!--    <span class="next ">Next</span>-->
+
+  {% assign others = site.portfolio | where: "featured", false %}
+  {% if others.size > 0 %}
+  <div class="portfolio-grid">
+    {% for project in others %}
+    <article class="portfolio-card">
+      <a href="{{ project.url }}">
+        <div class="card-screenshot">
+          {% if project.screenshot and project.screenshot != "" %}
+            <img src="{{ project.screenshot }}" alt="{{ project.title }}">
+          {% else %}
+            <div class="placeholder-screenshot" style="width:100%;height:200px;background:#A0C8F0;border-radius:8px;"></div>
+          {% endif %}
+        </div>
+        <div class="card-meta">
+          {% if project.logo and project.logo != "" %}
+            <img src="{{ project.logo }}" alt="{{ project.title }} logo" class="card-logo">
+          {% else %}
+            <div class="placeholder-logo" style="width:40px;height:40px;background:#C0F0A0;border-radius:8px;display:inline-block;"></div>
+          {% endif %}
+          <h3 class="card-title">{{ project.title }}</h3>
+          <p class="card-role">{{ project.role }} &middot; {{ project.place }}</p>
+        </div>
+      </a>
+    </article>
+    {% endfor %}
+  </div>
   {% endif %}
+
+  <div class="portfolio-blog-link">
+    <a href="/blog/" class="btn-blog">&rarr; blog</a>
+  </div>
+
 </div>

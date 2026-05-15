@@ -26,6 +26,9 @@ collections:
     output: true
   travels:
     output: true
+  portfolio:
+    output: true
+    permalink: /portfolio/:name/
 
 defaults:
   - scope:
