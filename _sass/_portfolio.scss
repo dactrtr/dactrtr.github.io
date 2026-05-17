@@ -1,0 +1,423 @@
+// Portfolio — Dark + Accent design
+// Spec: docs/superpowers/specs/2026-05-18-portfolio-design.md
+
+body.portfolio-landing,
+body.portfolio-full {
+  background: $bonedThrone;
+  color: $blackestNight;
+}
+
+.portfolio-home {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+  font-family: $helveticaNeue;
+}
+
+.portfolio-landing .main-header {
+  width: 100%;
+  background-color: $bonedThrone;
+
+  .header-inner {
+    background-color: $bonedThrone;
+  }
+}
+
+.portfolio-landing .who-iam {
+  color: rgba($blackestNight, 0.6);
+}
+
+.portfolio-landing .logo {
+  h1, h2 { color: $blackestNight; }
+  .what, .mind { color: $blackestNight; }
+}
+
+.portfolio-landing .dots {
+  opacity: 0.5;
+}
+
+// fixed-position element — horizontal layout intentional regardless of breakpoint
+.portfolio-landing .float-window {
+  flex-direction: row;
+  width: auto;
+  padding: 8px 16px;
+  align-items: center;
+  gap: 16px;
+
+  .controls { gap: 4px; }
+  .links { flex-direction: row; gap: 16px; }
+}
+
+// ─── Featured card ────────────────────────────────────────────────────────────
+
+.portfolio-featured {
+  margin-bottom: 12px;
+  border-radius: 24px;
+  overflow: hidden;
+  > a {
+    display: flex;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    // border: 1px solid rgba($purpleBack, 0.35);
+    text-decoration: none;
+    min-height: 160px;
+
+    @include media-medium {
+      min-height: 220px;
+    }
+  }
+
+  .featured-screenshot {
+    flex: 1;
+    min-width: 80px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .placeholder-screenshot {
+      width: 100%;
+      height: 100%;
+      min-height: 160px;
+      background: rgba($blackestNight, 0.93);
+    }
+  }
+
+  .featured-meta {
+    width: 55%;
+    flex-shrink: 0;
+    background: rgba($blackestNight, 0.93);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+
+    @include media-medium {
+      padding: 28px;
+      width: 50%;
+    }
+
+    &::before {
+      content: "★ FEATURED";
+      color: $blinkyPinky;
+      font-size: 9px;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+  }
+
+  .featured-logo,
+  .placeholder-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+  }
+
+  .placeholder-logo {
+    background: rgba($purpleBack, 0.4);
+    display: block;
+  }
+
+  .featured-title {
+    color: $bonedThrone;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 4px;
+
+    @include media-medium {
+      font-size: 20px;
+    }
+  }
+
+  .featured-role {
+    color: $cyanTyrant;
+    font-size: 10px;
+    margin: 0 0 8px;
+  }
+
+  .featured-challenge {
+    color: rgba($bonedThrone, 0.5);
+    font-size: 11px;
+    line-height: 1.5;
+    margin: 0 0 12px;
+    display: none;
+
+    @include media-medium {
+      display: block;
+    }
+  }
+
+  .featured-link {
+    color: $blinkyPinky;
+    font-size: 11px;
+  }
+}
+
+// ─── Project list ─────────────────────────────────────────────────────────────
+
+.portfolio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.portfolio-list-item {
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba($purpleBack, 0.3);
+
+  &:hover .list-item-panel {
+    background: rgba($blackestNight, 0.82);
+  }
+
+  > a {
+    display: flex;
+    height: 110px;
+    text-decoration: none;
+  }
+
+  .list-item-screenshot {
+    width: 42%;
+    flex-shrink: 0;
+    overflow: hidden;
+    min-width: 60px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .placeholder-screenshot {
+      width: 100%;
+      height: 100%;
+      background: rgba($purpleBack, 0.15);
+    }
+  }
+
+  .list-item-panel {
+    flex: 1;
+    background: rgba($blackestNight, 0.9);
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    transition: background 0.2s;
+  }
+
+  .list-item-meta {
+    color: $cyanTyrant;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .list-item-title {
+    color: $bonedThrone;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .list-item-link {
+    color: $blinkyPinky;
+    font-size: 13px;
+  }
+}
+
+// ─── Blog link ────────────────────────────────────────────────────────────────
+
+.portfolio-blog-link {
+  text-align: center;
+  padding: 16px 0;
+}
+
+.btn-blog {
+  color: rgba($bonedThrone, 0.4);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $cyanTyrant;
+  }
+}
+
+// ─── Individual project page ──────────────────────────────────────────────────
+
+body.portfolio-full {
+  .portfolio-back {
+    display: inline-block;
+    margin: 24px 0 0 32px;
+    color: $blinkyPinky;
+    text-decoration: none;
+    font-size: 13px;
+
+    &:hover { opacity: 0.7; }
+  }
+
+  .portfolio-full-content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 20px 64px;
+
+    @include media-medium {
+      padding: 32px 32px 64px;
+    }
+  }
+
+  .portfolio-item {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include media-medium {
+      grid-template-columns: 200px 1fr;
+      gap: 0 40px;
+
+      .portfolio-item-header { grid-column: 1; grid-row: 1 / -1; }
+      .portfolio-screenshot  { grid-column: 2; grid-row: 1; }
+      .portfolio-challenge   { grid-column: 2; grid-row: 2; }
+      .portfolio-learnings   { grid-column: 2; grid-row: 3; }
+      .portfolio-content     { grid-column: 2; grid-row: 4; }
+    }
+  }
+
+  // ─── Sidebar ────────────────────────────────────────────────────
+  .portfolio-item-header {
+    padding-top: 4px;
+    margin-bottom: 24px;
+
+    @include media-medium {
+      margin-bottom: 0;
+    }
+
+    .portfolio-logo {
+      margin-bottom: 20px;
+
+      img,
+      .placeholder-logo {
+        width: 64px;
+        height: 64px;
+        border-radius: 8px;
+        display: block;
+      }
+
+      .placeholder-logo {
+        background: rgba($purpleBack, 0.4);
+      }
+    }
+
+    .portfolio-meta {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+
+      @include media-medium {
+        flex-direction: column;
+        gap: 4px;
+      }
+    }
+
+    .portfolio-title {
+      color: $bonedThrone;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin: 0;
+      letter-spacing: 0;
+      text-indent: 0;
+      width: 100%;
+    }
+
+    .portfolio-role,
+    .portfolio-place,
+    .portfolio-date {
+      color: rgba($bonedThrone, 0.4);
+      font-size: 12px;
+      margin: 0;
+      font-weight: 400;
+    }
+  }
+
+  // ─── Screenshot ─────────────────────────────────────────────────
+  .portfolio-screenshot {
+    margin-bottom: 28px;
+
+    img {
+      width: 100%;
+      border-radius: 4px;
+      display: block;
+    }
+
+    .placeholder-screenshot {
+      width: 100%;
+      height: 200px;
+      background: rgba($cyanTyrant, 0.07);
+      border-radius: 4px;
+
+      @include media-medium {
+        height: 280px;
+      }
+    }
+  }
+
+  // ─── Challenge & Learnings ──────────────────────────────────────
+  .portfolio-challenge,
+  .portfolio-learnings {
+    border-left: 2px solid;
+    padding-left: 16px;
+
+    h2 {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+
+    p {
+      color: rgba($bonedThrone, 0.7);
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+
+  .portfolio-challenge {
+    border-color: $blinkyPinky;
+    margin-bottom: 24px;
+    h2 { color: $blinkyPinky; }
+  }
+
+  .portfolio-learnings {
+    border-color: $cyanTyrant;
+    margin-bottom: 32px; // extra space before content body
+    h2 { color: $cyanTyrant; }
+  }
+
+  // ─── Content ────────────────────────────────────────────────────
+  .portfolio-content {
+    color: rgba($bonedThrone, 0.75);
+    font-size: 15px;
+    line-height: 1.7;
+
+    p { margin-bottom: 1.4em; }
+    h2 { color: $bonedThrone; font-size: 1.4rem; }
+    h3 { color: $bonedThrone; font-size: 1.15rem; }
+    a { color: $cyanTyrant; text-decoration: none; }
+    a:hover { color: lighten($cyanTyrant, 10%); }
+  }
+}
