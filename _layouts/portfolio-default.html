@@ -125,12 +125,17 @@
 
   <body class="portfolio-landing">
     {% include portfolio-header.html %}
-    <div id="main" role="main" class="container">{{ content }}</div>
+    <div id="swup" role="main" class="container transition-main">{{ content }}</div>
     <footer class="wrapper-footer">
       <div class="container">
         <footer class="footer">Dactrtr @ 2015</footer>
       </div>
     </footer>
     {% include analytics.html %}
+    <script src="https://unpkg.com/swup@4"></script>
+    <script src="https://unpkg.com/@swup/body-class-plugin@3"></script>
+    <script>
+      const swup = new Swup({ plugins: [new SwupBodyClassPlugin()] });
+    </script>
   </body>
 </html>

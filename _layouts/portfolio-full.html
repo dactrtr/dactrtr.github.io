@@ -27,9 +27,11 @@
   </head>
 
   <body class="portfolio-full">
-    <a href="/" class="portfolio-back" aria-label="Back to portfolio">← back</a>
-    <div class="portfolio-full-content">
-      {{ content }}
+    <div id="swup" class="transition-main">
+      <a href="/" class="portfolio-back" aria-label="Back to portfolio">← back</a>
+      <div class="portfolio-full-content">
+        {{ content }}
+      </div>
     </div>
     <footer class="portfolio-footer">
       <p class="footer-name">Sebastian Zúñiga · dactrtr</p>
@@ -41,5 +43,10 @@
       </ul>
     </footer>
     {% include analytics.html %}
+    <script src="https://unpkg.com/swup@4"></script>
+    <script src="https://unpkg.com/@swup/body-class-plugin@3"></script>
+    <script>
+      const swup = new Swup({ plugins: [new SwupBodyClassPlugin()] });
+    </script>
   </body>
 </html>
