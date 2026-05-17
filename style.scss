@@ -389,3 +389,31 @@ video {
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
+
+.portfolio-list { }
+.portfolio-list-item { }
+.list-item-meta { }
+.list-item-title { }
+.list-item-desc { }
+.list-item-link { }
+
+.portfolio-landing .main-header {
+  width: 100%;
+}
+
+.portfolio-landing .float-window {
+  flex-direction: row;
+  width: auto;
+  padding: 8px 16px;
+  align-items: center;
+  gap: 16px;
+
+  .controls {
+    gap: 4px;
+  }
+
+  .links {
+    flex-direction: row;
+    gap: 16px;
+  }
+}
