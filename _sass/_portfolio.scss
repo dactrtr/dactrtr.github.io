@@ -23,6 +23,32 @@ body.portfolio-full {
   }
 }
 
+body.portfolio-full .main-header {
+  background-color: $bonedThrone;
+  height: 60px;
+  .header-inner {
+    background-color: $bonedThrone;
+    padding: 14px 24px;
+    min-height: 0;
+  }
+
+  .illustration,
+  .who-iam,
+  .dots {
+    display: none;
+  }
+
+  .logo {
+    margin: 0;
+    h2, .what, .mind { display: none; }
+    h1 {
+      color: $blackestNight;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+  }
+}
+
 .portfolio-landing .who-iam {
   color: rgba($blackestNight, 0.6);
 }
@@ -30,6 +56,7 @@ body.portfolio-full {
 .portfolio-landing .logo {
   h1, h2 { color: $blackestNight; }
   .what, .mind { color: $blackestNight; }
+  .mind { font-family: 'Mochiy Pop One', sans-serif; }
 }
 
 .portfolio-landing .dots {
@@ -59,7 +86,6 @@ body.portfolio-full {
     position: relative;
     border-radius: 4px;
     overflow: hidden;
-    // border: 1px solid rgba($purpleBack, 0.35);
     text-decoration: none;
     min-height: 160px;
 

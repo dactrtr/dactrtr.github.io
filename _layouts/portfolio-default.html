@@ -111,6 +111,19 @@
     <meta property="og:image" content="https://i.imgur.com/dGSE8SA.jpg" />
 
     <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       type="text/css"
       href="{{ site.baseurl }}/style.css"
@@ -135,6 +148,7 @@
     <script src="https://unpkg.com/swup@4"></script>
     <script src="https://unpkg.com/@swup/body-class-plugin@3"></script>
     <script>
+      history.scrollRestoration = 'manual';
       const swup = new Swup({ plugins: [new SwupBodyClassPlugin()] });
     </script>
   </body>
