@@ -1,13 +1,12 @@
 ---
-layout: portfolio-item
+layout: portfolio-project
 title: UI Design System
 role: UI Designer
 place: Santiago, Chile
-challenge: Build a scalable component library from scratch for a product team of four, without a dedicated design system tool.
-learnings: Naming conventions and documentation matter more than the components themselves. A system nobody understands is not a system.
+description: ""
 featured: false
 logo: ""
-screenshot: ""
+images: []
 date: 2023-03-01
 ---
 

@@ -32,16 +32,10 @@
       <div class="portfolio-full-content">
         {{ content }}
       </div>
+      <footer class="portfolio-footer">
+        {% include float-window.html %}
+      </footer>
     </div>
-    <footer class="portfolio-footer">
-      <p class="footer-name">Sebastian Zúñiga · dactrtr</p>
-      <ul class="footer-links">
-        <li><a href="mailto:{{ site.footer-links.email }}">{{ site.footer-links.email }}</a></li>
-        <li><a href="https://github.com/{{ site.footer-links.github }}">github</a></li>
-        <li><a href="https://www.instagram.com/dactrtr.rocks/">instagram</a></li>
-        <li><a href="https://behance.net/{{ site.footer-links.behance }}">behance</a></li>
-      </ul>
-    </footer>
     {% include analytics.html %}
     <script src="https://unpkg.com/swup@4"></script>
     <script src="https://unpkg.com/@swup/body-class-plugin@3"></script>

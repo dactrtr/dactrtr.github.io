@@ -17,6 +17,10 @@ $font-path-file-name: /assets/fonts/Shnobel-Regular;
       format("svg"); /* Legacy iOS */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /// Landing
 
 .container {
@@ -297,8 +301,11 @@ $font-path-file-name: /assets/fonts/Shnobel-Regular;
         &.icon-pizza {
           background-image: url("../assets/icons/Icon-pizza.svg");
         }
+        &.icons-linkedin {
+          background-image: url("../assets/icons/Icon-linkedin.svg");
+        }
         &.icon-tangara {
-        background-image: url("../assets/icons/Icon-tangara.svg");
+          background-image: url("../assets/icons/Icon-tangara.svg");
         }
         & img{
           width: 24px;
@@ -725,6 +732,64 @@ article.post a img.feat {
   color: rgba(255, 255, 255, 0.5);
 }
 /// Single - post
+.thepost .wrapper-footer {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  background: transparent;
+
+  .footer {
+    display: flex;
+    justify-content: center;
+  }
+
+  .float-window {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    width: auto;
+    background-color: $blackestNight;
+    border-radius: 4px;
+    padding: 8px 16px;
+
+    .controls {
+      display: flex;
+      gap: 4px;
+
+      span {
+        display: flex;
+        width: 8px;
+        height: 8px;
+        border-radius: 16px;
+        &.red    { background-color: #dd4b4b; }
+        &.yellow { background-color: #fce412; }
+        &.green  { background-color: #50f475; }
+      }
+    }
+
+    .links {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 16px;
+
+      a {
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        &.icon-code      { background-image: url("../assets/icons/Icon-code.svg"); }
+        &.icon-ig        { background-image: url("../assets/icons/Icon-ig.svg"); }
+        &.icon-pizza     { background-image: url("../assets/icons/Icon-pizza.svg"); }
+        &.icons-linkedin { background-image: url("../assets/icons/Icon-linkedin.svg"); }
+        &.icon-tangara   { background-image: url("../assets/icons/Icon-tangara.svg"); }
+      }
+    }
+  }
+}
+
 .thepost {
   background: #fff;
   color: #3a4145;

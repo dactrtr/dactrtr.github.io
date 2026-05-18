@@ -1,20 +1,20 @@
 ---
 layout: portfolio-item
-title: DinoPirates from Inner Space
+title: DinoPirates from Inner Space 
 role: Game Designer & Developer
 place: Tokyo, Japan
 challenge: Design and ship a complete Playdate game solo — with zero prior Lua experience — under extreme hardware constraints. 400×240 px resolution, 1-bit display, and a physical crank as the primary input device. Everything from the game loop to the UI had to be rethought from scratch.
 learnings: Shipping a demo at BitSummit 2025 and watching people play it for the first time was worth more than any amount of polish. Constraint-driven design — forced by a 1-bit palette and a tiny screen — led to more interesting creative decisions than open-ended tools ever had. And someone paid for it. That was unexpected.
-featured: false
+featured: true
 logo: ""
 screenshot: ""
 date: 2025-07-01
 toolchain:
-  - "Pixquare — pixel art editor"
-  - "LDtk — level editor"
-  - "LevelGenerator — custom SwiftUI tool"
-  - "Playdate SDK (Lua)"
-  - "Love2D — macOS port"
+- "Pixquare — pixel art editor"
+- "LDtk — level editor"
+- "LevelGenerator — custom SwiftUI tool"
+- "Playdate SDK (Lua)"
+- "Love2D — macOS port"
 ---
 
 ## Overview
@@ -24,9 +24,9 @@ DinoPirates from Inner Space is an indie game for the [Playdate](https://play.da
 A solo project across design, code, and art — over 900 commits and around 150 Lua source files. The game combines four distinct gameplay modes into a single cohesive experience: top-down dungeon exploration, rhythm-based combat, a side-scrolling space shooter, and an accelerometer-driven cockpit puzzle.
 
 <figure class="figimg">
-  <div style="height:320px;background:#A0C8F0;border-radius:4px;"></div>
+  <img src="/assets/projects/playdate-001.png" alt="DinoPirates from Inner Space — title screen">
   <figcaption>
-    [placeholder] Title screen — the full name fits, somehow.
+    Title screen — the full name fits, somehow.
   </figcaption>
 </figure>
 
@@ -78,6 +78,14 @@ The first prototype was two screens: a room full of broco-enemies to test collis
     [placeholder] Early prototype — a lonely dinopirate in a room full of brocoalien rats. This is where collision and movement were figured out.
   </figcaption>
 </figure>
+
+### Toolchain
+
+- **Pixquare** — pixel art editor for all game assets, designed with Playdate's 1-bit palette in mind
+- **LDtk** — level editor for room geometry and layout
+- **LevelGenerator** — custom SwiftUI tool for scripting, dialog, triggers, and NPCs — the parts of the pipeline the game's own code couldn't absorb from LDtk
+- **Playdate SDK** (Lua) — game logic, physics, animation
+- **Love2D** — macOS port target
 
 ### What got built
 

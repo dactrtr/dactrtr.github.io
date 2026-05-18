@@ -1,6 +1,6 @@
 ---
 layout: portfolio-item
-title: DinoPirates from Inner Space
+title: DinoPirates from Inner Space Unity
 role: Game Designer & Developer
 place: Tokyo, Japan
 challenge: Design and ship a complete Playdate game solo — with zero prior Lua experience — under extreme hardware constraints. 400×240 px resolution, 1-bit display, and a physical crank as the primary input device. Everything from the game loop to the UI had to be rethought from scratch.
@@ -9,12 +9,6 @@ featured: false
 logo: ""
 screenshot: ""
 date: 2025-07-01
-toolchain:
-  - "Pixquare — pixel art editor"
-  - "LDtk — level editor"
-  - "LevelGenerator — custom SwiftUI tool"
-  - "Playdate SDK (Lua)"
-  - "Love2D — macOS port"
 ---
 
 ## Overview
@@ -24,7 +18,7 @@ DinoPirates from Inner Space is an indie game for the [Playdate](https://play.da
 A solo project across design, code, and art — over 900 commits and around 150 Lua source files. The game combines four distinct gameplay modes into a single cohesive experience: top-down dungeon exploration, rhythm-based combat, a side-scrolling space shooter, and an accelerometer-driven cockpit puzzle.
 
 <figure class="figimg">
-  <div style="height:320px;background:#A0C8F0;border-radius:4px;"></div>
+  <div style="width:100%;height:320px;background:#A0C8F0;border-radius:4px;"></div>
   <figcaption>
     [placeholder] Title screen — the full name fits, somehow.
   </figcaption>
@@ -41,7 +35,7 @@ Every design decision on the Playdate is an exercise in subtraction. There is no
 The main character changed early on from a Styracosaurus to a Triceratops — not for story reasons, but because the Triceratops reads better at the resolution the game runs at. The horns are legible at 16×16 px. The Styracosaurus spines are not. This is the kind of decision that defines 1-bit design: biological accuracy loses to pixel clarity every time.
 
 <figure class="figimg">
-  <div style="height:280px;background:#C0F0A0;border-radius:4px;"></div>
+  <div style="width:100%;height:280px;background:#C0F0A0;border-radius:4px;"></div>
   <figcaption>
     [placeholder] Character evolution — from sketch to pixel art. The design went through several iterations before the Triceratops locked in as the lead.
   </figcaption>
@@ -56,7 +50,7 @@ The Playdate screen is 400×240 px. That is not a typo. Designing a game UI for 
 The in-game menu was rebuilt multiple times. The final version uses a layered approach: minimal HUD during play, expandable on demand. A single button opens and closes it — the challenge was making it feel fast enough that players didn't avoid using it.
 
 <figure class="figimg">
-  <div style="height:260px;background:#F0E0A0;border-radius:4px;"></div>
+  <div style="width:100%;height:260px;background:#F0E0A0;border-radius:4px;"></div>
   <figcaption>
     [placeholder] In-game UI breakdown — HUD elements, menu states, and how the crank interaction maps to each.
   </figcaption>
@@ -73,11 +67,19 @@ The Playdate SDK runs on Lua. I had never written Lua before starting this proje
 The first prototype was two screens: a room full of broco-enemies to test collision, and a top-down shooter to test the rail mechanic. Neither looked like a game. Both were essential.
 
 <figure class="figimg">
-  <div style="height:300px;background:#A0C8F0;border-radius:4px;"></div>
+  <div style="width:100%;height:300px;background:#A0C8F0;border-radius:4px;"></div>
   <figcaption>
     [placeholder] Early prototype — a lonely dinopirate in a room full of brocoalien rats. This is where collision and movement were figured out.
   </figcaption>
 </figure>
+
+### Toolchain
+
+- **Pixquare** — pixel art editor for all game assets, designed with Playdate's 1-bit palette in mind
+- **LDtk** — level editor for room geometry and layout
+- **LevelGenerator** — custom SwiftUI tool for scripting, dialog, triggers, and NPCs — the parts of the pipeline the game's own code couldn't absorb from LDtk
+- **Playdate SDK** (Lua) — game logic, physics, animation
+- **Love2D** — macOS port target
 
 ### What got built
 
@@ -108,7 +110,7 @@ Placing enemies, props, and room connections by hand in raw JSON was unsustainab
 The result is a cross-platform SwiftUI app (iOS + macOS) built entirely on first-party Apple frameworks. A single observable store owns all levels, scripts, triggers, and NPCs, persists them to UserDefaults, and exposes stable UUID-based bindings so the UI never goes stale on index shifts. The export layer generates Lua tables the dialog engine reads directly — no conversion step between design and runtime.
 
 <figure class="figimg">
-  <div style="height:300px;background:#F0C8F0;border-radius:4px;"></div>
+  <div style="width:100%;height:300px;background:#F0C8F0;border-radius:4px;"></div>
   <figcaption>
     [placeholder] LevelGenerator — the canvas, script editor, and trigger hierarchy side by side.
   </figcaption>
@@ -123,7 +125,7 @@ In July 2025, I brought the game to BitSummit in Kyoto — one of Japan's bigges
 Fellow Playdate developers played it. They played it for about five minutes, which is the correct amount of time for a Playdate game. They liked it. They told me to ship a demo. I shipped the demo.
 
 <figure class="figimg">
-  <div style="height:300px;background:#F0C8F0;border-radius:4px;"></div>
+  <div style="width:100%;height:300px;background:#F0C8F0;border-radius:4px;"></div>
   <figcaption>
     [placeholder] BitSummit 2025 — showing the game for the first time to people who had never heard of it.
   </figcaption>

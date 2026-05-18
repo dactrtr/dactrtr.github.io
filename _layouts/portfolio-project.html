@@ -1,0 +1,42 @@
+---
+layout: portfolio-full
+---
+<article class="portfolio-project">
+
+  <header class="portfolio-item-header">
+    <div class="portfolio-logo">
+      {% if page.logo and page.logo != "" %}
+        <img src="{{ page.logo }}" alt="{{ page.title }} logo">
+      {% else %}
+        <div class="placeholder-logo" aria-hidden="true"></div>
+      {% endif %}
+    </div>
+    <div class="portfolio-meta">
+      <h1 class="portfolio-title">{{ page.title }}</h1>
+      <p class="portfolio-role">{{ page.role }}</p>
+      <p class="portfolio-place">{{ page.place }}</p>
+      <p class="portfolio-date">{{ page.date | date: "%Y" }}</p>
+    </div>
+  </header>
+
+  {% if page.description and page.description != "" %}
+  <p class="portfolio-project-desc">{{ page.description }}</p>
+  {% endif %}
+
+  {% if page.images %}
+  <div class="portfolio-image-grid">
+    {% for image in page.images %}
+    <div class="portfolio-image-item">
+      <img src="{{ image }}" alt="{{ page.title }}">
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if content != "" %}
+  <div class="portfolio-content">
+    {{ content }}
+  </div>
+  {% endif %}
+
+</article>

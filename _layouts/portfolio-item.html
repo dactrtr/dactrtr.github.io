@@ -3,7 +3,15 @@ layout: portfolio-full
 ---
 <article class="portfolio-item">
 
-  <header class="portfolio-item-header">
+  <div class="portfolio-screenshot">
+    {% if page.screenshot and page.screenshot != "" %}
+      <img src="{{ page.screenshot }}" alt="{{ page.title }} screenshot">
+    {% else %}
+      <div class="placeholder-screenshot" aria-hidden="true"></div>
+    {% endif %}
+  </div>
+
+  <aside class="portfolio-item-sidebar">
     <div class="portfolio-logo">
       {% if page.logo and page.logo != "" %}
         <img src="{{ page.logo }}" alt="{{ page.title }} logo">
@@ -17,28 +25,37 @@ layout: portfolio-full
       <p class="portfolio-place">{{ page.place }}</p>
       <p class="portfolio-date">{{ page.date | date: "%Y" }}</p>
     </div>
-  </header>
 
-  <div class="portfolio-screenshot">
-    {% if page.screenshot and page.screenshot != "" %}
-      <img src="{{ page.screenshot }}" alt="{{ page.title }} screenshot">
-    {% else %}
-      <div class="placeholder-screenshot" aria-hidden="true"></div>
+    {% if page.learnings and page.learnings != "" %}
+    <section class="portfolio-learnings">
+      <h2>Learnings</h2>
+      <p>{{ page.learnings }}</p>
+    </section>
     {% endif %}
-  </div>
 
-  <section class="portfolio-challenge">
-    <h2>Challenge</h2>
-    <p>{{ page.challenge }}</p>
-  </section>
+    {% if page.toolchain %}
+    <section class="portfolio-toolchain">
+      <h2>Toolchain</h2>
+      <ul>
+        {% for tool in page.toolchain %}
+        <li>{{ tool }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+  </aside>
 
-  <section class="portfolio-learnings">
-    <h2>Learnings</h2>
-    <p>{{ page.learnings }}</p>
-  </section>
+  <div class="portfolio-item-main">
+    {% if page.challenge and page.challenge != "" %}
+    <section class="portfolio-challenge">
+      <h2>Challenge</h2>
+      <p>{{ page.challenge }}</p>
+    </section>
+    {% endif %}
 
-  <div class="portfolio-content">
-    {{ content }}
+    <div class="portfolio-content">
+      {{ content }}
+    </div>
   </div>
 
 </article>

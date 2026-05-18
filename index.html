@@ -3,7 +3,7 @@ layout: portfolio-default
 ---
 <div class="portfolio-home">
 
-  {% assign featured = site.portfolio | where: "featured", true | first %}
+  {% assign featured = site.portfolio | where: "featured", true | sort: "date" | reverse | first %}
   {% if featured %}
   <div class="portfolio-featured">
     <a href="{{ featured.url }}">
@@ -29,7 +29,7 @@ layout: portfolio-default
   </div>
   {% endif %}
 
-  {% assign others = site.portfolio | where: "featured", false %}
+  {% assign others = site.portfolio | where: "featured", false | sort: "date" | reverse %}
   {% if others.size > 0 %}
   <div class="portfolio-list">
     {% for project in others %}
