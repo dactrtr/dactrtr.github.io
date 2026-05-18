@@ -14,6 +14,11 @@ body.portfolio-full {
   font-family: $helveticaNeue;
 }
 
+.portfolio-landing .main-header,
+body.portfolio-full .main-header {
+  transition: height 0.4s ease;
+}
+
 .portfolio-landing .main-header {
   width: 100%;
   background-color: $bonedThrone;
@@ -21,14 +26,30 @@ body.portfolio-full {
   .header-inner {
     background-color: $bonedThrone;
   }
+
+  .header-icon {
+    display: none;
+  }
+}
+
+body.portfolio-full .main-header .header-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  object-fit: cover;
+  margin-right: 4px;
+  flex-shrink: 0;
 }
 
 body.portfolio-full .main-header {
   background-color: $bonedThrone;
   height: 60px;
+
   .header-inner {
     background-color: $bonedThrone;
-    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    padding: 14px 32px;
     min-height: 0;
   }
 
@@ -40,11 +61,22 @@ body.portfolio-full .main-header {
 
   .logo {
     margin: 0;
-    h2, .what, .mind { display: none; }
+    padding-left: 32px;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 10px;
+    text-align: left;
+    h2, .what { display: none; }
     h1 {
       color: $blackestNight;
       font-size: 13px;
       letter-spacing: 1px;
+    }
+    .mind {
+      display: block;
+      color: rgba($blackestNight, 0.45);
+      font-family: 'Mochiy Pop One', sans-serif;
+      font-size: 9px;
     }
   }
 }
@@ -131,7 +163,7 @@ body.portfolio-full .main-header {
     &::before {
       content: "★ FEATURED";
       color: $blinkyPinky;
-      font-size: 9px;
+      font-size: 10px;
       letter-spacing: 2px;
       margin-bottom: 6px;
     }
@@ -152,25 +184,25 @@ body.portfolio-full .main-header {
 
   .featured-title {
     color: $bonedThrone;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     line-height: 1.2;
     margin: 0 0 4px;
 
     @include media-medium {
-      font-size: 20px;
+      font-size: 22px;
     }
   }
 
   .featured-role {
     color: $cyanTyrant;
-    font-size: 10px;
+    font-size: 12px;
     margin: 0 0 8px;
   }
 
   .featured-challenge {
     color: rgba($bonedThrone, 0.5);
-    font-size: 11px;
+    font-size: 13px;
     line-height: 1.5;
     margin: 0 0 12px;
     display: none;
@@ -182,7 +214,7 @@ body.portfolio-full .main-header {
 
   .featured-link {
     color: $blinkyPinky;
-    font-size: 11px;
+    font-size: 13px;
   }
 }
 
@@ -199,6 +231,7 @@ body.portfolio-full .main-header {
   border-radius: 4px;
   overflow: hidden;
   border: 1px solid rgba($purpleBack, 0.3);
+  border-radius: 24px;
 
   &:hover .list-item-panel {
     background: rgba($blackestNight, 0.82);
@@ -243,14 +276,14 @@ body.portfolio-full .main-header {
 
   .list-item-meta {
     color: $cyanTyrant;
-    font-size: 9px;
+    font-size: 11px;
     letter-spacing: 1px;
     text-transform: uppercase;
   }
 
   .list-item-title {
     color: $bonedThrone;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
     margin: 0;
     line-height: 1.3;
@@ -258,7 +291,7 @@ body.portfolio-full .main-header {
 
   .list-item-link {
     color: $blinkyPinky;
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 
@@ -301,7 +334,8 @@ body.portfolio-full {
     margin: 24px 0 0 32px;
     color: $blinkyPinky;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 20px;
+    line-height: 1;
 
     &:hover { opacity: 0.7; }
   }
@@ -371,7 +405,7 @@ body.portfolio-full {
 
     .portfolio-title {
       color: $blackestNight;
-      font-size: 15px;
+      font-size: 18px;
       font-weight: 700;
       line-height: 1.3;
       margin: 0;
@@ -384,7 +418,7 @@ body.portfolio-full {
     .portfolio-place,
     .portfolio-date {
       color: rgba($blackestNight, 0.45);
-      font-size: 12px;
+      font-size: 13px;
       margin: 0;
       font-weight: 400;
     }
@@ -419,7 +453,7 @@ body.portfolio-full {
     padding-left: 16px;
 
     h2 {
-      font-size: 11px;
+      font-size: 12px;
       letter-spacing: 2px;
       text-transform: uppercase;
       font-weight: 700;
@@ -428,7 +462,7 @@ body.portfolio-full {
 
     p {
       color: rgba($blackestNight, 0.7);
-      font-size: 14px;
+      font-size: 15px;
       line-height: 1.6;
       margin: 0;
     }
@@ -449,7 +483,7 @@ body.portfolio-full {
   // ─── Content ────────────────────────────────────────────────────
   .portfolio-content {
     color: rgba($blackestNight, 0.75);
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.7;
 
     p { margin-bottom: 1.4em; }

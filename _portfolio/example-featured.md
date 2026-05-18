@@ -1,6 +1,6 @@
 ---
 layout: portfolio-item
-title: DinoPirates from Outer Space VS the Evil Brocolliens from inner space
+title: DinoPirates from Inner Space
 role: Game Designer & Developer
 place: Tokyo, Japan
 challenge: Design and ship a complete Playdate game solo — with zero prior Lua experience — under extreme hardware constraints. 400×240 px resolution, 1-bit display, and a physical crank as the primary input device. Everything from the game loop to the UI had to be rethought from scratch.
@@ -13,9 +13,9 @@ date: 2025-07-01
 
 ## Overview
 
-DinoPirates from Outer Space VS the Evil Brocolliens from inner space is an indie game for the [Playdate](https://play.date/) — a tiny handheld console with a black and white screen and a physical crank. The premise came from a friend's offhand idea: dinosaurs in space, who are also pirates. That was enough.
+DinoPirates from Inner Space is an indie game for the [Playdate](https://play.date/) — a tiny handheld console with a black and white screen and a physical crank. The premise came from a friend's offhand idea: dinosaurs in space, who are also pirates. That was enough.
 
-The game is a mix of exploration and rail shooter, somewhere between *Starfox* and *Starlink*, with the absurdist energy of a project that started as a webcomic and evolved into a full development cycle spanning two years, a studio founding, a public demo, and a first sale.
+A solo project across design, code, and art — over 900 commits and around 150 Lua source files. The game combines four distinct gameplay modes into a single cohesive experience: top-down dungeon exploration, rhythm-based combat, a side-scrolling space shooter, and an accelerometer-driven cockpit puzzle.
 
 <figure class="figimg">
   <div style="width:100%;height:320px;background:#A0C8F0;border-radius:4px;"></div>
@@ -76,21 +76,45 @@ The first prototype was two screens: a room full of broco-enemies to test collis
 ### Toolchain
 
 - **Pixquare** — pixel art editor for all game assets, designed with Playdate's 1-bit palette in mind
-- **LDtk** — level editor, replaced a custom tool that was taking more time to maintain than to use
+- **LDtk** — level editor for room geometry and layout
+- **LevelGenerator** — custom SwiftUI tool built to handle scripting, dialog, triggers, and NPCs — everything LDtk doesn't cover
 - **Playdate SDK** (Lua) — game logic, physics, animation
-- **Love2D** — macOS port target, ported from Playdate Lua with assistance from Claude Code
+- **Love2D** — macOS port target
 
 ### What got built
 
-Over two years of on-and-off development, the game accumulated:
-
-- Two distinct gameplay modes (exploration and rail shooter)
+- Four distinct gameplay modes: dungeon exploration, rhythm combat, space shooter, and accelerometer-driven cockpit puzzle
 - Conditional dialogue system and NPCs
 - Multiple player skills (including a shrinking mechanic)
 - Pickup characters
 - Credit scene
 - Full in-game menu
 - A working macOS port in progress
+
+---
+
+## Engineering
+
+### "Time Moves When You Move"
+
+Enemies and NPCs only run their AI when the player acts. The decision was driven by two constraints at once: maintaining the game's turn-based feel, and keeping CPU usage minimal on a device with no GPU and a 168 MHz processor. Preserving that contract consistently across every mechanic — combat transitions, hole falls, sliding, dash, projectiles — without edge cases breaking it was one of the most persistent engineering challenges throughout the project.
+
+### Rhythm Combat System
+
+Touching an enemy triggers a full rhythm encounter: button prompts scroll toward a hit zone, the player presses the matching input in time, and a balance bar shifts toward a win or lose threshold based on accuracy. Difficulty is determined by a probabilistic weighted roll across three player stats — sanity counter, power level, and calories burned — producing organic difficulty escalation without hardcoded curves. Each of the four enemy tiers runs at a higher BPM with more simultaneous prompts, scaling from 4 buttons at 16 BPM up to 12 buttons at 32 BPM.
+
+### LevelGenerator
+
+Placing enemies, props, and room connections by hand in raw JSON was unsustainable. LevelGenerator started as a simple SwiftUI map canvas — drag items onto a grid, configure four-directional doors, export — and grew to meet each gap as it appeared: first dialog scripts with their sequences, then a conditional script system that evaluates player state at runtime, then a full trigger hierarchy, then NPC entities with their own script references.
+
+The result is a cross-platform SwiftUI app (iOS + macOS) built entirely on first-party Apple frameworks. A single observable store owns all levels, scripts, triggers, and NPCs, persists them to UserDefaults, and exposes stable UUID-based bindings so the UI never goes stale on index shifts. The export layer generates both JSON for level data and Lua tables for the dialog engine — the same format the game reads directly, with no conversion step between design and runtime.
+
+<figure class="figimg">
+  <div style="width:100%;height:300px;background:#F0C8F0;border-radius:4px;"></div>
+  <figcaption>
+    [placeholder] LevelGenerator — the canvas, script editor, and trigger hierarchy side by side.
+  </figcaption>
+</figure>
 
 ---
 
@@ -107,7 +131,7 @@ Fellow Playdate developers played it. They played it for about five minutes, whi
   </figcaption>
 </figure>
 
-The demo went up on itch.io without announcement. Shadow-dropped. The goal was closure — a line under a chapter that had been open for two years.
+The demo went up on itch.io without announcement. Shadow-dropped. The goal was closure — a line under a chapter that had been open for too long.
 
 Someone bought it. Not a friend. A stranger. That was the first dollar.
 
@@ -119,13 +143,13 @@ Someone bought it. Not a friend. A stranger. That was the first dollar.
 The 1-bit palette, the tiny screen, and the crank as primary input forced every design decision to be intentional. There was no room for decoration. Every pixel had a reason. That discipline transfers to any project.
 
 **Ship to close, not to finish.**
-The demo was never "done." Releasing it anyway — with a specific event as the deadline — created a forcing function that two years of self-imposed deadlines never had. Shipping gave the project an end, which is the only way to start the next one.
+The demo was never "done." Releasing it anyway — with a specific event as the deadline — created a forcing function that self-imposed deadlines never had. Shipping gave the project an end, which is the only way to start the next one.
 
-**Build your own tools last.**
-The custom level editor was a mistake. It felt productive. It was a distraction. LDtk exists and is better. The time spent on internal tooling was time not spent on the game.
+**Know when to build and when to adopt.**
+The first custom level editor was a mistake — LDtk exists and is better. Replacing it saved months. LevelGenerator fills a different gap: game-specific scripting, conditional dialog logic, and direct Lua export that no off-the-shelf tool provides. The distinction is whether a better alternative already exists.
 
 **Small hardware teaches fundamentals.**
 Optimizing for a device with no GPU, minimal RAM, and a 168 MHz processor forces you to understand what your code is actually doing. Performance problems are visible immediately. There is no hiding behind modern hardware.
 
 **Community validates before launch does.**
-The five minutes of playtime at BitSummit told me more about the game's feel than two years of solo development. Get it in front of people early. The feedback you need is not on your hard drive.
+The five minutes of playtime at BitSummit told me more about the game's feel than any amount of solo development. Get it in front of people early. The feedback you need is not on your hard drive.
