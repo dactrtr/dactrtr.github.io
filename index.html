@@ -33,6 +33,21 @@ layout: portfolio-default
   {% if others.size > 0 %}
   <div class="portfolio-list">
     {% for project in others %}
+    {% if project.static %}
+    <article class="portfolio-list-item portfolio-list-item--static">
+      <div class="list-item-screenshot">
+        {% if project.screenshot and project.screenshot != "" %}
+          <img src="{{ project.screenshot }}" alt="{{ project.title }}">
+        {% else %}
+          <div class="placeholder-screenshot" aria-hidden="true"></div>
+        {% endif %}
+      </div>
+      <div class="list-item-static-meta">
+        <span class="list-item-meta">{{ project.role }}</span>
+        <h3 class="list-item-title">{{ project.title }}</h3>
+      </div>
+    </article>
+    {% else %}
     <article class="portfolio-list-item">
       <a href="{{ project.url }}" aria-label="{{ project.title }}">
         <div class="list-item-screenshot">
@@ -45,10 +60,14 @@ layout: portfolio-default
         <div class="list-item-panel">
           <span class="list-item-meta">{{ project.role }} &middot; {{ project.date | date: "%Y" }}</span>
           <h3 class="list-item-title">{{ project.title }}</h3>
+          {% if project.description and project.description != "" %}
+          <p class="list-item-desc">{{ project.description | truncate: 140 }}</p>
+          {% endif %}
           <span class="list-item-link">&rarr;</span>
         </div>
       </a>
     </article>
+    {% endif %}
     {% endfor %}
   </div>
   {% endif %}
