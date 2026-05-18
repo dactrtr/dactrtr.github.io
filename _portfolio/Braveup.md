@@ -9,9 +9,11 @@ logo: ""
 images:
   - ""
 date: 2023-09-30
+intro: >
+  Brave UP! is an edtech platform focused on social-emotional learning.
+  I joined as UX/UI and frontend developer, working across the design system,
+  data visualization layer, and mobile feasibility prototypes.
 ---
-
-Brave UP! is an edtech platform focused on social-emotional learning. I joined as UX/UI and frontend developer, working across the design system, data visualization layer, and mobile feasibility prototypes.
 
 ---
 
@@ -51,3 +53,13 @@ I built SwiftUI components and interactions specifically to validate that propos
     [generate] SwiftUI prototype alongside Figma design — showing a component or interaction as designed vs. as built. Split-screen or annotation overlay format.
   </figcaption>
 </figure>
+
+---
+
+## Learnings
+
+**The medium has its own constraints.**
+Knowing D3 can render a chart is not the same as knowing what a chart can communicate. The limitations that shaped the design came from data visualization as a discipline — not from the library. Understanding the medium before designing for it is a different kind of research.
+
+**Distributed work has a hidden cost.**
+The odd hours and constant availability required by a multi-timezone team are an operational commitment, not a personal inconvenience. Factor it in before it becomes the engagement.

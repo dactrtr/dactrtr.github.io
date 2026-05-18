@@ -9,9 +9,12 @@ logo: ""
 images:
   - ""
 date: 2021-10-31
+intro: >
+  Clever by BICE was a 100% digital investment platform that let users build savings
+  through mutual funds without minimum amounts. I worked as UI Frontend Developer
+  during the product's active development phase, bridging design and engineering
+  and filling a critical gap in the mobile team.
 ---
-
-Clever by BICE was a 100% digital investment platform that let users build savings through mutual funds without minimum amounts. I worked as UI Frontend Developer during the product's active development phase, bridging design and engineering and filling a critical gap in the mobile team.
 
 ---
 
@@ -38,3 +41,10 @@ At a critical point in the project, the mobile team had no iOS developer. I step
     [generate] Clever app key screens — 2 or 3 iOS screens showing the investment dashboard, fund selection, or onboarding flow. Minimal fintech aesthetic, white background, blue accents. Can be shown as iPhone mockups.
   </figcaption>
 </figure>
+
+---
+
+## Learnings
+
+**Build to unblock, but build it right.**
+The SwiftUI foundation I built to unblock the team was never rewritten — it shipped as-is. The iOS developer who joined later didn't know SwiftUI, so I ended up teaching him the same screens I'd built. What starts as a stopgap can become the real thing. Build it like it might stay.

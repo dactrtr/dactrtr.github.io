@@ -9,11 +9,11 @@ logo: ""
 images:
   - ""
 date: 2025-11-30
+intro: |
+  Storymoon was the digital evolution of MiCuento — a personalized children's story platform where kids become the protagonists of their own stories. I owned the brand identity and UI design from scratch, ran user testing, and contributed directly to the frontend in Tailwind CSS.
+
+  The core design challenge: the product has two simultaneous audiences. Parents are the buyers — they configure the story, choose the values, enter the child's name and avatar. Children are the experience. Both need to feel like the product was made for them.
 ---
-
-Storymoon was the digital evolution of MiCuento — a personalized children's story platform where kids become the protagonists of their own stories. I owned the brand identity and UI design from scratch, ran user testing, and contributed directly to the frontend in Tailwind CSS.
-
-The core design challenge: the product has two simultaneous audiences. Parents are the buyers — they configure the story, choose the values, enter the child's name and avatar. Children are the experience. Both need to feel like the product was made for them.
 
 ---
 
@@ -55,3 +55,10 @@ I implemented the frontend in Tailwind CSS, translating the design system into a
     Frontend implementation — a screen or component showing the Tailwind build in the browser. Could be a side-by-side of design vs. implementation, or a detail of a key UI component like the story card or avatar selector.
   </figcaption>
 </figure>
+
+---
+
+## Learnings
+
+**When testing exposes the core, nothing else matters.**
+User testing revealed that the token and payment system — the product's monetization core — wasn't understood by users. Everything else on the backlog became secondary until that was fixed. A product people don't understand doesn't get sold, no matter how polished the rest of it is.

@@ -3,21 +3,24 @@ layout: portfolio-project
 title: McKinsey & Company
 role: Senior Visual Designer
 place: Santiago, Chile
-description: Introduced modern prototyping tools and design system workflows to client teams across multiple countries, reducing design review cycles by 25%.
+description: Introduced modern prototyping tools and design system workflows to client teams across multiple countries, shortening review cycles and accelerating adoption within a single project cycle.
 featured: false
 logo: ""
 images:
   - ""
 date: 2017-10-30
+intro: >
+  At McKinsey I worked as Senior Visual Designer embedded with client design teams.
+  The engagement wasn't about producing screens — it was about changing how teams worked:
+  introducing tools they weren't using, establishing workflows that didn't exist,
+  and getting adoption fast enough to show results within a single project cycle.
 ---
-
-At McKinsey I worked as Senior Visual Designer embedded with client design teams. The engagement wasn't about producing screens — it was about changing how teams worked: introducing tools they weren't using, establishing workflows that didn't exist, and getting adoption fast enough to show results within a single project cycle.
 
 ---
 
 ### Tool Adoption
 
-Client design teams were working without prototyping tools — reviews happened on static files, feedback was slow, and iteration cycles were longer than they needed to be. I introduced Sketch and Principle, ran hands-on sessions to accelerate adoption, and restructured the review process around interactive prototypes instead of static deliverables. Design review cycles dropped by 25% within three months.
+Client design teams were working without prototyping tools — reviews happened on static files, feedback was slow, and iteration cycles were longer than they needed to be. I introduced Sketch and Principle, ran hands-on sessions to accelerate adoption, and restructured the review process around interactive prototypes instead of static deliverables. Design review cycles dropped noticeably within three months.
 
 <figure class="figimg">
   <div style="width:100%;height:280px;background:#F0F0EE;border-radius:4px;"></div>
@@ -38,3 +41,13 @@ The scope extended beyond a single team. I supported design and development team
     [generate] Design system rollout diagram — a visual showing how components or guidelines propagate across multiple teams or regions. Abstract, no client-specific content. Could be a simple node diagram or layered structure.
   </figcaption>
 </figure>
+
+---
+
+## Learnings
+
+**Sell adoption downstream, not upstream.**
+The key to getting designers to adopt new tools wasn't convincing designers — it was showing developers how fast they could build views with component-based design. Once devs saw the benefit, designers had no argument against it. Tool adoption follows the path of least resistance; find where the resistance is lowest.
+
+**Atomic design is a language, not just a method.**
+Teaching modular thinking gave teams a shared vocabulary for UI. The components were almost secondary — what changed was how people thought about and discussed UI structure.

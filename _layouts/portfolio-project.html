@@ -19,19 +19,23 @@ layout: portfolio-full
     </div>
   </header>
 
-  {% if page.description and page.description != "" %}
-  <p class="portfolio-project-desc">{{ page.description }}</p>
-  {% endif %}
-
-  {% if page.images %}
-  <div class="portfolio-image-grid">
-    {% for image in page.images %}
-    <div class="portfolio-image-item">
-      <img src="{{ image }}" alt="{{ page.title }}">
+  <div class="portfolio-project-intro">
+    <div class="portfolio-intro-image">
+      {% assign hero = page.images[0] %}
+      {% if hero and hero != "" %}
+        <img src="{{ hero }}" alt="{{ page.title }}">
+      {% else %}
+        <div class="placeholder-screenshot"></div>
+      {% endif %}
     </div>
-    {% endfor %}
+    <div class="portfolio-intro-about">
+      {% if page.intro and page.intro != "" %}
+        {{ page.intro | markdownify }}
+      {% elsif page.description and page.description != "" %}
+        <p>{{ page.description }}</p>
+      {% endif %}
+    </div>
   </div>
-  {% endif %}
 
   {% if content != "" %}
   <div class="portfolio-content">
