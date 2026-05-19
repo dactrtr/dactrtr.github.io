@@ -559,6 +559,31 @@ body.portfolio-full {
 
   // ─── Project (visual) layout ────────────────────────────────────
   .portfolio-project {
+    .portfolio-item-header {
+      margin-bottom: 32px;
+
+      .portfolio-title {
+        font-size: 24px;
+        font-weight: 700;
+        margin: 0 0 6px;
+        color: $blackestNight;
+      }
+
+      .portfolio-role,
+      .portfolio-place,
+      .portfolio-date {
+        display: inline;
+        font-size: 13px;
+        color: rgba($blackestNight, 0.5);
+        margin: 0;
+      }
+
+      .portfolio-place::before,
+      .portfolio-date::before {
+        content: " · ";
+      }
+    }
+
     .portfolio-project-intro {
       display: grid;
       grid-template-columns: 1fr;
@@ -631,7 +656,6 @@ body.portfolio-full {
   }
 
   // ─── Challenge, Learnings & Toolchain ───────────────────────────
-  .portfolio-challenge,
   .portfolio-learnings,
   .portfolio-toolchain {
     border-left: 2px solid;
@@ -653,16 +677,49 @@ body.portfolio-full {
     }
   }
 
-  .portfolio-challenge {
-    border-color: $blinkyPinky;
-    margin-bottom: 28px;
-    h2 { color: $blinkyPinky; }
-  }
-
   .portfolio-learnings {
     border-color: $cyanTyrant;
     margin-bottom: 24px;
     h2 { color: $cyanTyrant; }
+  }
+
+  .portfolio-challenge {
+    background: rgba($blackestNight, 0.05);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 28px;
+
+    h2 {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin: 0;
+      color: $blinkyPinky;
+    }
+
+    p {
+      color: rgba($blackestNight, 0.7);
+      font-size: 13px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .challenge-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .challenge-icon {
+      flex-shrink: 0;
+      width: 90px;
+      height: 90px;
+      border-radius: 10px;
+      background: rgba($blinkyPinky, 0.12);
+      display: block;
+    }
   }
 
   .portfolio-toolchain {

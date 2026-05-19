@@ -183,7 +183,7 @@ html {
     @include media-medium {
     }
     @include media-xlarge {
-      grid-column: 3/4;
+      grid-column: 2/3;
       grid-row: 3/4;
       margin: 32px 0 20% 0;
       align-self: end;

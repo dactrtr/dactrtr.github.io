@@ -48,7 +48,10 @@ layout: portfolio-full
   <div class="portfolio-item-main">
     {% if page.challenge and page.challenge != "" %}
     <section class="portfolio-challenge">
-      <h2>Challenge</h2>
+      <div class="challenge-header">
+        <span class="challenge-icon"></span>
+        <h2>Challenge</h2>
+      </div>
       <p>{{ page.challenge }}</p>
     </section>
     {% endif %}
