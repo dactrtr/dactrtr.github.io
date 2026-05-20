@@ -6,8 +6,9 @@ place: Worldwide
 description: Mobile-first frontend for a web3 play-to-earn NFT trading card game, built with a distributed team across 10+ countries.
 featured: false
 logo: ""
-images:
-  - ""
+screenshot: "/assets/projects/project-screenshot-DF.png"
+images: 
+  - "/assets/projects/project-deviants.png"
 date: 2022-02-28
 intro: >
   Deviants' Factions is a play-to-earn NFT trading card game on the blockchain —
@@ -23,9 +24,9 @@ intro: >
 Card game UIs are dense by nature — hand slots, battlefield zones, card art, action timers, menus. Translating that to a mobile canvas without losing legibility or feel required rethinking layout priorities rather than just scaling things down. I implemented the responsive layouts in CSS3, with measurable improvements in mobile usability testing scores.
 
 <figure class="figimg">
-  <div style="width:100%;height:300px;background:#1A1A2E;border-radius:4px;"></div>
-  <figcaption>
-    [generate] Card game UI on mobile — a battlefield or deck-building screen adapted for a small screen. Dark theme, vibrant card art, clear zone separation. Should feel like a real TCG product, not a generic app.
+  <img src="/assets/projects/deviants-code2.png" alt="descripción">
+  <figcaption> 
+    The design specs where mainly for desktop, so the tablet and mobile version where designed on the fly during the frontend phase in the browser.
   </figcaption>
 </figure>
 
@@ -36,10 +37,10 @@ Card game UIs are dense by nature — hand slots, battlefield zones, card art, a
 The team spanned 10+ countries across multiple time zones with no single HQ. Delivery required clear async communication, disciplined handoff, and the ability to stay unblocked without a daily standup to fall back on. We shipped on schedule throughout the engagement.
 
 <figure class="figimg">
-  <div style="width:100%;height:260px;background:#16213E;border-radius:4px;"></div>
-  <figcaption>
-    [generate] Game interface detail — a close-up of the card UI or marketplace screen showing the web3 integration (wallet, NFT badge, or transaction element). Dark sci-fi aesthetic consistent with the game's visual style.
-  </figcaption>
+  <img src="/assets/projects/deviants-code3.png" alt="descripción">
+ <figcaption>
+   To make the card display more scalable instead of using images, we opted for create each card part by part, optimising load times and making changes easier than using bitmap images.
+ </figcaption> 
 </figure>
 
 ---

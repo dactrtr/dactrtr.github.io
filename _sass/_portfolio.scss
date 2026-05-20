@@ -142,6 +142,13 @@ body.portfolio-full #swup {
   margin-bottom: 12px;
   border-radius: 24px;
   overflow: hidden;
+  border: 2px solid rgba(white, 0.18);
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: $blinkyPinky;
+  }
+
   > a {
     display: flex;
     position: relative;
@@ -274,11 +281,17 @@ body.portfolio-full #swup {
 .portfolio-list-item {
   grid-column: 1 / -1;
   overflow: hidden;
-  border: 1px solid rgba($purpleBack, 0.3);
+  border: 2px solid rgba(white, 0.18);
   border-radius: 24px;
+  transition: border-color 0.2s;
+  background: rgba($blackestNight, 0.9);
+  &:hover {
+    border-color: $blinkyPinky;
+    background: rgba($blackestNight, 0.9);
+  }
 
   &:hover .list-item-panel {
-    background: rgba($blackestNight, 0.82);
+    background: rgba($blackestNight, 1);
   }
 
   &:hover .list-item-link {
@@ -309,7 +322,6 @@ body.portfolio-full #swup {
     .placeholder-screenshot {
       width: 100%;
       height: 100%;
-      background: rgba($purpleBack, 0.15);
     }
   }
 
