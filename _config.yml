@@ -9,7 +9,7 @@ name: Dactrtr.rocks
 imgheader: /assets/build/blog.gif
 
 # Short bio or description (displayed in the header)
-description: With great power comes a great blog, I don't have any power so this blog is shitty
+description: With great power comes great responsibility, but I have no powers, so this blog isn't great.
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://avatars1.githubusercontent.com/u/2884334?v=3&s=460
@@ -48,7 +48,7 @@ footer-links:
   flickr:
   github: dactrtr
   instagram: dactrtr.svg
-  linkedin:
+  linkedin: dactrtr
   pinterest:
   rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
   twitter: dctrtr
@@ -102,3 +102,4 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+  - docs/
