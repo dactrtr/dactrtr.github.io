@@ -144,11 +144,10 @@ body.portfolio-full #swup {
   margin-bottom: 12px;
   border-radius: 24px;
   overflow: hidden;
-  border: 2px solid rgba(white, 0.18);
-  transition: border-color 0.2s;
+  transition: opacity 0.2s;
 
   &:hover {
-    border-color: $blinkyPinky;
+    opacity: 0.92;
   }
 
   > a {
@@ -167,11 +166,12 @@ body.portfolio-full #swup {
   .featured-screenshot {
     flex: 1;
     min-width: 80px;
+    background: rgb(243 243 240);
 
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
     }
 
@@ -179,14 +179,14 @@ body.portfolio-full #swup {
       width: 100%;
       height: 100%;
       min-height: 160px;
-      background: rgba($blackestNight, 0.93);
+      background: rgb(243 243 240);
     }
   }
 
   .featured-meta {
     width: 55%;
     flex-shrink: 0;
-    background: rgba($blackestNight, 0.93);
+    background: rgb(243 243 240);
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -200,7 +200,7 @@ body.portfolio-full #swup {
 
     &::before {
       content: "★ FEATURED";
-      color: $blinkyPinky;
+      color: darken($blinkyPinky, 20%);
       font-size: 10px;
       letter-spacing: 2px;
       margin-bottom: 6px;
@@ -221,7 +221,7 @@ body.portfolio-full #swup {
   }
 
   .featured-title {
-    color: $bonedThrone;
+    color: $blackestNight;
     font-size: 18px;
     font-weight: 700;
     line-height: 1.2;
@@ -239,10 +239,11 @@ body.portfolio-full #swup {
   }
 
   .featured-challenge {
-    color: rgba($bonedThrone, 0.7);
-    font-size: 13px;
-    line-height: 1.5;
+    color: rgba($blackestNight, 1);
+    font-size: 15px;
+    line-height: 1.6;
     margin: 0 0 12px;
+    font-weight: 300;
     display: none;
 
     @include media-medium {
@@ -253,21 +254,24 @@ body.portfolio-full #swup {
   .featured-link {
     display: inline-flex;
     align-items: center;
-    padding: 4px 12px;
+    padding: 12px 16px;
     border-radius: 20px;
-    border: 1px solid $blinkyPinky;
-    color: $blinkyPinky;
+    border: 1px solid darken($blinkyPinky, 18%);
+    background: darken($blinkyPinky, 18%);
+    color: $bonedThrone;
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.5px;
     width: fit-content;
+    margin-top: 32px;
     transition: background 0.2s, color 0.2s, border-color 0.2s;
+    text-transform: capitalize;
   }
 
   &:hover .featured-link {
-    background: $blinkyPinky;
-    color: $blackestNight;
-    border-color: $blinkyPinky;
+    background: darken($blinkyPinky, 28%);
+    color: $bonedThrone;
+    border-color: darken($blinkyPinky, 28%);
   }
 }
 
@@ -283,12 +287,11 @@ body.portfolio-full #swup {
 .portfolio-list-item {
   grid-column: 1 / -1;
   overflow: hidden;
-  border: 2px solid rgba(white, 0.18);
   border-radius: 24px;
-  transition: border-color 0.2s;
+  transition: opacity 0.2s;
   background: rgba($blackestNight, 0.9);
   &:hover {
-    border-color: $blinkyPinky;
+    opacity: 0.92;
     background: rgba($blackestNight, 0.9);
   }
 
@@ -368,15 +371,18 @@ body.portfolio-full #swup {
   .list-item-link {
     display: inline-flex;
     align-items: center;
-    padding: 4px 12px;
+    padding: 12px 16px;
     border-radius: 20px;
     border: 1px solid $blinkyPinky;
-    color: $blinkyPinky;
+    background: $blinkyPinky;
+    color: $bonedThrone;
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.5px;
     width: fit-content;
+    margin-top: 32px;
     transition: background 0.2s, color 0.2s, border-color 0.2s;
+    text-transform: capitalize;
   }
 }
 

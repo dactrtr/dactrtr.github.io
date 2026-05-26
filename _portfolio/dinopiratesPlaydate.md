@@ -1,6 +1,6 @@
 ---
 layout: portfolio-item
-title: DinoPirates from Inner Space
+title: Dinopirates from Inner Space
 role: Game Designer · Developer · Art Director
 place: Tokyo, Japan
 challenge: Build a game universe across two distinct platforms from scratch — a hardware-constrained 1-bit Playdate game and a commercial action roguelike for Steam — as sole designer, developer, and art director on both. Each version required owning a completely different part of the stack under completely different constraints.
@@ -21,7 +21,7 @@ toolchain:
 
 ## Overview
 
-DinoPirates from Inner Space is a game universe built around one premise: dinosaurs in space, who are also pirates. That premise has produced two distinct games on two distinct platforms, each with its own design language, constraints, and goals.
+Dinopirates from Inner Space is a game universe built around one premise: dinosaurs in space, who are also pirates. That premise has produced two distinct games on two distinct platforms, each with its own design language, constraints, and goals.
 
 The Playdate version is a solo indie adventure game: 900+ commits, 150 **Lua** source files, four gameplay modes, and a demo shipped at BitSummit 2025 in Kyoto.
 
