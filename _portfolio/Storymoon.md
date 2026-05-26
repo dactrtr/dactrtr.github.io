@@ -22,9 +22,9 @@ intro: |
 The visual identity needed warmth and trust for the parents, and delight for the kids. Too playful and parents don't trust it with their child's data. Too corporate and kids don't want to engage with it. I defined the logo, color system, and typography to sit in that balance — approachable and soft, but structured enough to feel like a real product.
 
 <figure class="figimg">
-  <div style="width:100%;height:300px;background:#FFF5F0;border-radius:4px;"></div>
+  <img src="/assets/projects/storymoon-designsystem.png" alt="storymoon design system">
   <figcaption>
-    Brand identity — logo, color palette, and type system. The visual language should read as warm and trustworthy for parents, and playful enough for a children's product. Show primary palette, logo lockup, and typeface pairing.
+    Brand identity, logo creation, color palette, type scale and card example.
   </figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ The product's core interaction is a creation flow: parents input a child's name,
 I shaped the first prototype from scratch and ran user testing sessions against it. The feedback loop between test and redesign was the primary output of the engagement — validating the flow, identifying where parents dropped off, and confirming which personalization options felt meaningful vs. overwhelming.
 
 <figure class="figimg">
-  <div style="width:100%;height:320px;background:#F0F5FF;border-radius:4px;"></div>
+  <img src="/assets/projects/storymoon-flow.png" alt="storymoon user test flow">
   <figcaption>
     Personalization flow — the key screens of the story creation experience: character setup, preferences, and story preview. Show the parent-facing configuration alongside the child-facing output. Mobile-first layout.
   </figcaption>
