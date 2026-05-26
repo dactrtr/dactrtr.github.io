@@ -152,13 +152,14 @@ body.portfolio-full #swup {
 
   > a {
     display: flex;
+    flex-direction: column;
     position: relative;
     border-radius: 4px;
     overflow: hidden;
     text-decoration: none;
-    min-height: 160px;
 
     @include media-medium {
+      flex-direction: row;
       min-height: 220px;
     }
   }
@@ -166,7 +167,12 @@ body.portfolio-full #swup {
   .featured-screenshot {
     flex: 1;
     min-width: 80px;
+    min-height: 180px;
     background: rgb(243 243 240);
+
+    @include media-medium {
+      min-height: 0;
+    }
 
     img {
       width: 100%;
@@ -184,7 +190,7 @@ body.portfolio-full #swup {
   }
 
   .featured-meta {
-    width: 55%;
+    width: 100%;
     flex-shrink: 0;
     background: rgb(243 243 240);
     padding: 20px;
@@ -209,10 +215,15 @@ body.portfolio-full #swup {
 
   .featured-logo,
   .placeholder-logo {
-    width: 40px;
-    height: 40px;
-    border-radius: 6px;
-    margin-bottom: 8px;
+    display: none;
+
+    @include media-medium {
+      display: block;
+      width: 40px;
+      height: 40px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
   }
 
   .placeholder-logo {
@@ -236,6 +247,7 @@ body.portfolio-full #swup {
     color: $cyanTyrant;
     font-size: 13px;
     margin: 0 0 8px;
+    font-weight: 800;
   }
 
   .featured-challenge {
@@ -307,15 +319,28 @@ body.portfolio-full #swup {
 
   > a {
     display: flex;
-    height: 230px;
+    flex-direction: column;
+    height: auto;
     text-decoration: none;
+
+    @include media-medium {
+      flex-direction: row;
+      height: 230px;
+    }
   }
 
   .list-item-screenshot {
-    width: 42%;
+    width: 100%;
+    height: 160px;
     flex-shrink: 0;
     overflow: hidden;
-    min-width: 60px;
+    min-width: 0;
+
+    @include media-medium {
+      width: 42%;
+      height: auto;
+      min-width: 60px;
+    }
 
     img {
       width: 100%;
@@ -333,12 +358,16 @@ body.portfolio-full #swup {
   .list-item-panel {
     flex: 1;
     background: rgba($blackestNight, 0.9);
-    padding: 0 16px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 4px;
     transition: background 0.2s;
+
+    @include media-medium {
+      padding: 0 16px;
+    }
   }
 
   .list-item-meta {
@@ -389,11 +418,16 @@ body.portfolio-full #swup {
 // ─── Static image card ────────────────────────────────────────────────────────
 
 .portfolio-list-item--logo-only {
-  grid-column: span 2;
+  grid-column: 1 / -1;
 
-  &.portfolio-list-item--logo-centered {
-    grid-column: 3 / span 2;
+  @include media-medium {
+    grid-column: span 2;
+
+    &.portfolio-list-item--logo-centered {
+      grid-column: 3 / span 2;
+    }
   }
+
   cursor: default;
   border: none;
   border-radius: 0;
@@ -673,23 +707,48 @@ body.portfolio-full {
   .portfolio-project {
     .portfolio-item-header {
       margin-bottom: 32px;
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      column-gap: 12px;
+      align-items: center;
+
+      @include media-medium {
+        display: block;
+      }
 
       .portfolio-logo {
-        margin-bottom: 48px;
+        grid-column: 1;
+        grid-row: 1;
+        margin-bottom: 0;
+
+        @include media-medium {
+          margin-bottom: 48px;
+        }
 
         img {
-          max-width: 220px;
+          max-width: 80px;
           height: auto;
-          border-radius: 8px;
+          border-radius: 6px;
           display: block;
+
+          @include media-medium {
+            max-width: 220px;
+            border-radius: 8px;
+          }
         }
 
         .placeholder-logo {
-          width: 64px;
-          height: 64px;
-          border-radius: 8px;
+          width: 80px;
+          height: 80px;
+          border-radius: 6px;
           display: block;
           background: rgba($purpleBack, 0.4);
+
+          @include media-medium {
+            width: 64px;
+            height: 64px;
+            border-radius: 8px;
+          }
         }
       }
 
@@ -698,6 +757,13 @@ body.portfolio-full {
         font-weight: 700;
         margin: 0 0 6px;
         color: $blackestNight;
+        grid-column: 2;
+        grid-row: 1;
+
+        @include media-medium {
+          grid-column: unset;
+          grid-row: unset;
+        }
       }
 
       .portfolio-role,
@@ -707,6 +773,7 @@ body.portfolio-full {
         font-size: 13px;
         color: rgba($blackestNight, 0.5);
         margin: 0;
+        grid-column: 1 / -1;
       }
 
       .portfolio-place::before,
