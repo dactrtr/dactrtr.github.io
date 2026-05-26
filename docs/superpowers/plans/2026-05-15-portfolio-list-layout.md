@@ -93,9 +93,7 @@ layout: portfolio-default
   </div>
   {% endif %}
 
-  <div class="portfolio-blog-link">
-    <a href="/blog/" class="btn-blog">&rarr; blog</a>
-  </div>
+
 
 </div>
 ```

@@ -5,7 +5,8 @@ role: Senior Visual Designer
 place: Santiago, Chile
 description: Introduced modern prototyping tools and design system workflows to client teams across multiple countries, shortening review cycles and accelerating adoption within a single project cycle.
 featured: false
-logo: "/assets/projects/braveup-logo-color.png"
+logo_only: true
+logo: "/assets/projects/Mckinsey-logo.png"
 images:
   - ""
 date: 2017-10-30

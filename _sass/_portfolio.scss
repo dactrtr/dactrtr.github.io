@@ -273,7 +273,7 @@ body.portfolio-full #swup {
 
 .portfolio-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(6, 1fr);
   gap: 8px;
   margin-bottom: 32px;
 }
@@ -380,8 +380,36 @@ body.portfolio-full #swup {
 
 // ─── Static image card ────────────────────────────────────────────────────────
 
+.portfolio-list-item--logo-only {
+  grid-column: span 2;
+
+  &.portfolio-list-item--logo-centered {
+    grid-column: 3 / span 2;
+  }
+  cursor: default;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+
+  &:hover {
+    border-color: transparent;
+    background: transparent;
+  }
+
+  img {
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
 .portfolio-list-item--static {
-  grid-column: auto;
+  grid-column: span 3;
   cursor: default;
   display: flex;
   flex-direction: column;
@@ -858,6 +886,7 @@ body.portfolio-full {
     flex-direction: column;
     gap: 8px;
     margin: 32px 0;
+    border-radius: 16px;
 
     @include media-medium {
       flex-direction: row;
@@ -871,6 +900,7 @@ body.portfolio-full {
       min-width: 0;
       max-width: 100%;
       height: auto;
+      border-radius: 16px;
     }
 
     > div {

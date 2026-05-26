@@ -30,10 +30,25 @@ layout: portfolio-default
   {% endif %}
 
   {% assign others = site.portfolio | where: "featured", false | sort: "date" | reverse %}
+  {% assign logo_only_items = others | where: "logo_only", true %}
+  {% assign logo_count = logo_only_items | size %}
+  {% assign logo_remainder = logo_count | modulo: 3 %}
+  {% assign logo_index = 0 %}
   {% if others.size > 0 %}
   <div class="portfolio-list">
     {% for project in others %}
-    {% if project.static %}
+    {% if project.logo_only %}
+    {% assign logo_index = logo_index | plus: 1 %}
+    {% if logo_index == logo_count and logo_remainder == 1 %}
+    <article class="portfolio-list-item portfolio-list-item--logo-only portfolio-list-item--logo-centered">
+    {% else %}
+    <article class="portfolio-list-item portfolio-list-item--logo-only">
+    {% endif %}
+      {% if project.logo and project.logo != "" %}
+        <img src="{{ project.logo }}" alt="{{ project.title }} logo">
+      {% endif %}
+    </article>
+    {% elsif project.static %}
     <article class="portfolio-list-item portfolio-list-item--static">
       <div class="list-item-screenshot">
         {% if project.screenshot and project.screenshot != "" %}
@@ -72,8 +87,5 @@ layout: portfolio-default
   </div>
   {% endif %}
 
-  <div class="portfolio-blog-link">
-    <a href="/blog/" class="btn-blog">&rarr; blog</a>
-  </div>
 
 </div>

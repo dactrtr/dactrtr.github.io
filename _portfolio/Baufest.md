@@ -6,6 +6,7 @@ place: Santiago, Chile
 description: Modular design system for two banking platforms — improving consistency, reducing handoff friction, and standardizing asset workflows across teams.
 featured: false
 logo: "/assets/projects/Baufest-logo.png"
+logo_only: true
 images:
   - "/assets/projects/Baufest-logo.png"
 date: 2019-02-01
