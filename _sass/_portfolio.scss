@@ -302,7 +302,7 @@ body.portfolio-full #swup {
 
   > a {
     display: flex;
-    height: 160px;
+    height: 230px;
     text-decoration: none;
   }
 
@@ -578,9 +578,15 @@ body.portfolio-full {
     }
 
     .portfolio-logo {
-      margin-bottom: 20px;
+      margin-bottom: 48px;
 
-      img,
+      img {
+        max-width: 220px;
+        height: auto;
+        border-radius: 8px;
+        display: block;
+      }
+
       .placeholder-logo {
         width: 64px;
         height: 64px;
@@ -631,6 +637,25 @@ body.portfolio-full {
   .portfolio-project {
     .portfolio-item-header {
       margin-bottom: 32px;
+
+      .portfolio-logo {
+        margin-bottom: 48px;
+
+        img {
+          max-width: 220px;
+          height: auto;
+          border-radius: 8px;
+          display: block;
+        }
+
+        .placeholder-logo {
+          width: 64px;
+          height: 64px;
+          border-radius: 8px;
+          display: block;
+          background: rgba($purpleBack, 0.4);
+        }
+      }
 
       .portfolio-title {
         font-size: 24px;
