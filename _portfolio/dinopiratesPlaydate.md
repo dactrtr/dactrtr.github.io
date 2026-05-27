@@ -42,7 +42,7 @@ The main character changed early on from a Styracosaurus to a Triceratops, not f
 <figure class="figimg">
   <img src="/assets/projects/dp-design.png" alt="braveup design system">
   <figcaption>
-    [placeholder] Character evolution — from sketch to pixel art. The design went through several iterations before the Triceratops locked in as the lead.
+    Character evolution — from sketch to pixel art. The design went through several iterations before the Triceratops locked in as the lead.
   </figcaption>
 </figure>
 
@@ -57,7 +57,7 @@ The in-game menu was rebuilt multiple times. The final version uses a layered ap
 <figure class="figimg">
   <img src="/assets/projects/dp-ui.png" alt="braveup design system">
   <figcaption>
-    [placeholder] In-game UI breakdown — HUD elements, menu states, and how each layer expands on demand.
+    With such a tiny screen most of the UI had to relay in animations to make it pop in a small black and white space, while staying minimal as posible to maintain the screen real state for the game.
   </figcaption>
 </figure>
 
@@ -80,7 +80,7 @@ The result is a cross-platform **SwiftUI** app (**iOS** + **macOS**) built entir
 <figure class="figimg">
   <img src="/assets/projects/dp-level.png" alt="braveup design system">
   <figcaption>
-    [placeholder] LevelGenerator — the canvas, script editor, and trigger hierarchy side by side.
+    LevelGenerator, a vibe coded tool to create levels, that later was replaced for LDTK and refactored to be the tool to create dialogues in the game.
   </figcaption>
 </figure>
 
@@ -116,7 +116,7 @@ The visual tone is 90s action cartoon: loud, committed, absurdist without losing
 <figure class="figimg">
  <img src="/assets/projects/dp-guide.png" alt="braveup design system">
   <figcaption>
-    [placeholder] Art direction sheet — color palette, tone references, and key visual decisions that define the Unity version's aesthetic. Should show the 90s cartoon energy and how it translates to the game's environments and characters.
+    Art direction sheet — The universe is a mix of 90s cartoon style with a touch of Street art, such as Graffiti and Sticker art.
   </figcaption>
 </figure>
 
@@ -140,7 +140,7 @@ The Inner Space is a sci-fi setting that explains itself through the game's fict
 <figure class="figimg">
  <img src="/assets/projects/dp-screens.png" alt="braveup design system">
   <figcaption>
-    [placeholder] UI screens — run summary, build selection, or crew management in the Unity version. Should use the established visual identity and feel like in-universe interfaces, not generic game menus.
+    UI screens — Beta release screens, since this is a work in progress most of this screens are changing weekly depending on user feedback.
   </figcaption>
 </figure>
 
