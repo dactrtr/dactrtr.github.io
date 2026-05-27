@@ -1,15 +1,17 @@
 <footer class="portfolio-contact-footer">
   <div class="footer-inner">
-    <div class="footer-identity">
-      <span class="footer-name">Sebastian Zúñiga</span>
-      <span class="footer-tagline">UI Designer &middot; Developer &middot; Tokyo</span>
+
+    <div class="footer-statement">
+      <p class="footer-headline">
+        Living in <span class="footer-tokyo"><span class="footer-tokyo-name">Tokyo</span><span class="footer-tokyo-img"></span></span>
+      </p>
+      <p class="footer-headline footer-headline--available">available for work worldwide</p>
     </div>
-    <div class="footer-contact">
-      {% if site.footer-links.email and site.footer-links.email != "" %}
-      <a href="mailto:{{ site.footer-links.email }}" class="footer-email">{{ site.footer-links.email }}</a>
-      {% endif %}
-      <div class="footer-socials">
-        {% if site.footer-links.github and site.footer-links.github != "" %}
+
+    <div class="footer-bottom">
+      <span class="footer-name">{{ site.author.name }} &middot; {{ site.author.tagline }}</span>
+      <div class="footer-links">
+{% if site.footer-links.github and site.footer-links.github != "" %}
         <a href="https://github.com/{{ site.footer-links.github }}" target="_blank" rel="noopener" class="footer-social-link">GitHub</a>
         {% endif %}
         {% if site.footer-links.linkedin and site.footer-links.linkedin != "" %}
@@ -23,5 +25,6 @@
         {% endif %}
       </div>
     </div>
+
   </div>
 </footer>

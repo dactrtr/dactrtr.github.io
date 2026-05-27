@@ -136,7 +136,7 @@ html {
         grid-row: 2/4;
       }
       @include media-small {
-        width: 80%;
+        width: 70%;
         grid-column: 3/5;
       }
       @include media-medium {
@@ -145,6 +145,7 @@ html {
       }
     }
     .illu-code {
+      display: none;
       grid-column: 1/4;
       grid-row: 3/5;
       align-self: center;
@@ -165,36 +166,29 @@ html {
     }
   }
   p.who-iam {
-    grid-column: 1/5;
-    grid-row: 4/6;
-    margin: 0;
+    margin: 8px 0 0 0;
     text-align: center;
-    padding: 8px;
-    font-size: 14px;
-    @include media-xsmall {
-      font-size: 20px;
-      align-self: center;
-      justify-self: center;
-      width: 75%;
-    }
-    @include media-small {
-      margin: 0 0 16px 0;
-    }
-    @include media-medium {
-    }
-    @include media-xlarge {
-      grid-column: 2/3;
-      grid-row: 3/4;
-      margin: 32px 0 20% 0;
-      align-self: end;
-    }
-    @include media-xxlarge {
-      margin-bottom: 7rem;
-    }
+    font-size: 18px;
+    line-height: 1.5;
     span {
       font-weight: 900;
-      text-align: left;
-      margin-top: 24px;
+    }
+    .header-tokyo {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      vertical-align: middle;
+    }
+    .header-tokyo-name {
+      color: $cyanTyrant;
+    }
+    .header-tokyo-img {
+      display: inline-block;
+      width: 40px;
+      height: 24px;
+      background-color: rgba($blackestNight, 0.12);
+      border-radius: 3px;
+      flex-shrink: 0;
     }
   }
   .logo {
@@ -217,11 +211,11 @@ html {
       grid-row: 2/4;
     }
     @include media-xxlarge {
-      transform: scale(1.5);
+      // transform: scale(1.5);
     }
     h1 {
       font-family: Inter;
-      // text-shadow: 1px 1px 0px #f95ba7, -1px -1px 0px #06d2ff;
+      text-shadow: 1px 1px 0px #f95ba7, -1px -1px 0px #06d2ff;
       text-transform: uppercase;
       margin: 0;
       transform: rotate(-2deg);
