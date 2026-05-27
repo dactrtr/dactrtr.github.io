@@ -6,7 +6,6 @@ place: Santiago, Chile
 description: Modular design system for two banking platforms. Improved consistency, reduced handoff friction, and standardized asset workflows across teams.
 featured: false
 logo: "/assets/projects/Baufest-logo.png"
-logo_only: true
 images:
   - "/assets/projects/Baufest-logo.png"
 date: 2019-02-01
@@ -33,7 +32,11 @@ The core challenge wasn't designing components, it was making them modular enoug
 
 ### Asset Versioning
 
-Design system maintenance breaks down when assets aren't versioned. I standardized the team's versioning workflow in **Abstract**: naming conventions, branching structure, review process. Duplicate assets stopped piling up and everyone was finally working off the same files.
+Before this, there was no versioning. Files moved by email or sat in a shared Drive folder with no real structure. For a regular project that's manageable, but for a design system it's a real problem: two people updating the same component in parallel, no way to know which file is current, no single source of truth for the atoms and base components shared across both products.
+
+I proposed using **Abstract** and put together a presentation showing the team why version control for design files made sense, the same arguments you'd make for code. No resistance, they got it. From there I set up the branching structure, defined the naming conventions, and established weekly sessions for creating and maintaining the system, reviewing new elements before they went into the base and making sure nothing drifted between the two projects.
+
+It wasn't glamorous work. But having a proper workflow meant the component library could actually be maintained, not just built once and left to decay.
 
 <figure class="figimg">
   <div style="width:100%;height:260px;background:#F0F4F8;border-radius:4px;"></div>
