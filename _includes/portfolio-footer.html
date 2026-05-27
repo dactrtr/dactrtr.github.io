@@ -1,0 +1,27 @@
+<footer class="portfolio-contact-footer">
+  <div class="footer-inner">
+    <div class="footer-identity">
+      <span class="footer-name">Sebastian Zúñiga</span>
+      <span class="footer-tagline">UI Designer &middot; Developer &middot; Tokyo</span>
+    </div>
+    <div class="footer-contact">
+      {% if site.footer-links.email and site.footer-links.email != "" %}
+      <a href="mailto:{{ site.footer-links.email }}" class="footer-email">{{ site.footer-links.email }}</a>
+      {% endif %}
+      <div class="footer-socials">
+        {% if site.footer-links.github and site.footer-links.github != "" %}
+        <a href="https://github.com/{{ site.footer-links.github }}" target="_blank" rel="noopener" class="footer-social-link">GitHub</a>
+        {% endif %}
+        {% if site.footer-links.linkedin and site.footer-links.linkedin != "" %}
+        <a href="https://linkedin.com/in/{{ site.footer-links.linkedin }}" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
+        {% endif %}
+        {% if site.footer-links.behance and site.footer-links.behance != "" %}
+        <a href="https://behance.net/{{ site.footer-links.behance }}" target="_blank" rel="noopener" class="footer-social-link">Behance</a>
+        {% endif %}
+        {% if site.footer-links.twitter and site.footer-links.twitter != "" %}
+        <a href="https://twitter.com/{{ site.footer-links.twitter }}" target="_blank" rel="noopener" class="footer-social-link">Twitter</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</footer>

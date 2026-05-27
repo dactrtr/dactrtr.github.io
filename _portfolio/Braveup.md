@@ -20,12 +20,12 @@ intro: >
 
 ### Design System
 
-The design system was already in place when I joined — the work was making it scale. I standardized the **SASS** module structure across the codebase, resolved inconsistencies that had accumulated across multiple contributors, and improved cross-device compatibility throughout.
+The design system was already in place when I joined. The work was making it scale. I standardized the **SASS** module structure across the codebase, resolved inconsistencies that had accumulated across multiple contributors, and improved cross-device compatibility throughout.
 
 <figure class="figimg">
   <img src="/assets/projects/braveup-designsystem.png" alt="braveup design system">
   <figcaption>
-    [generate] Component library overview — a grid of UI components showing the system's coverage: buttons, inputs, cards, navigation, and data elements. Clean, light background.
+    [generate] Component library overview: a grid of UI components showing the system's coverage: buttons, inputs, cards, navigation, and data elements. Clean, light background.
   </figcaption>
 </figure>
 
@@ -38,7 +38,7 @@ A significant part of the product was surfacing student and cohort progress thro
 <figure class="figimg">
   <img src="/assets/projects/braveup-charts.png" alt="storymoon design system">
   <figcaption>
-    D3.js educator dashboard this chart was build to show how the students interact to each other and who each consider a friend, whith this tool, we made easier for the educators to spot kids that where a connection between "groups".
+    D3.js educator dashboard. This chart shows how students interact with each other and who they each consider a friend. It made it easier for educators to spot kids who were a bridge between separate groups.
   </figcaption>
 </figure>
 
@@ -46,7 +46,7 @@ A significant part of the product was surfacing student and cohort progress thro
 
 ### Design–Dev Bridge
 
-I built **SwiftUI** components and interactions specifically to validate that proposed designs could ship — closing feasibility gaps before they reached the development sprint. This also meant supporting the dev team directly: reviewing code for clarity, consistency, and compatibility before it went live.
+I built **SwiftUI** components to check whether proposed designs could actually ship. If something wasn't feasible, I wanted to catch it before it hit the development sprint. I also reviewed the dev team's code directly, checking for clarity, consistency, and compatibility before it went live.
 
 <figure class="figimg">
   <img src="/assets/projects/braveup-swift.png" alt="storymoon design system">
@@ -59,8 +59,8 @@ I built **SwiftUI** components and interactions specifically to validate that pr
 
 ## Learnings
 
-**The medium has its own constraints.**
-Knowing D3 can render a chart is not the same as knowing what a chart can communicate. The limitations that shaped the design came from data visualization as a discipline — not from the library. Understanding the medium before designing for it is a different kind of research.
+**D3 is a rendering tool, not a design tool.**
+Knowing D3 can render a chart doesn't tell you what the chart should say. I had to learn data visualization as a discipline first, separate from the library. That shaped the design more than any API decision did.
 
-**Distributed work has a hidden cost.**
-The odd hours and constant availability required by a multi-timezone team are an operational commitment, not a personal inconvenience. Factor it in before it becomes the engagement.
+**Multi-timezone work has a real operational cost.**
+The odd hours and constant availability aren't just inconvenient, they're a commitment. I'd factor that in earlier next time, before it quietly becomes the default.

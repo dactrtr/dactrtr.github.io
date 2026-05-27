@@ -21,12 +21,12 @@ intro: >
 
 ### QA Bridge
 
-Design and development teams running at different speeds create handoff debt. I ran weekly QA sessions between both sides, reviewing implementation against design specs, surfacing discrepancies early, and keeping the feedback loop short enough that issues didn't compound across sprints. Delivery accelerated and product quality improved as a direct result.
+Design and dev were moving at different speeds and things were slipping through the cracks. I ran weekly QA sessions between both teams, reviewing implementation against design specs and catching discrepancies before they piled up across sprints. Things moved faster once we had a consistent check-in rhythm.
 
 <figure class="figimg">
   <img src="/assets/projects/clever-swift.png" alt="storymoon design system">
   <figcaption>
-    To make deliveries faster between design and development we organized a workflow with both teams that allowed us to export design tokens from figma directly to storybook, making changes easily and consistent.
+    We set up a shared workflow so both teams could export design tokens from Figma directly to Storybook, keeping changes consistent without the back-and-forth.
   </figcaption>
 </figure>
 
@@ -34,12 +34,12 @@ Design and development teams running at different speeds create handoff debt. I 
 
 ### iOS App Foundation
 
-At a critical point in the project, the mobile team had no **iOS** developer. I stepped in to build the foundational app structure, despite it being my first professional **iOS** experience. The goal wasn't to own the platform long-term, but to unblock the team and maintain delivery momentum until the right person joined.
+At a critical point in the project, the mobile team had no **iOS** developer. I stepped in to build the foundational app structure, despite it being my first professional **iOS** experience. I wasn't meant to own it long-term, just get things moving until the right person joined.
 
 <figure class="figimg">
   <img src="/assets/projects/clever-front.png" alt="storymoon design system">
   <figcaption>
-    Using SwiftUI the workflow from design to code was easier and allow the team to design "in code" making delivery time faster, all the screens were kept till the end of the project
+    Using SwiftUI made it easier to go from design to code. The team could design "in code" and the screens we built stayed in the project until the end.
   </figcaption>
 </figure>
 

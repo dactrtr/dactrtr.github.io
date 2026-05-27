@@ -21,12 +21,12 @@ intro: >
 
 ### Tool Adoption
 
-Client design teams were working without prototyping tools. Reviews happened on static files, feedback was slow, and iteration cycles were longer than they needed to be. I introduced **Sketch** and **Principle**, ran hands-on sessions to accelerate adoption, and restructured the review process around interactive prototypes instead of static deliverables. Design review cycles dropped noticeably within three months.
+Client design teams were working without prototyping tools. Reviews happened on static files, feedback was slow, and iteration cycles were longer than they needed to be. I introduced **Sketch** and **Principle**, ran hands-on sessions to get people up to speed, and restructured the review process around interactive prototypes instead of static deliverables. Within three months, review cycles were measurably shorter.
 
 <figure class="figimg">
   <div style="width:100%;height:280px;background:#F0F0EE;border-radius:4px;"></div>
   <figcaption>
-    [generate] Before/after workflow diagram — a simple two-column comparison showing the old static-file review process vs. the new prototype-driven loop. Clean, minimal, professional. No client data.
+    [generate] Before/after workflow diagram: a simple two-column comparison showing the old static-file review process vs. the new prototype-driven loop. Clean, minimal, professional. No client data.
   </figcaption>
 </figure>
 
@@ -34,12 +34,12 @@ Client design teams were working without prototyping tools. Reviews happened on 
 
 ### Cross-country Design Systems
 
-The scope extended beyond a single team. I supported design and development teams across multiple countries in adopting design systems and modern workflows, coordinating adoption across different organizational cultures, tooling maturity levels, and working styles.
+The scope extended beyond a single team. I supported design and development teams across multiple countries in adopting design systems and modern workflows. Each team had different tools, different levels of familiarity, and different ways of working together.
 
 <figure class="figimg">
   <div style="width:100%;height:260px;background:#EBEBEA;border-radius:4px;"></div>
   <figcaption>
-    [generate] Design system rollout diagram — a visual showing how components or guidelines propagate across multiple teams or regions. Abstract, no client-specific content. Could be a simple node diagram or layered structure.
+    [generate] Design system rollout diagram: a visual showing how components or guidelines propagate across multiple teams or regions. Abstract, no client-specific content. Could be a simple node diagram or layered structure.
   </figcaption>
 </figure>
 
@@ -47,8 +47,6 @@ The scope extended beyond a single team. I supported design and development team
 
 ## Learnings
 
-**Sell adoption downstream, not upstream.**
-The key to getting designers to adopt new tools wasn't convincing designers. It was showing developers how fast they could build views with component-based design. Once devs saw the benefit, designers had no argument against it. Tool adoption follows the path of least resistance; find where the resistance is lowest.
+Getting designers to adopt new tools turned out to be easier when I went through developers first. Once devs saw how fast they could build views from component-based specs, they started pushing for it. That changed the conversation entirely. Designers weren't being asked to change how they worked; they were responding to demand from the people they hand off to.
 
-**Atomic design** is a language, not just a method.
-Teaching **modular thinking** gave teams a shared vocabulary for UI. The components were almost secondary. What changed was how people thought about and discussed UI structure.
+Teaching atomic design was less about the method and more about giving teams a shared way to talk about UI. Once people had that vocabulary, component structure became something they could discuss and negotiate, not just something handed down from a design file.

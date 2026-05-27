@@ -3,7 +3,7 @@ layout: portfolio-project
 title: Baufest
 role: UI Designer
 place: Santiago, Chile
-description: Modular design system for two banking platforms — improving consistency, reducing handoff friction, and standardizing asset workflows across teams.
+description: Modular design system for two banking platforms. Improved consistency, reduced handoff friction, and standardized asset workflows across teams.
 featured: false
 logo: "/assets/projects/Baufest-logo.png"
 logo_only: true
@@ -20,12 +20,12 @@ intro: >
 
 ### Design System
 
-The core challenge wasn't designing components, it was making them modular enough to work across two distinct banking products without diverging into two separate systems. I managed and promoted the **component library**, ensuring consistency in patterns, states, and spacing across projects. The result was measurably fewer handoff issues between design and development, and better UI consistency across both projects.
+The core challenge wasn't designing components, it was making them modular enough to work across two distinct banking products without diverging into two separate systems. I managed and promoted the **component library**, ensuring consistency in patterns, states, and spacing across projects. Handoff issues between design and development dropped, and UI consistency across both products got noticeably better.
 
 <figure class="figimg">
   <div style="width:100%;height:300px;background:#E8EFF5;border-radius:4px;"></div>
   <figcaption>
-    [generate] Modular component library for banking — a structured grid showing form elements, buttons, cards, and data tables in a neutral financial UI style. Dark blue or grey palette. Professional, not decorative.
+    [generate] Modular component library for banking: a structured grid showing form elements, buttons, cards, and data tables in a neutral financial UI style. Dark blue or grey palette. Professional, not decorative.
   </figcaption>
 </figure>
 
@@ -33,12 +33,12 @@ The core challenge wasn't designing components, it was making them modular enoug
 
 ### Asset Versioning
 
-Design system maintenance breaks down when assets aren't versioned. I standardized the team's versioning workflow in **Abstract**: naming conventions, branching structure, review process, which cut duplicate assets significantly and gave the team a single source of truth for the first time.
+Design system maintenance breaks down when assets aren't versioned. I standardized the team's versioning workflow in **Abstract**: naming conventions, branching structure, review process. Duplicate assets stopped piling up and everyone was finally working off the same files.
 
 <figure class="figimg">
   <div style="width:100%;height:260px;background:#F0F4F8;border-radius:4px;"></div>
   <figcaption>
-    [generate] Abstract versioning workflow — a diagram or annotated screenshot showing branch structure, naming conventions, and how components flow from draft to published. Clean, technical documentation style.
+    [generate] Abstract versioning workflow: a diagram or annotated screenshot showing branch structure, naming conventions, and how components flow from draft to published. Clean, technical documentation style.
   </figcaption>
 </figure>
 
@@ -47,4 +47,4 @@ Design system maintenance breaks down when assets aren't versioned. I standardiz
 ## Learnings
 
 **Some contexts don't call for creativity, and that's fine.**
-Banking is too normalized and structured for design innovation. The value was in making the system more robust, consistent, and scalable, not in pushing it somewhere new. Recognizing when a context requires discipline over creativity, and delivering that without friction, is its own skill.
+Banking is too normalized and structured for design innovation. The value was in making the system more robust and consistent, not in pushing it somewhere new. Knowing when to just do the disciplined work, without looking for a creative angle, is actually useful.

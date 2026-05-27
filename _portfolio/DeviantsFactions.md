@@ -21,12 +21,12 @@ intro: >
 
 ### Mobile-First Responsive
 
-Card game UIs are dense by nature: hand slots, battlefield zones, card art, action timers, menus. Translating that to a mobile canvas without losing legibility or feel required rethinking layout priorities rather than just scaling things down. I implemented the **mobile-first** responsive layouts in **CSS3**, with measurable improvements in mobile usability testing scores.
+Card game UIs are dense by nature: hand slots, battlefield zones, card art, action timers, menus. Getting all of that onto a phone screen without killing legibility meant rethinking which elements were actually essential, not just shrinking the desktop layout. I built the **mobile-first** responsive layouts in **CSS3**, working through the hierarchy of each view until it held up on small screens.
 
 <figure class="figimg">
   <img src="/assets/projects/deviants-code2.png" alt="descripción">
   <figcaption> 
-    The design specs where mainly for desktop, so the tablet and mobile version where designed on the fly during the frontend phase in the browser.
+    The design specs were mainly for desktop, so the tablet and mobile versions were designed on the fly during the frontend phase, directly in the browser.
   </figcaption>
 </figure>
 
@@ -34,12 +34,12 @@ Card game UIs are dense by nature: hand slots, battlefield zones, card art, acti
 
 ### Remote, Cross-timezone Delivery
 
-The team spanned 10+ countries across multiple time zones with no single HQ. Delivery required clear async communication, disciplined handoff, and the ability to stay unblocked without a daily standup to fall back on. We shipped on schedule throughout the engagement.
+The team spanned 10+ countries across multiple time zones with no single HQ. You had to write clearly, hand off properly, and know how to keep moving without waiting for a standup that wasn't happening. We shipped on schedule throughout the engagement.
 
 <figure class="figimg">
   <img src="/assets/projects/deviants-code3.png" alt="descripción">
  <figcaption>
-   To make the card display more scalable instead of using images, we opted for create each card part by part, optimising load times and making changes easier than using bitmap images.
+   To keep the card display scalable, we built each card part by part in code instead of using images. That kept load times down and made updates much easier than swapping out bitmap assets.
  </figcaption> 
 </figure>
 
@@ -47,5 +47,5 @@ The team spanned 10+ countries across multiple time zones with no single HQ. Del
 
 ## Learnings
 
-**Strong criteria ships when process doesn't.**
-The design process was chaotic: incomplete specs, no design feedback, decisions made alone in the browser. The output was good anyway. That's not luck; it's what sufficient design judgment looks like under pressure. Incomplete specs are a condition you work with, not an excuse for bad work.
+**Good output survives a bad process.**
+The design process was chaotic: incomplete specs, no design feedback, most decisions made alone in the browser. The output was still good. That comes from having enough judgment to fill the gaps, not from ideal conditions. Incomplete specs are just part of the job.

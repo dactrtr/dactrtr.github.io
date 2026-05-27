@@ -3,20 +3,20 @@ layout: portfolio-item
 title: Dinopirates from Inner Space
 role: Game Designer · Developer · Art Director
 place: Tokyo, Japan
-challenge: Build a game universe across two distinct platforms from scratch — a hardware-constrained 1-bit Playdate game and a commercial action roguelike for Steam — as sole designer, developer, and art director on both. Each version required owning a completely different part of the stack under completely different constraints.
-learnings: Shipping a demo at BitSummit 2025 and watching people play it for the first time was worth more than any amount of polish. Constraint-driven design — forced by a 1-bit palette, a tiny screen, or a rogue progression arc — led to more interesting decisions than open-ended tools ever had. And someone paid for it. That was unexpected.
+challenge: Build a game universe across two distinct platforms from scratch: a hardware-constrained 1-bit Playdate game and a commercial action roguelike for Steam, as sole designer, developer, and art director on both. Each version required owning a completely different part of the stack under completely different constraints.
+learnings: Shipping a demo at BitSummit 2025 and watching people play it for the first time was worth more than any amount of polish. Constraint-driven design, forced by a 1-bit palette, a tiny screen, or a rogue progression arc, led to more interesting decisions than open-ended tools ever had. And someone paid for it. That was unexpected.
 featured: true
 logo: "/assets/projects/icon-playdate.png"
 screenshot: "/assets/projects/dp-main.png"
 description: ""
 date: 2025-07-01
 toolchain:
-- "Pixquare — 1-bit pixel art"
-- "LDtk — level editor"
-- "LevelGenerator — custom SwiftUI tool"
+- "Pixquare: 1-bit pixel art"
+- "LDtk: level editor"
+- "LevelGenerator: custom SwiftUI tool"
 - "Playdate SDK (Lua)"
-- "Unity — roguelike version"
-- "Love2D — macOS port"
+- "Unity: roguelike version"
+- "Love2D: macOS port"
 ---
 
 ## Overview
@@ -42,7 +42,7 @@ The main character changed early on from a Styracosaurus to a Triceratops, not f
 <figure class="figimg">
   <img src="/assets/projects/dp-design.png" alt="braveup design system">
   <figcaption>
-    Character evolution — from sketch to pixel art. The design went through several iterations before the Triceratops locked in as the lead.
+    Character evolution, from sketch to pixel art. The design went through several iterations before the Triceratops locked in as the lead.
   </figcaption>
 </figure>
 
@@ -93,7 +93,7 @@ Fellow Playdate developers played it. They played it for about five minutes, whi
 <!-- <figure class="figimg">
   <div style="width:100%;height:300px;background:#F0C8F0;border-radius:4px;"></div>
   <figcaption>
-    [placeholder] BitSummit 2025 — showing the game for the first time to people who had never heard of it.
+    [placeholder] BitSummit 2025: showing the game for the first time to people who had never heard of it.
   </figcaption>
 </figure> -->
 
@@ -116,7 +116,7 @@ The visual tone is 90s action cartoon: loud, committed, absurdist without losing
 <figure class="figimg">
  <img src="/assets/projects/dp-guide.png" alt="braveup design system">
   <figcaption>
-    Art direction sheet — The universe is a mix of 90s cartoon style with a touch of Street art, such as Graffiti and Sticker art.
+    Art direction sheet. The universe is a mix of 90s cartoon style with a touch of Street art, such as Graffiti and Sticker art.
   </figcaption>
 </figure>
 
@@ -127,7 +127,7 @@ TTT is the throughline of the entire IP, the same character read at 16×16 px on
 <figure class="figimg">
   <img src="/assets/projects/dp-guide.png" alt="braveup design system">
   <figcaption>
-    [placeholder] Character sheet — TTT and a selection of Brocolite enemy variants. Show the design progression from silhouette to final art, and how the characters read at different sizes.
+    [placeholder] Character sheet: TTT and a selection of Brocolite enemy variants. Show the design progression from silhouette to final art, and how the characters read at different sizes.
   </figcaption>
 </figure> -->
 
@@ -140,7 +140,7 @@ The Inner Space is a sci-fi setting that explains itself through the game's fict
 <figure class="figimg">
  <img src="/assets/projects/dp-screens.png" alt="braveup design system">
   <figcaption>
-    UI screens — Beta release screens, since this is a work in progress most of this screens are changing weekly depending on user feedback.
+    UI screens. Beta release screens, since this is a work in progress most of this screens are changing weekly depending on user feedback.
   </figcaption>
 </figure>
 

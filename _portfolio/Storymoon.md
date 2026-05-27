@@ -53,7 +53,7 @@ The app was built in **Expo Go** for iOS, with styles implemented in **Tailwind*
 <figure class="figimg">
   <img src="/assets/projects/storymoon-code.png" alt="storymoon Tailwind codebase">
   <figcaption>
-    Instead of using SwiftUI for the UI the team used Expo Go, and I collaborated using Tailwind.
+    The team skipped SwiftUI and built in Expo Go instead. I worked on the UI side using Tailwind.
   </figcaption>
 </figure>
 
@@ -62,4 +62,4 @@ The app was built in **Expo Go** for iOS, with styles implemented in **Tailwind*
 ## Learnings
 
 **When testing exposes the core, nothing else matters.**
-User testing revealed that the token and payment system, the product's monetization core, wasn't understood by users. Everything else on the backlog became secondary until that was fixed. A product people don't understand doesn't get sold, no matter how polished the rest of it is.
+User testing revealed that the token and payment system, the product's monetization core, wasn't understood by users. Everything else on the backlog had to wait. If people can't figure out how to buy the thing, polish elsewhere doesn't matter.

@@ -1080,3 +1080,87 @@ body.portfolio-full {
     }
   }
 }
+
+// ─── Contact footer ───────────────────────────────────────────────────────────
+
+.portfolio-contact-footer {
+  background-color: $blackestNight;
+  padding: 40px 20px;
+
+  .footer-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+
+    @include media-small {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+  }
+
+  .footer-identity {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .footer-name {
+    font-family: $helveticaNeue;
+    font-size: 14px;
+    font-weight: 600;
+    color: $bonedThrone;
+    letter-spacing: 0;
+  }
+
+  .footer-tagline {
+    font-family: $helveticaNeue;
+    font-size: 12px;
+    color: rgba($bonedThrone, 0.45);
+    letter-spacing: 0;
+  }
+
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+
+    @include media-small {
+      align-items: flex-start;
+    }
+  }
+
+  .footer-email {
+    font-family: $helveticaNeue;
+    font-size: 12px;
+    font-weight: 500;
+    color: $blinkyPinky;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+
+    &:hover { opacity: 0.75; }
+  }
+
+  .footer-socials {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .footer-social-link {
+    font-family: $helveticaNeue;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: rgba($bonedThrone, 0.4);
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover { color: $bonedThrone; }
+  }
+}
