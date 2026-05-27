@@ -11,17 +11,20 @@ images:
   - ""
 date: 2017-10-30
 intro: >
-  At McKinsey I worked as Senior Visual Designer embedded with client design teams.
-  The engagement wasn't about producing screens. It was about changing how teams worked:
-  introducing tools they weren't using, establishing workflows that didn't exist,
-  and getting adoption fast enough to show results within a single project cycle.
+  At McKinsey I was part of an internal design team working alongside consultants.
+  The engagement ran about five months across four client companies in Chile and Argentina,
+  covering telecom, insurance, fintech, and financial services. The job wasn't producing
+  screens. It was getting design teams working differently, fast enough to show results
+  within a single project cycle.
 ---
 
 ---
 
-### Tool Adoption
+### Diagnosing the problem first
 
-Client design teams were working without prototyping tools. Reviews happened on static files, feedback was slow, and iteration cycles were longer than they needed to be. I introduced **Sketch** and **Principle**, ran hands-on sessions to get people up to speed, and restructured the review process around interactive prototypes instead of static deliverables. Within three months, review cycles were measurably shorter.
+Before touching design tools at all, we started with the developers. Talked to them about what wasn't working with the design team. Most of the time the pain was the same: handoff was unclear and design changes kept arriving without context. Once we understood that, we knew where to focus.
+
+From there we moved to the design teams. Most were working in **Freehand** or **Photoshop**, no interactive prototyping, reviews happening on static files. Feedback was slow and imprecise because stakeholders couldn't click through anything. I introduced **Sketch** and **Principle**, ran hands-on sessions, and restructured the review process around interactive prototypes. The difference in the quality of feedback was immediate.
 
 <figure class="figimg">
   <div style="width:100%;height:280px;background:#F0F0EE;border-radius:4px;"></div>
@@ -32,9 +35,11 @@ Client design teams were working without prototyping tools. Reviews happened on 
 
 ---
 
-### Cross-country Design Systems
+### Chile, Argentina, Brazil
 
-The scope extended beyond a single team. I supported design and development teams across multiple countries in adopting design systems and modern workflows. Each team had different tools, different levels of familiarity, and different ways of working together.
+The work wasn't contained to one location. We were based in Chile but traveled to Argentina regularly to run workshops with the teams there. In parallel, we coordinated with a Lead UI and UX Director from McKinsey's Brazil team, who came to Chile for workshops on their end. Three countries, four companies, one shared approach being adapted to each context.
+
+Each client team had a different starting point: different tools, different levels of design maturity, different relationships between design and development. The framework stayed consistent but how you introduced it depended entirely on who was in the room.
 
 <figure class="figimg">
   <div style="width:100%;height:260px;background:#EBEBEA;border-radius:4px;"></div>
@@ -47,6 +52,6 @@ The scope extended beyond a single team. I supported design and development team
 
 ## Learnings
 
-Getting designers to adopt new tools turned out to be easier when I went through developers first. Once devs saw how fast they could build views from component-based specs, they started pushing for it. That changed the conversation entirely. Designers weren't being asked to change how they worked; they were responding to demand from the people they hand off to.
+Going to developers first wasn't a persuasion trick. It was a diagnostic. You learn more about a design team's real problems by asking the people downstream from them than by asking the team itself. Once you know where the friction actually is, the rest of the conversation gets easier.
 
-Teaching atomic design was less about the method and more about giving teams a shared way to talk about UI. Once people had that vocabulary, component structure became something they could discuss and negotiate, not just something handed down from a design file.
+Atomic design gave teams a shared vocabulary more than a method. The components mattered less than the fact that everyone could now point at a piece of UI and agree on what it was called. That sounds small. It changes a lot.
