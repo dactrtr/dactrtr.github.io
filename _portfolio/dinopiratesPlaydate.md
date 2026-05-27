@@ -40,7 +40,7 @@ Every design decision on the Playdate is an exercise in subtraction. There is no
 The main character changed early on from a Styracosaurus to a Triceratops, not for story reasons, but because the Triceratops reads better at the resolution the game runs at. The horns are legible at 16×16 px. The Styracosaurus spines are not. This is the kind of decision that defines 1-bit design: biological accuracy loses to pixel clarity every time.
 
 <figure class="figimg">
-  <div style="width:100%;height:280px;background:#C0F0A0;border-radius:4px;"></div>
+  <img src="/assets/projects/dp-design.png" alt="braveup design system">
   <figcaption>
     [placeholder] Character evolution — from sketch to pixel art. The design went through several iterations before the Triceratops locked in as the lead.
   </figcaption>
@@ -55,7 +55,7 @@ The Playdate screen is 400×240 px. That is not a typo. Designing a game UI for 
 The in-game menu was rebuilt multiple times. The final version uses a layered approach: minimal HUD during play, expandable on demand. A single button opens and closes it. The challenge was making it feel fast enough that players didn't avoid using it.
 
 <figure class="figimg">
-  <div style="width:100%;height:260px;background:#F0E0A0;border-radius:4px;"></div>
+  <img src="/assets/projects/dp-ui.png" alt="braveup design system">
   <figcaption>
     [placeholder] In-game UI breakdown — HUD elements, menu states, and how each layer expands on demand.
   </figcaption>
@@ -78,7 +78,7 @@ Placing enemies, props, and room connections by hand in raw **Lua** was unsustai
 The result is a cross-platform **SwiftUI** app (**iOS** + **macOS**) built entirely on first-party Apple frameworks. A single observable store owns all levels, scripts, triggers, and NPCs, and exposes stable UUID-based bindings so the UI never goes stale on index shifts. The export layer generates **Lua** tables the dialog engine reads directly, with no conversion step between design and runtime.
 
 <figure class="figimg">
-  <div style="width:100%;height:300px;background:#F0C8F0;border-radius:4px;"></div>
+  <img src="/assets/projects/dp-level.png" alt="braveup design system">
   <figcaption>
     [placeholder] LevelGenerator — the canvas, script editor, and trigger hierarchy side by side.
   </figcaption>
@@ -90,12 +90,12 @@ In July 2025, I brought the game to BitSummit in Kyoto, one of Japan's biggest i
 
 Fellow Playdate developers played it. They played it for about five minutes, which is the correct amount of time for a Playdate game. They liked it. They told me to ship a demo. I shipped the demo.
 
-<figure class="figimg">
+<!-- <figure class="figimg">
   <div style="width:100%;height:300px;background:#F0C8F0;border-radius:4px;"></div>
   <figcaption>
     [placeholder] BitSummit 2025 — showing the game for the first time to people who had never heard of it.
   </figcaption>
-</figure>
+</figure> -->
 
 The demo went up on itch.io without announcement. Shadow-dropped. The goal was closure, a line under a chapter that had been open for too long.
 
@@ -114,22 +114,22 @@ My role on this version was art direction, character design, and UI, not enginee
 The visual tone is 90s action cartoon: loud, committed, absurdist without losing narrative stakes. Where the Playdate version communicates entirely through shape and timing, the **Unity** version has color, animation, and full character expression. The constraint flipped: instead of reducing to the minimum readable form, the challenge was maintaining a coherent identity across a wide range of assets, enemies, and environments without it dissolving into noise.
 
 <figure class="figimg">
-  <div style="width:100%;height:300px;background:#1A1230;border-radius:4px;"></div>
+ <img src="/assets/projects/dp-guide.png" alt="braveup design system">
   <figcaption>
     [placeholder] Art direction sheet — color palette, tone references, and key visual decisions that define the Unity version's aesthetic. Should show the 90s cartoon energy and how it translates to the game's environments and characters.
   </figcaption>
 </figure>
 
-### Character Design
+<!-- ### Character Design
 
 TTT is the throughline of the entire IP, the same character read at 16×16 px on Playdate and at full resolution in Unity. Designing him to work at both scales required the same principle as the original 1-bit work: the read has to be immediate. The Brocolites, plant-creature enemies, follow the same logic. Silhouette first, detail second.
 
 <figure class="figimg">
-  <div style="width:100%;height:300px;background:#0F1A20;border-radius:4px;"></div>
+  <img src="/assets/projects/dp-guide.png" alt="braveup design system">
   <figcaption>
     [placeholder] Character sheet — TTT and a selection of Brocolite enemy variants. Show the design progression from silhouette to final art, and how the characters read at different sizes.
   </figcaption>
-</figure>
+</figure> -->
 
 ### UI & World Building
 
@@ -138,7 +138,7 @@ The roguelike structure introduces UI complexity that doesn't exist in the Playd
 The Inner Space is a sci-fi setting that explains itself through the game's fiction rather than exposition: the Dinopirate hierarchy, the alien Brocolite invasion, the mutiny arc. World building here is a design constraint, not a writing exercise. It determines what UI elements exist and what they're called.
 
 <figure class="figimg">
-  <div style="width:100%;height:280px;background:#16213E;border-radius:4px;"></div>
+ <img src="/assets/projects/dp-screens.png" alt="braveup design system">
   <figcaption>
     [placeholder] UI screens — run summary, build selection, or crew management in the Unity version. Should use the established visual identity and feel like in-universe interfaces, not generic game menus.
   </figcaption>

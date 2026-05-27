@@ -221,7 +221,7 @@ html {
     }
     h1 {
       font-family: Inter;
-      text-shadow: 2px 2px 0px #f95ba7, -2px -2px 0px #06d2ff;
+      // text-shadow: 1px 1px 0px #f95ba7, -1px -1px 0px #06d2ff;
       text-transform: uppercase;
       margin: 0;
       transform: rotate(-2deg);
@@ -348,7 +348,7 @@ html {
 
 /// Posts
 .blog-title {
-  // text-shadow: 2px 2px 0px #f95ba7, -2px -2px 0px #06d2ff;
+  // // text-shadow: 1px 1px 0px #f95ba7, -1px -1px 0px #06d2ff;
   font-family: $font-name;
   margin: 0;
   font-size: 20px;
@@ -929,6 +929,7 @@ header a.home:hover {
 }
 #single-post .entry h2 {
   color: $pink;
+  // text-shadow: 1px 1px 0px #f95ba7, -1px -1px 0px #06d2ff;
 }
 
 #single-post .wrapper {

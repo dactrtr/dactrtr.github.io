@@ -237,6 +237,7 @@ body.portfolio-full #swup {
     font-weight: 700;
     line-height: 1.2;
     margin: 0 0 4px;
+    // text-shadow: 1px 1px 0px #f95ba7, -1px -1px 0px #06d2ff;
 
     @include media-medium {
       font-size: 22px;
@@ -691,6 +692,7 @@ body.portfolio-full {
       letter-spacing: 0;
       text-indent: 0;
       width: 100%;
+      // text-shadow: 1px 1px 0px #f95ba7, -1px -1px 0px #06d2ff;
     }
 
     .portfolio-role,
@@ -757,6 +759,7 @@ body.portfolio-full {
         font-weight: 700;
         margin: 0 0 6px;
         color: $blackestNight;
+        // text-shadow: 1px 1px 0px #f95ba7, -1px -1px 0px #06d2ff;
         grid-column: 2;
         grid-row: 1;
 
@@ -949,8 +952,8 @@ body.portfolio-full {
     line-height: 1.7;
 
     p { margin-bottom: 1.4em; }
-    h2 { color: $blackestNight; font-size: 20px; }
-    h3 { color: $blackestNight; font-size: 15px; }
+    h2 { color: $blackestNight; font-size: 20px; // text-shadow: 1px 1px 0px #f95ba7, -1px -1px 0px #06d2ff; }
+    h3 { color: $blackestNight; font-size: 15px; // text-shadow: 1px 1px 0px #f95ba7, -1px -1px 0px #06d2ff; }
     a { color: $purpleBack; text-decoration: none; }
     a:hover { color: darken($purpleBack, 10%); }
   }
