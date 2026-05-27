@@ -70,20 +70,28 @@ html {
   }
 
   .main-header .float-window {
+    // blog-specific: center the bar horizontally instead of fixed bottom-right
     right: unset;
     left: 50%;
     transform: translateX(-50%);
-    flex-direction: row;
-    width: auto;
-    padding: 8px 16px;
-    align-items: center;
-    gap: 16px;
-
-    .controls { gap: 4px; }
-    .window-title { display: none; }
-    .links { flex-direction: row; gap: 16px; }
   }
 }
+
+/// Shared header float-window horizontal layout
+/// (used by both .landing-dactrtr and .portfolio-landing)
+.landing-dactrtr .main-header .float-window,
+.portfolio-landing .float-window {
+  flex-direction: row;
+  width: auto;
+  padding: 8px 16px;
+  align-items: center;
+  gap: 16px;
+
+  .controls { gap: 4px; }
+  .window-title { display: none; }
+  .links { flex-direction: row; gap: 16px; }
+}
+
 // font color utility
 .blinkypinky {
   color: $blinkyPinky;

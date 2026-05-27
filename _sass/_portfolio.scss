@@ -38,6 +38,7 @@ body.portfolio-full .main-header {
 }
 
 body.portfolio-full .main-header .header-icon {
+  display: block;
   width: 32px;
   height: 32px;
   border-radius: 6px;
@@ -123,19 +124,6 @@ body.portfolio-full #swup {
 
 .portfolio-landing .dots {
   opacity: 0.5;
-}
-
-// fixed-position element — horizontal layout intentional regardless of breakpoint
-.portfolio-landing .float-window {
-  flex-direction: row;
-  width: auto;
-  padding: 8px 16px;
-  align-items: center;
-  gap: 16px;
-
-  .controls { gap: 4px; }
-  .window-title { display: none; }
-  .links { flex-direction: row; gap: 16px; }
 }
 
 // ─── Featured card ────────────────────────────────────────────────────────────
