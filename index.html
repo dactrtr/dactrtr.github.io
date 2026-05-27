@@ -23,7 +23,10 @@ layout: portfolio-default
         <h2 class="featured-title">{{ featured.title }}</h2>
         <p class="featured-role">{{ featured.role }} &middot; {{ featured.place }} &middot; {{ featured.date | date: "%Y" }}</p>
         <p class="featured-challenge">{{ featured.challenge }}</p>
-        <span class="featured-link">view project</span>
+        <span class="featured-link">
+          <span class="btn-mas">view project</span>
+          <span class="btn-inner">view project</span>
+        </span>
       </div>
     </a>
   </div>
@@ -78,7 +81,10 @@ layout: portfolio-default
           {% if project.description and project.description != "" %}
           <p class="list-item-desc">{{ project.description | truncate: 140 }}</p>
           {% endif %}
-          <span class="list-item-link">view project</span>
+          <span class="list-item-link">
+            <span class="btn-mas">view project</span>
+            <span class="btn-inner">view project</span>
+          </span>
         </div>
       </a>
     </article>
