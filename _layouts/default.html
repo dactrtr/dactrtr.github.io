@@ -112,6 +112,19 @@
     <meta property="og:image" content="https://i.imgur.com/dGSE8SA.jpg" />
 
     <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       type="text/css"
       href="{{ site.baseurl }}/style.css"
@@ -125,49 +138,7 @@
   </head>
 
   <body class="landing-dactrtr">
-    <header class="main-header">
-      <div class="header-inner">
-        <div class="logo">
-          <h1>dactrtr</h1>
-          <h2>Sebastian Zúñiga Rivas</h2>
-          <p class="what">... what</p>
-          <p class="mind">Don’t mind just call me Seba</p>
-        </div>
-        <div class="illustration">
-          <img class="illu-me" src="../assets/img.png" alt="ME" />
-          <img
-            class="illu-code"
-            src="../assets/coding.png"
-            alt="some random code"
-          />
-          <div class="float-window">
-            <span class="controls">
-              <span class="red"></span>
-              <span class="yellow"></span>
-              <span class="green"></span>
-            </span>
-            <div class="links">
-              <a href="https://github.com/dactrtr" class="icon-code"></a>
-              <a
-                href="https://www.instagram.com/dactrtr.rocks/"
-                class="icon-ig"
-              ></a>
-              <a href="https://tangara.studio/" class="icon-tangara"></a>
-              <!-- <a href="https://webring.xxiivv.com/#dactrtr.rocks" target="_blank" rel="noopener">
-                <img src="https://webring.xxiivv.com/icon.white.svg" alt="XXIIVV webring"/>
-              </a> -->
-            </div>
-          </div>
-        </div>
-        <p class="who-iam">
-          I’m <span class="blinkypinky">UI Designer</span>,
-          <span class="purpleback">Illustrator</span> and
-          <span class="cyantyrant">Indie Game Developer</span> (HTML/CSS/SwiftUI/Lua) located in Tokyo.
-        </p>
-        
-        <span class="dots"></span>
-      </div>
-    </header>
+    {% include portfolio-header.html %}
     <div id="main" role="main" class="container">{{ content }}</div>
     <footer class="wrapper-footer">
       <div class="container">
