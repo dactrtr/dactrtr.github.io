@@ -68,28 +68,6 @@ html {
   .logo .mind {
     font-family: 'Mochiy Pop One', sans-serif;
   }
-
-  .main-header .float-window {
-    // blog-specific: center the bar horizontally instead of fixed bottom-right
-    right: unset;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-
-/// Shared header float-window horizontal layout
-/// (used by both .landing-dactrtr and .portfolio-landing)
-.landing-dactrtr .main-header .float-window,
-.portfolio-landing .float-window {
-  flex-direction: row;
-  width: auto;
-  padding: 8px 16px;
-  align-items: center;
-  gap: 16px;
-
-  .controls { gap: 4px; }
-  .window-title { display: none; }
-  .links { flex-direction: row; gap: 16px; }
 }
 
 // font color utility
@@ -279,64 +257,46 @@ html {
   }
   .float-window {
     display: flex;
-    width: 56px;
+    width: auto;
     background-color: $blackestNight;
-    flex-direction: column;
+    flex-direction: row;
     gap: 16px;
     border-radius: 4px;
-    padding: 8px 8px 16px 8px;
+    padding: 8px 16px;
     position: fixed;
-    right: 24px;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 24px;
     z-index: 100;
+    align-items: center;
     .controls {
       display: flex;
-      width: 100%;
       gap: 4px;
-
       span {
         display: flex;
         height: 8px;
         width: 8px;
         border-radius: 16px;
-        &.red {
-          background-color: #dd4b4b;
-        }
-        &.yellow {
-          background-color: #fce412;
-        }
-        &.green {
-          background-color: #50f475;
-        }
+        &.red    { background-color: #dd4b4b; }
+        &.yellow { background-color: #fce412; }
+        &.green  { background-color: #50f475; }
       }
     }
+    .window-title { display: none; }
     .links {
-      gap: 32px;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
+      gap: 16px;
       a {
         width: 24px;
         height: 24px;
-        &.icon-code {
-          background-image: url("../assets/icons/Icon-code.svg");
-        }
-        &.icon-ig {
-          background-image: url("../assets/icons/Icon-ig.svg");
-        }
-        &.icon-pizza {
-          background-image: url("../assets/icons/Icon-pizza.svg");
-        }
-        &.icons-linkedin {
-          background-image: url("../assets/icons/Icon-linkedin.svg");
-        }
-        &.icon-tangara {
-          background-image: url("../assets/icons/Icon-tangara.svg");
-        }
-        & img{
-          width: 24px;
-          height: 24px;
-        }
+        &.icon-code      { background-image: url("../assets/icons/Icon-code.svg"); }
+        &.icon-ig        { background-image: url("../assets/icons/Icon-ig.svg"); }
+        &.icon-pizza     { background-image: url("../assets/icons/Icon-pizza.svg"); }
+        &.icons-linkedin { background-image: url("../assets/icons/Icon-linkedin.svg"); }
+        &.icon-tangara   { background-image: url("../assets/icons/Icon-tangara.svg"); }
+        & img { width: 24px; height: 24px; }
       }
     }
   }

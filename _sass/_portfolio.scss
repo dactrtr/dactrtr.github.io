@@ -1094,6 +1094,7 @@ body.portfolio-full {
     display: flex;
     flex-direction: column;
     gap: 2px;
+    width: 100%;
   }
 
   .footer-headline {
@@ -1118,6 +1119,9 @@ body.portfolio-full {
       background-clip: text;
       font-size: 23px;
       text-align: justify;
+      @include media-small{
+        text-align: center;
+      }
     }
   }
 
@@ -1128,7 +1132,7 @@ body.portfolio-full {
     vertical-align: bottom;
     height: 28px;
     @include media-small{
-      height: 46px;
+      height: 60px;
     }
   }
 
