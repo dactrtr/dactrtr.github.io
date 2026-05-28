@@ -73,7 +73,7 @@ body.portfolio-full .main-header {
 
   .logo {
     margin: 0;
-    padding-left: 32px;
+    // padding-left: 32px;
     flex-direction: row;
     align-items: baseline;
     gap: 10px;
@@ -1113,6 +1113,8 @@ body.portfolio-full {
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      font-size: 23px;
+      text-align: justify;
     }
   }
 
@@ -1121,6 +1123,7 @@ body.portfolio-full {
     align-items: center;
     gap: 12px;
     vertical-align: bottom;
+    height: 46px;
   }
 
   .footer-tokyo-name {
@@ -1130,11 +1133,12 @@ body.portfolio-full {
   .footer-tokyo-img {
     display: inline-block;
     width: 96px;
-    height: 54px;
-    background-color: rgba($bonedThrone, 0.1);
+    height: 96px;
+    background: url('/assets/where.png') center/contain no-repeat;
     border-radius: 6px;
     flex-shrink: 0;
     vertical-align: middle;
+    transform: rotate(2deg);
   }
 
   .footer-bottom {
