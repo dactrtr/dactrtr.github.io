@@ -541,7 +541,7 @@ body.portfolio-full #swup {
   padding: 40px 0;
 
   .float-window {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
@@ -549,7 +549,9 @@ body.portfolio-full #swup {
     background-color: $blackestNight;
     border-radius: 8px;
     padding: 12px 20px 16px;
-
+    @include media-small{
+      display: flex;
+    }
     .window-bar {
       display: flex;
       align-items: center;
@@ -1096,7 +1098,7 @@ body.portfolio-full {
 
   .footer-headline {
     font-family: $helveticaNeue;
-    font-size: 56px;
+    font-size: 28px;
     font-weight: 800;
     color: $bonedThrone;
     line-height: 1.1;
@@ -1106,6 +1108,7 @@ body.portfolio-full {
     @include media-small {
       font-size: 40px;
       letter-spacing: -1px;
+      font-size: 56px;
     }
 
     &--available {
@@ -1123,7 +1126,10 @@ body.portfolio-full {
     align-items: center;
     gap: 12px;
     vertical-align: bottom;
-    height: 46px;
+    height: 28px;
+    @include media-small{
+      height: 46px;
+    }
   }
 
   .footer-tokyo-name {
@@ -1132,13 +1138,17 @@ body.portfolio-full {
 
   .footer-tokyo-img {
     display: inline-block;
-    width: 96px;
-    height: 96px;
+    width: 48px;
+    height: 48px;
     background: url('/assets/where.png') center/contain no-repeat;
     border-radius: 6px;
     flex-shrink: 0;
     vertical-align: middle;
     transform: rotate(2deg);
+    @include media-small{
+      width: 96px;
+      height: 96px;
+    }
   }
 
   .footer-bottom {
