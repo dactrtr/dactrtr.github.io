@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>dactrtr — index</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Archivo+Narrow:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --paper:#eceae1;
+  --ink:#181513;
+  --red:#d83a2b;
+  --dim:#74706a;
+  --line:rgba(24,21,19,.16);
+  --sans:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --cond:"Archivo Narrow",sans-serif;
+  --mono:"JetBrains Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+#flow{position:fixed;inset:0;z-index:0;pointer-events:none}
+.wrap{position:relative;z-index:2;max-width:1240px;margin:0 auto;padding:0 36px}
+
+/* masthead nav */
+.mast{border-bottom:1.5px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:40}
+.mast .row{max-width:1240px;margin:0 auto;padding:13px 36px;display:flex;align-items:center;gap:18px}
+.mast .nm{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.mast .nm b{font-weight:500}
+.mast .meta{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.04em}
+.mast nav{margin-left:auto;display:flex;gap:24px}
+.mast nav a{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--ink);position:relative;padding:3px 0}
+.mast nav a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1.5px;background:var(--red);transition:.25s}
+.mast nav a:hover::after{width:100%}
+
+/* hero masthead */
+.hero{padding:54px 0 30px;border-bottom:1.5px solid var(--ink)}
+.kicker{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--dim);text-transform:uppercase;margin-bottom:18px}
+.kicker .r{color:var(--red)}
+.display{font-family:var(--sans);font-weight:800;letter-spacing:-.035em;line-height:.86;font-size:clamp(56px,13.5vw,184px);text-transform:uppercase}
+.display .thin{font-weight:400;font-style:italic;letter-spacing:-.02em;text-transform:none}
+.display em{font-style:normal;color:var(--red)}
+.lead-row{display:grid;grid-template-columns:1.6fr 1fr;gap:40px;margin-top:34px;align-items:end}
+.lead{font-family:var(--sans);font-weight:400;font-size:clamp(18px,2.3vw,26px);line-height:1.3;letter-spacing:-.01em;max-width:18ch;text-wrap:balance}
+.lead b{font-weight:600}
+.facts{font-family:var(--mono);font-size:12px;line-height:1.9;color:var(--ink)}
+.facts div{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:5px 0}
+.facts div span:first-child{color:var(--dim)}
+.facts .ok{color:var(--red)}
+
+/* index list */
+.sec-label{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);display:flex;justify-content:space-between;padding:26px 0 6px}
+.idx{border-top:1.5px solid var(--ink)}
+.irow{display:grid;grid-template-columns:64px 1fr auto;gap:24px;align-items:center;padding:22px 6px;
+  border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);position:relative;cursor:pointer;transition:padding .25s,background .25s}
+.irow:hover{padding-left:20px;background:rgba(24,21,19,.02)}
+.irow .no{font-family:var(--mono);font-size:13px;color:var(--dim)}
+.irow .ttl{font-family:var(--sans);font-weight:700;font-size:clamp(22px,3.4vw,38px);letter-spacing:-.02em;line-height:1;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.irow .ttl .yr{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--dim)}
+.irow:hover .ttl{color:var(--red)}
+.irow .right{text-align:right;font-family:var(--cond);font-weight:600;font-size:15px;text-transform:uppercase;letter-spacing:.02em;color:var(--dim);line-height:1.25}
+.irow .right .pl{display:block;font-family:var(--mono);font-weight:400;font-size:10.5px;letter-spacing:.04em;text-transform:none;margin-top:3px}
+.irow.feat{background:var(--ink);color:var(--paper);margin:0 -6px;padding-left:20px;padding-right:20px}
+.irow.feat:hover{padding-left:30px}
+.irow.feat .no,.irow.feat .right{color:rgba(236,234,225,.6)}
+.irow.feat:hover .ttl{color:var(--paper)}
+.irow.feat .star{color:var(--red)}
+
+/* peek image */
+.peek{position:fixed;z-index:45;width:340px;aspect-ratio:16/10;overflow:hidden;pointer-events:none;opacity:0;
+  transform:translateY(10px);transition:opacity .2s,transform .2s;background:var(--ink);box-shadow:0 30px 70px -25px rgba(0,0,0,.5)}
+.peek.on{opacity:1;transform:translateY(0)}
+.peek img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05)}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:60px;padding:64px 0;border-top:1.5px solid var(--ink);margin-top:48px}
+.about h2{font-family:var(--sans);font-weight:800;font-size:clamp(30px,5vw,58px);letter-spacing:-.03em;line-height:.95;text-transform:uppercase}
+.about h2 em{font-style:italic;font-weight:400;color:var(--red)}
+.about p{font-size:16px;line-height:1.65;margin-bottom:16px;max-width:46ch}
+.about .colhead{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:18px}
+.cta{margin-top:10px;display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;text-decoration:none;color:var(--ink);border-bottom:1.5px solid var(--red);padding-bottom:3px}
+.cta:hover{color:var(--red)}
+.linklist{font-family:var(--mono);font-size:13px}
+.linklist a{display:flex;justify-content:space-between;text-decoration:none;color:var(--ink);padding:11px 0;border-bottom:1px solid var(--line)}
+.linklist a:hover{color:var(--red)}
+.linklist a span:last-child{color:var(--dim)}
+footer{border-top:1.5px solid var(--ink);padding:28px 0 60px;display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:11.5px;color:var(--dim);flex-wrap:wrap;gap:10px}
+footer .jp{font-family:var(--sans);font-size:15px;color:var(--ink)}
+.back{position:fixed;left:20px;bottom:20px;z-index:50;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink);text-decoration:none;border:1.5px solid var(--ink);padding:8px 13px;background:var(--paper)}
+.back:hover{background:var(--ink);color:var(--paper)}
+@media(max-width:860px){.lead-row,.about{grid-template-columns:1fr;gap:26px}.irow{grid-template-columns:40px 1fr}.irow .right{display:none}}
+</style>
+</head>
+<body>
+<canvas id="flow"></canvas>
+
+<header class="mast">
+  <div class="row">
+    <span class="nm"><b>Sebastian Zúñiga</b> — dactrtr</span>
+    <span class="meta">Designer / Developer · Tokyo</span>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <div class="kicker"><span>Portfolio — Selected Work</span><span class="r">Issue 2026</span></div>
+    <h1 class="display">Designer<br><span class="thin">who&nbsp;</span><em>codes</em></h1>
+    <div class="lead-row">
+      <p class="lead">I design the interaction, then <b>build it in real code</b> — from 1-bit Playdate games to D3 dashboards, SwiftUI tools and design systems.</p>
+      <div class="facts">
+        <div><span>Discipline</span><span>UI/UX · Frontend · Games</span></div>
+        <div><span>Stack</span><span>SwiftUI · Lua · CSS · D3</span></div>
+        <div><span>Based</span><span>Tokyo, JP</span></div>
+        <div><span>Status</span><span class="ok">● Open to work</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="sec-label"><span>§ Index of Work</span><span id="cnt"></span></div>
+    <div class="idx" id="idx"></div>
+  </section>
+
+  <section id="about" class="about">
+    <div>
+      <h2>Built at the seam of <em>design</em> &amp; engineering.</h2>
+    </div>
+    <div>
+      <div class="colhead">/ About</div>
+      <p>Ten years across visual design, UI/UX and frontend, working with distributed teams from Santiago to Tokyo, Spain and the United States. I tend to live where design meets engineering — prototyping in real code, bridging handoff between teams, and owning the interaction rather than stopping at the mockup.</p>
+      <p>Lately that means <b>Dinopirates from Inner Space</b>: a game universe spanning a hand-built 1-bit Playdate title and a Unity roguelike, demoed at BitSummit 2025. Constraints make interactions sharper.</p>
+      <a class="cta" href="#contact">Get in touch →</a>
+    </div>
+  </section>
+
+  <section id="contact" class="about" style="border-top:none;padding-top:0;margin-top:0">
+    <div><div class="colhead">/ Contact</div><h2 style="font-size:clamp(26px,4vw,44px)">Let's build<br>something <em>weird</em>.</h2></div>
+    <div>
+      <div class="colhead">/ Channels</div>
+      <div class="linklist">
+        <a href="mailto:hi@dactrtr.com"><span>Email</span><span>hi@dactrtr.com ↗</span></a>
+        <a href="#"><span>itch.io</span><span>dactrtr.itch.io ↗</span></a>
+        <a href="#"><span>GitHub</span><span>@dactrtr ↗</span></a>
+        <a href="#"><span>Résumé</span><span>CV.pdf ↓</span></a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="wrap" style="z-index:2">
+  <span class="jp">さばと申します</span>
+  <span>© 2026 Sebastian Zúñiga Rivas — designed &amp; coded in Tokyo</span>
+  <span>dactrtr</span>
+</footer>
+
+<a class="back" href="index.html">← Directions</a>
+<div class="peek" id="peek"><img id="peekimg" alt="" /></div>
+<script src="editorial.js"></script>
+</body>
+</html>

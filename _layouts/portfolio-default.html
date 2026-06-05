@@ -139,9 +139,12 @@
   </head>
 
   <body class="portfolio-landing">
+    <canvas id="field" aria-hidden="true"></canvas>
     {% include portfolio-header.html %}
     <div id="swup" role="main" class="container transition-main">{{ content }}{% include portfolio-footer.html %}</div>
     {% include analytics.html %}
+    <script src="{{ '/assets/js/dot-field.js' | relative_url }}" defer></script>
+    <script src="{{ '/assets/js/whoami.js' | relative_url }}" defer></script>
     <script src="https://unpkg.com/swup@4"></script>
     <script src="https://unpkg.com/@swup/body-class-plugin@3"></script>
     <script>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="midnight" data-atmosphere="live" data-layout="balanced">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>dactrtr — Sebastian Zúñiga</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#0d0b0f;
+  --panel:#141118;
+  --panel2:#1b1722;
+  --ink:#f4f1ea;
+  --dim:#8a8290;
+  --line:rgba(244,241,234,.10);
+  --cyan:#06d2ff;
+  --pink:#f95ba7;
+  --purple:#8b7be8;
+  --green:#7ee787;
+  --amber:#ffcd6b;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sans:"Inter",Helvetica,Arial,sans-serif;
+  /* dot-field colour stops (ambient → near cursor) */
+  --dot-base:"138,130,144";
+  --dot-near:"6,210,255";
+  --dot-mid:"139,123,232";
+  --dot-far:"249,91,167";
+}
+/* ── THEMES: each one reshapes the whole palette + texture ── */
+html[data-theme="phosphor"]{
+  --bg:#04130b;--panel:#07291a;--panel2:#0a3322;--ink:#c9ffd8;--dim:#5fae84;
+  --line:rgba(180,255,210,.13);
+  --cyan:#7ee787;--pink:#ffd166;--purple:#4fd6a0;--green:#7ee787;--amber:#ffd166;
+  --dot-base:"70,140,95";--dot-near:"126,231,135";--dot-mid:"120,210,140";--dot-far:"255,209,102";
+}
+html[data-theme="paper"]{
+  --bg:#f1efe6;--panel:#ffffff;--panel2:#f8f6ef;--ink:#1c1820;--dim:#6f6873;
+  --line:rgba(28,24,32,.15);
+  --cyan:#0a86ac;--pink:#d8417e;--purple:#6a4fd0;--green:#1f8a5b;--amber:#b9791f;
+  --dot-base:"120,112,126";--dot-near:"10,134,172";--dot-mid:"106,79,208";--dot-far:"216,65,126";
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--mono);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.bg{position:fixed;inset:0;z-index:-1;background:var(--bg)}
+#field{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.6}
+.scanlines{position:fixed;inset:0;z-index:1;pointer-events:none;background:repeating-linear-gradient(to bottom,rgba(255,255,255,.018) 0 1px,transparent 1px 3px);mix-blend-mode:overlay;transition:opacity .3s}
+/* ── ATMOSPHERE: texture intensity ── */
+html[data-atmosphere="calm"] .scanlines{display:none}
+html[data-atmosphere="hyper"] .scanlines{background:repeating-linear-gradient(to bottom,rgba(255,255,255,.05) 0 1px,transparent 1px 3px)}
+html[data-atmosphere="calm"] #field{opacity:.42}
+html[data-atmosphere="hyper"] #field{opacity:.85}
+html[data-theme="paper"] .scanlines{display:none}
+html[data-theme="paper"] #field{opacity:.9}
+.wrap{position:relative;z-index:2;max-width:1140px;margin:0 auto;padding:0 28px;color:var(--ink)}
+
+/* top bar */
+.topbar{position:sticky;top:0;z-index:30;backdrop-filter:blur(8px);background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid var(--line)}
+.topbar .row{max-width:1140px;margin:0 auto;padding:13px 28px;display:flex;align-items:center;gap:14px}
+.dot{width:11px;height:11px;border-radius:50%;flex:none}
+.dots{display:flex;gap:7px;margin-right:6px}
+.tb-title{font-size:12.5px;color:var(--dim);letter-spacing:.04em}
+.tb-title b{color:var(--ink);font-weight:500}
+.tb-title .mind{font-family:var(--sans);color:var(--purple);font-size:11px;margin-left:6px}
+.tb-nav{margin-left:auto;display:flex;gap:4px}
+.tb-nav a{font-size:12px;color:var(--dim);text-decoration:none;padding:6px 11px;border-radius:7px;letter-spacing:.02em;transition:.15s}
+.tb-nav a:hover{color:var(--ink);background:rgba(255,255,255,.05)}
+.tb-nav a .pre{color:var(--cyan)}
+
+/* hero */
+.hero{padding:52px 0 26px}
+.hero-grid{display:grid;grid-template-columns:1.4fr .92fr;gap:34px;align-items:start}
+.term{background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:0 40px 100px -40px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.02) inset;overflow:hidden}
+.term-head{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.015)}
+.term-head .nm{margin-left:8px;font-size:12px;color:var(--dim)}
+.term-body{padding:28px 28px 30px;font-size:15.5px;line-height:1.95;min-height:430px;color:var(--ink)}
+.ln{white-space:pre-wrap;word-break:break-word}
+.muted{color:var(--dim)}
+.cy{color:var(--cyan)}.pk{color:var(--pink)}.pu{color:var(--purple)}.gn{color:var(--green)}.am{color:var(--amber)}
+.prompt .u{color:var(--green)}.prompt .at{color:var(--dim)}.prompt .h{color:var(--cyan)}.prompt .p{color:var(--purple)}
+.cursor{display:inline-block;width:9px;height:1.05em;background:var(--cyan);vertical-align:-2px;margin-left:2px;animation:bl 1.05s steps(1) infinite}
+.tokyo-tag{display:inline-flex;align-items:center;gap:7px;vertical-align:middle}
+.tokyo-img-inline{width:34px;height:34px;border-radius:7px;object-fit:cover;transform:rotate(2deg);box-shadow:0 5px 14px -6px rgba(0,0,0,.5);flex-shrink:0}
+@keyframes bl{50%{opacity:0}}
+.big{font-family:var(--sans);font-weight:800;letter-spacing:-.02em;line-height:1.02}
+.name-xl{font-size:clamp(34px,5vw,58px);margin:6px 0 2px}
+.role-xl{font-size:clamp(15px,1.85vw,19px);color:color-mix(in srgb,var(--ink) 82%,transparent);font-family:var(--mono);font-weight:400;line-height:1.55}
+.role-xl .hl{color:var(--ink);font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{font-size:11.5px;color:var(--dim);border:1px solid var(--line);padding:5px 11px;border-radius:20px;letter-spacing:.02em}
+.chip b{color:var(--ink);font-weight:500}
+.run{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.cmd{font-family:var(--mono);font-size:12.5px;color:var(--ink);background:rgba(255,255,255,.04);border:1px solid var(--line);padding:9px 14px;border-radius:9px;cursor:pointer;transition:.15s;letter-spacing:.01em;text-decoration:none}
+.cmd:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(6,210,255,.06)}
+.cmd .pre{color:var(--pink)}
+
+/* portrait column */
+.portrait-col{display:flex;flex-direction:column;gap:18px;position:relative;padding-top:6px}
+.portrait{position:relative}
+.portrait img{display:block;width:100%;max-width:340px;margin:0 auto;filter:drop-shadow(0 24px 50px rgba(0,0,0,.55))}
+.portrait .ruby{position:absolute;right:6px;top:4px;text-align:right;font-family:var(--sans);font-size:13px;color:var(--ink);background:color-mix(in srgb,var(--bg) 62%,transparent);backdrop-filter:blur(4px);padding:4px 9px;border-radius:8px;border:1px solid var(--line)}
+.portrait .ruby rt{font-size:8px;color:var(--purple)}
+/* float window (echo of existing site) */
+.float-window{background:var(--panel2);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 20px 50px -28px rgba(0,0,0,.8)}
+.window-bar{display:flex;align-items:center;gap:8px;padding:9px 13px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.02)}
+.window-bar .ttl{margin-left:6px;font-size:11.5px;color:var(--dim)}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+.links a{display:flex;align-items:center;gap:9px;padding:13px 14px;background:var(--panel2);text-decoration:none;color:var(--ink);font-size:12.5px;transition:.14s}
+.links a:hover{background:rgba(6,210,255,.08);color:var(--cyan)}
+.links a .ic{width:16px;height:16px;display:inline-flex;align-items:center;justify-content:center;color:var(--pink);flex:none}
+.links a .ic svg{width:100%;height:100%;display:block}
+.links a:hover .ic{color:var(--cyan)}
+.links a .ar{margin-left:auto;color:var(--dim);font-size:11px}
+
+/* sections */
+.sec{padding:54px 0 10px}
+.sec-h{display:flex;align-items:baseline;gap:14px;margin-bottom:26px}
+.sec-h .hash{color:var(--pink);font-size:13px}
+.sec-h h2{font-family:var(--sans);font-weight:800;font-size:clamp(22px,3.4vw,32px);letter-spacing:-.01em}
+.sec-h .n{margin-left:auto;color:var(--dim);font-size:12px}
+
+/* featured card */
+.feat-card{display:grid;grid-template-columns:1.15fr 1fr;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);
+  margin-bottom:26px;text-decoration:none;color:var(--ink);position:relative;transition:.2s;box-shadow:0 30px 70px -45px rgba(0,0,0,.9)}
+.feat-card:hover{border-color:rgba(249,91,167,.4);transform:translateY(-2px)}
+.feat-card .shot{position:relative;min-height:300px;background:#000;overflow:hidden}
+.feat-card .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.feat-card .tagf{position:absolute;top:14px;left:14px;z-index:2;font-size:10px;letter-spacing:.14em;color:var(--bg);background:var(--pink);padding:4px 10px;border-radius:20px;font-weight:700}
+.feat-card .meta{padding:26px 28px;display:flex;flex-direction:column}
+.feat-card .meta .ec{font-size:11.5px;color:var(--dim);margin-bottom:9px}
+.feat-card .meta .ec .pre{color:var(--green)}
+.feat-card .meta h3{font-family:var(--sans);font-weight:800;font-size:clamp(22px,2.6vw,30px);line-height:1.02;letter-spacing:-.02em;margin-bottom:12px}
+.feat-card .meta p{font-size:13px;line-height:1.6;color:color-mix(in srgb,var(--ink) 78%,transparent);margin-bottom:16px}
+.feat-card .tg{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto}
+.feat-card .tg span{font-size:10.5px;color:var(--cyan);border:1px solid rgba(6,210,255,.25);padding:3px 9px;border-radius:6px}
+.feat-card .go{margin-top:16px;font-size:12.5px;color:var(--pink)}
+
+/* project list */
+.plist{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.prow{display:grid;grid-template-columns:54px 1.5fr 1.1fr auto;gap:20px;align-items:center;padding:20px 12px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);position:relative;transition:.18s;cursor:pointer;background:rgba(255,255,255,.03)}
+.prow:hover{background:rgba(255,255,255,.09);padding-left:22px}
+.prow .idx{color:var(--dim);font-size:12px}
+.prow .nm{font-family:var(--sans);font-weight:700;font-size:18px;letter-spacing:-.01em}
+.prow .nm .yr{color:var(--dim);font-weight:400;font-size:12px;margin-left:9px;font-family:var(--mono)}
+.prow .rl{color:var(--dim);font-size:13px;line-height:1.4}
+.prow .tg{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.prow .tg span{font-size:10.5px;color:var(--cyan);border:1px solid rgba(6,210,255,.25);padding:3px 8px;border-radius:6px;white-space:nowrap;background:rgba(255,255,255,.05);transition:background .18s}
+.prow:hover .tg span{background:rgba(255,255,255,.12)}
+.prow .arr{position:absolute;right:12px;opacity:0;color:var(--cyan);transition:.18s;font-size:15px}
+.prow:hover .arr{opacity:1;right:6px}
+
+.peek{position:fixed;z-index:40;width:280px;border-radius:10px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 60px -20px rgba(0,0,0,.8);pointer-events:none;opacity:0;transform:translateY(8px) scale(.97);transition:opacity .18s,transform .18s;background:var(--panel)}
+.peek.on{opacity:1;transform:translateY(0) scale(1)}
+.peek img{display:block;width:100%}
+
+/* about / contact */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:start;padding:10px 0 30px}
+.about p{font-family:var(--sans);font-size:16px;line-height:1.7;color:color-mix(in srgb,var(--ink) 85%,transparent);margin-bottom:16px}
+.about .lead{font-size:19px;color:var(--ink)}
+.about .lead .pk{color:var(--pink)}.about .lead .pu{color:var(--purple)}.about .lead .cy{color:var(--cyan)}
+.kv{border-top:1px solid var(--line)}
+.kv div{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px}
+.kv div .k{color:var(--dim)}
+.kv div .v{color:var(--ink);text-align:right}
+.kv div .v a{color:var(--cyan);text-decoration:none}
+.kv div .v a:hover{text-decoration:underline}
+footer{padding:56px 0 50px;text-align:center;color:var(--dim);font-size:12px;line-height:2}
+footer .big-jp{font-family:var(--sans);font-size:14px;color:var(--ink)}
+.back{position:fixed;left:20px;bottom:20px;z-index:50;font-size:11.5px;color:var(--dim);text-decoration:none;border:1px solid var(--line);padding:8px 13px;border-radius:8px;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(6px);transition:.15s}
+.back:hover{color:var(--cyan);border-color:var(--cyan)}
+/* ── COMPOSITION: which element dominates the hero (desktop only) ── */
+@media(min-width:881px){
+  html[data-layout="terminal"] .hero-grid{grid-template-columns:1.85fr .5fr}
+  html[data-layout="terminal"] .portrait img{max-width:200px}
+  html[data-layout="terminal"] .portrait .ruby{font-size:11px}
+  html[data-layout="portrait"] .hero-grid{grid-template-columns:.92fr 1.08fr;align-items:center}
+  html[data-layout="portrait"] .portrait img{max-width:none}
+  html[data-layout="portrait"] .term-body{min-height:340px}
+}
+@media(max-width:880px){
+  .hero-grid{grid-template-columns:1fr!important;gap:24px}
+  .portrait-col{flex-direction:row;gap:16px;align-items:stretch}
+  .portrait{flex:0 0 44%}
+  .portrait img{max-width:none!important}
+  .float-window{flex:1;align-self:flex-start}
+  .links{grid-template-columns:1fr}
+  .feat-card{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .prow{grid-template-columns:30px 1fr;gap:8px}
+  .prow .rl,.prow .tg{display:none}
+  .about{grid-template-columns:1fr;gap:24px}
+  .term-body{padding:22px}
+  .portrait-col{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"></div>
+<canvas id="field"></canvas>
+<div class="scanlines"></div>
+
+<div class="topbar">
+  <div class="row">
+    <div class="dots"><span class="dot" style="background:#f95ba7"></span><span class="dot" style="background:#ffcd6b"></span><span class="dot" style="background:#7ee787"></span></div>
+    <span class="tb-title">dactrtr@tokyo: <b>~/portfolio</b><span class="mind">さば</span></span>
+    <nav class="tb-nav">
+      <a href="#work"><span class="pre">cd </span>work</a>
+      <a href="#about"><span class="pre">cat </span>about</a>
+      <a href="#contact"><span class="pre">./</span>contact</a>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="term">
+        <div class="term-head">
+          <div class="dots"><span class="dot" style="background:#f95ba7"></span><span class="dot" style="background:#ffcd6b"></span><span class="dot" style="background:#7ee787"></span></div>
+          <span class="nm">— zsh — dactrtr — 80×30</span>
+        </div>
+        <div class="term-body" id="termbody"></div>
+      </div>
+
+      <div class="portrait-col">
+        <div class="portrait">
+          <img src="../assets/img.png" alt="Sebastian Zúñiga — illustrated self-portrait" />
+          <span class="ruby"><ruby>さば<rt>saba</rt></ruby>と申します</span>
+        </div>
+        <div class="float-window">
+          <div class="window-bar">
+            <div class="dots"><span class="dot" style="width:9px;height:9px;background:#f95ba7"></span><span class="dot" style="width:9px;height:9px;background:#ffcd6b"></span><span class="dot" style="width:9px;height:9px;background:#7ee787"></span></div>
+            <span class="ttl">dactrtr.rocks</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/dactrtr"><span class="ic"><svg viewBox="0 0 25 25" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.18803 19.4797C9.57856 19.8702 10.2117 19.8702 10.6022 19.4797C10.9928 19.0892 10.9928 18.456 10.6022 18.0655L5.30935 12.7726L10.6022 7.47969C10.9928 7.08917 10.9928 6.456 10.6022 6.06548C10.2117 5.67495 9.57856 5.67495 9.18803 6.06548L3.18803 12.0655C2.79751 12.456 2.79751 13.0892 3.18803 13.4797L9.18803 19.4797ZM16.6022 6.06548C16.2117 5.67495 15.5786 5.67495 15.188 6.06548C14.7975 6.456 14.7975 7.08917 15.188 7.47969L20.4809 12.7726L15.188 18.0655C14.7975 18.456 14.7975 19.0892 15.188 19.4797C15.5786 19.8702 16.2117 19.8702 16.6022 19.4797L22.6022 13.4797C22.9928 13.0892 22.9928 12.456 22.6022 12.0655L16.6022 6.06548Z" fill="currentColor"/></svg></span>GitHub<span class="ar">↗</span></a>
+            <a href="https://www.linkedin.com/in/dactrtr/"><span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19.7778 2C20.3671 2 20.9324 2.23413 21.3491 2.65087C21.7659 3.06762 22 3.63285 22 4.22222V19.7778C22 20.3671 21.7659 20.9324 21.3491 21.3491C20.9324 21.7659 20.3671 22 19.7778 22H4.22222C3.63285 22 3.06762 21.7659 2.65087 21.3491C2.23413 20.9324 2 20.3671 2 19.7778V4.22222C2 3.63285 2.23413 3.06762 2.65087 2.65087C3.06762 2.23413 3.63285 2 4.22222 2H19.7778ZM19.2222 19.2222V13.3333C19.2222 12.3727 18.8406 11.4513 18.1613 10.772C17.482 10.0927 16.5607 9.71111 15.6 9.71111C14.6556 9.71111 13.5556 10.2889 13.0222 11.1556V9.92222H9.92222V19.2222H13.0222V13.7444C13.0222 12.8889 13.7111 12.1889 14.5667 12.1889C14.9792 12.1889 15.3749 12.3528 15.6666 12.6445C15.9583 12.9362 16.1222 13.3319 16.1222 13.7444V19.2222H19.2222ZM6.31111 8.17778C6.80618 8.17778 7.28098 7.98111 7.63104 7.63104C7.98111 7.28098 8.17778 6.80618 8.17778 6.31111C8.17778 5.27778 7.34444 4.43333 6.31111 4.43333C5.81309 4.43333 5.33547 4.63117 4.98332 4.98332C4.63117 5.33547 4.43333 5.81309 4.43333 6.31111C4.43333 7.34444 5.27778 8.17778 6.31111 8.17778ZM7.85556 19.2222V9.92222H4.77778V19.2222H7.85556Z" fill="currentColor"/></svg></span>LinkedIn<span class="ar">↗</span></a>
+            <a href="/blog/"><span class="ic"><svg viewBox="0 0 25 25" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.152 3.83179C11.9166 2.47249 13.8737 2.47249 14.6383 3.83179L18.4273 10.5678L20.7665 14.7819L22.2364 17.3542C22.4419 17.7137 22.6489 18.1729 22.721 18.6743C22.7958 19.1949 22.7281 19.8072 22.3166 20.3499C21.5149 21.4072 19.9587 22.2444 18.3289 22.8137C16.6527 23.3992 14.6936 23.7726 12.8952 23.7726C11.0926 23.7726 9.12857 23.3975 7.44968 22.8096C5.81818 22.2382 4.25901 21.3974 3.46193 20.3342C3.0578 19.7952 2.99158 19.1894 3.06455 18.6749C3.13487 18.1789 3.33725 17.7247 3.5373 17.3691L11.152 3.83179ZM16.68 11.5409L12.8952 4.81232L10.4832 9.10022C11.9023 9.71473 12.8952 11.1277 12.8952 12.7726C12.8952 14.9817 11.1043 16.7726 8.89517 16.7726C8.03287 16.7726 7.23454 16.4994 6.58186 16.036L5.28045 18.3496C5.1437 18.5927 5.06664 18.8012 5.04474 18.9557C5.02608 19.0872 5.05244 19.1218 5.06134 19.1334L5.06216 19.1345C5.48914 19.7041 6.56995 20.3824 8.11071 20.922C9.60407 21.4449 11.3446 21.7726 12.8952 21.7726C14.4421 21.7726 16.1782 21.4465 17.6693 20.9256C19.2069 20.3884 20.2903 19.7121 20.7229 19.1416L20.7237 19.1405C20.7336 19.1276 20.7605 19.0925 20.7414 18.959C20.7188 18.8025 20.6398 18.5913 20.4999 18.3464L20.3878 18.1502C19.8226 18.5421 19.1357 18.7726 18.3952 18.7726C16.4622 18.7726 14.8952 17.2056 14.8952 15.2726C14.8952 13.8451 15.7497 12.6172 16.9752 12.0726L16.68 11.5409ZM17.9552 13.8381C17.3415 14.0262 16.8952 14.5973 16.8952 15.2726C16.8952 16.101 17.5667 16.7726 18.3952 16.7726C18.7749 16.7726 19.1217 16.6321 19.3867 16.3983L19.0208 15.758L17.9552 13.8381ZM9.49164 10.863C10.3049 11.1168 10.8952 11.8758 10.8952 12.7726C10.8952 13.8772 9.99974 14.7726 8.89517 14.7726C8.38892 14.7726 7.92627 14.5849 7.57321 14.2736L9.49164 10.863Z" fill="currentColor"/><path d="M6.89517 7.77258C6.74573 7.17883 5.99852 5.10069 5.10186 5.99132C4.50307 6.58609 5.30962 6.98022 6.1903 7.41056C6.42862 7.52702 6.67237 7.64613 6.89517 7.77258Z" fill="currentColor"/><path d="M20.6885 5.99132C19.7918 5.10069 19.0446 7.17883 18.8952 7.77258C19.118 7.64613 19.3617 7.52702 19.6 7.41056C20.4807 6.98022 21.2873 6.58609 20.6885 5.99132Z" fill="currentColor"/></svg></span>Blog<span class="ar">↗</span></a>
+            <a href="https://tangara.studio/"><span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.28745 18.5722C3.40551 18.4756 3.5795 18.4934 3.67612 18.6113L3.74937 18.7011L3.83921 18.6279C3.95734 18.5313 4.13123 18.5485 4.22788 18.6669C4.3245 18.7851 4.30695 18.9587 4.18882 19.0556L4.09995 19.1288L4.17319 19.2187C4.26972 19.3368 4.2522 19.5118 4.13413 19.6083C4.016 19.705 3.84106 19.6874 3.74448 19.5693L3.67222 19.4794L3.58237 19.5527C3.46431 19.6492 3.29035 19.6319 3.1937 19.5136C3.09706 19.3954 3.11368 19.2208 3.23179 19.1239L3.32163 19.0517L3.24839 18.9618C3.15174 18.8437 3.16934 18.6688 3.28745 18.5722Z" fill="currentColor"/><path d="M6.20444 16.4687C6.43914 16.4688 6.62915 16.6596 6.62925 16.8945C6.62925 17.1294 6.4392 17.3201 6.20444 17.3202C5.96958 17.3202 5.77866 17.1294 5.77866 16.8945C5.77876 16.6596 5.96964 16.4687 6.20444 16.4687Z" fill="currentColor"/><path d="M9.76792 10.7743C10.0028 10.7743 10.1937 10.9651 10.1937 11.2001C10.1935 11.4349 10.0026 11.6259 9.76792 11.6259C9.53321 11.6259 9.34233 11.4349 9.34214 11.2001C9.34214 10.9651 9.53309 10.7743 9.76792 10.7743Z" fill="currentColor"/><path d="M14.4349 9.39055C14.6771 9.39055 14.8742 9.58671 14.8744 9.82903C14.8744 10.0715 14.6772 10.2685 14.4349 10.2685C14.1928 10.2682 13.9964 10.0713 13.9964 9.82903C13.9966 9.58685 14.1929 9.39079 14.4349 9.39055Z" fill="currentColor"/><path d="M8.598 6.64934C8.83272 6.64947 9.0228 6.84022 9.0228 7.07512C9.02273 7.30995 8.83267 7.50077 8.598 7.5009C8.36321 7.5009 8.1723 7.31004 8.17222 7.07512C8.17222 6.84014 8.36317 6.64934 8.598 6.64934Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M5.56577 4.8134L7.24155 5.39836C7.25343 5.38881 8.08313 4.72643 9.63511 4.83977C10.1618 4.87839 11.7981 5.1206 12.4808 6.48918C13.5583 6.22234 14.3581 6.27045 15.4593 6.96868C16.5127 7.63663 16.8685 8.6718 16.8685 8.6718L18.2513 8.51164C18.2513 8.51164 18.9965 8.35964 18.3314 9.31047C18.2231 9.46516 17.9376 9.74057 17.932 9.74602L17.0814 10.6142L17.0121 11.2011L20.6185 10.7743C20.6185 10.7743 21.0432 10.6954 20.9642 11.2109C20.5181 14.1212 17.8792 16.0966 17.8792 16.0966L21.4964 16.2031C21.5031 16.2032 21.7585 16.2099 21.7357 16.4423C21.7101 16.7028 21.3363 16.9482 21.3363 16.9482L20.0335 17.8261C20.0335 17.8261 20.4258 18.049 20.6205 18.1113C20.9203 18.2072 21.2307 18.3553 21.1507 18.4111C21.0672 18.4683 20.1222 18.828 19.7572 18.9111C18.0641 19.2961 15.4857 19.6093 15.4857 19.6093L15.5658 23.8134C15.5658 23.8134 15.5376 24.0029 15.0599 23.9999C14.5864 23.9969 14.5814 23.7694 14.5814 23.7607C14.5814 23.7607 14.5347 19.7702 14.5287 19.7421C11.7945 19.7623 10.4173 18.844 10.4066 18.8368L7.72007 20.8593C7.69367 20.8353 5.6035 18.936 5.59214 18.9169C5.50092 20.9734 3.47028 21.2084 2.61362 20.3544C1.47672 19.221 2.26792 18.1718 2.26792 18.1718C2.26792 18.1718 4.61613 16.0674 5.16734 15.5907C5.71853 15.1143 6.65028 15.2628 7.26792 15.9364C7.6699 16.3747 8.10945 17.5964 7.56675 18.1454C6.963 18.7562 6.09024 18.5149 6.07163 18.5097L7.69956 19.955C7.69956 19.955 9.5151 18.3615 9.52866 18.3583C7.0009 16.8962 6.79059 12.5288 6.78941 12.5038C6.78941 12.5038 5.44469 11.4297 5.16734 11.0136C4.89032 10.5977 5.38023 10.5614 5.38023 10.5614H6.60288L6.47007 6.94231C6.47007 6.94231 5.48853 5.52186 5.30015 5.18547C5.0295 4.70217 5.55889 4.81196 5.56577 4.8134ZM6.86948 16.2822C6.23735 15.6837 5.77866 15.9101 5.77866 15.9101L2.6937 18.5097C2.6937 18.5097 2.45474 19.1449 2.95933 19.7948C3.36344 20.3151 4.18073 20.3005 4.45054 20.1142C5.14247 19.6358 5.03603 18.7905 5.03355 18.7714L5.77866 18.0654C5.77866 18.0654 6.49226 18.3421 7.0023 17.9062C7.41691 17.5517 7.37622 16.762 6.86948 16.2822ZM7.74644 13.1337C7.74644 13.1337 7.7565 13.1414 7.77378 13.1552C7.77724 13.4201 7.86339 16.0222 9.90073 17.6659C12.4307 19.4268 14.7679 19.0907 14.7679 19.0907C14.7679 19.0907 13.253 18.2163 12.5062 16.5683C11.6808 14.7463 11.9486 13.1952 11.9486 13.1952C11.9486 13.1952 11.2257 13.8395 9.82066 13.8339C8.68347 13.8292 7.92308 13.2737 7.77378 13.1552C7.77362 13.1426 7.77378 13.1337 7.77378 13.1337H7.74644ZM9.97105 9.28801C9.6451 9.28801 9.32959 9.33877 9.05015 9.44328C7.17894 10.1432 7.60673 12.2046 7.61362 12.2372L7.6273 12.248C9.97699 14.0586 11.8959 12.5302 11.8959 12.5302C11.8083 11.4666 12.2347 10.2613 12.2416 10.2421C11.7079 9.62453 10.8141 9.29182 9.98472 9.28801H9.97105ZM15.6986 8.45891C14.1468 7.33165 12.9217 8.38412 12.4759 8.8759C13.5666 9.58209 13.6495 11.567 13.6507 11.5986L16.4515 11.2675C16.5829 10.7105 16.795 9.2554 15.6986 8.45891ZM7.16148 10.5341C7.16495 10.5186 7.29567 9.94729 7.6937 9.52336C7.43235 9.54598 7.13511 9.25676 7.13511 9.25676L7.16148 10.5341ZM10.3265 5.93059C9.15898 5.22767 8.01586 5.7075 7.56089 6.27629C7.03394 6.93573 7.01027 8.07861 7.26792 8.53899C7.432 8.83177 7.83122 8.97131 8.17124 9.03703C8.89455 8.41812 9.71669 8.22715 10.5628 8.30266C10.7801 7.76485 11.1945 6.45325 10.3265 5.93059Z" fill="currentColor"/><path d="M19.4222 4.57414C19.6187 4.43962 19.7374 4.49587 19.9046 4.6845C20.0718 4.87313 20.1478 5.11222 19.8207 5.26653C18.9058 5.85118 18.6384 6.16674 18.2171 6.38176C17.7957 6.59697 17.8077 6.27941 17.7064 6.21868C17.6051 6.15801 17.0035 5.87249 17.6507 5.57903C18.2983 5.2855 19.4222 4.57414 19.4222 4.57414Z" fill="currentColor"/><path d="M15.1429 1.32512C15.1429 1.32512 15.4676 1.03994 15.6224 1.11809C15.7768 1.19652 15.7819 1.45256 15.6419 1.64641C15.5021 1.84029 14.797 3.2722 14.723 3.42668C14.6493 3.58076 14.5421 4.09385 13.9222 4.08586C13.3137 4.07816 13.6191 3.59063 13.6302 3.57317C13.6302 3.57317 14.0636 2.87931 14.4535 2.09172C14.8434 1.30397 15.1429 1.32512 15.1429 1.32512Z" fill="currentColor"/><path d="M8.62339 0.151293C8.89438 -0.192493 9.17458 0.156177 9.18003 0.163012C9.15214 0.905097 9.5804 2.8049 9.62241 2.97356C9.66417 3.14095 9.03798 3.43724 8.91538 3.21184C8.62028 2.3152 8.50668 1.07852 8.47398 0.767504C8.4424 0.463996 8.60122 0.447769 8.60874 0.447192C8.60875 0.435444 8.60937 0.169502 8.62339 0.151293Z" fill="currentColor"/></svg></span>Tangara<span class="ar">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="sec" id="work">
+    <div class="sec-h"><span class="hash">~/work $</span><h2>Selected work</h2><span class="n" id="projcount"></span></div>
+    <a class="feat-card" id="featcard" href="#"></a>
+    <div class="plist" id="plist"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="sec" id="about">
+    <div class="sec-h"><span class="hash">$ cat</span><h2>about.md</h2></div>
+    <div class="about">
+      <div>
+        <p class="lead">I'm a <span class="pk">UI Designer</span>, <span class="pu">Illustrator</span> &amp; <span class="cy">Indie Game Developer</span> who codes the things I design — from 1-bit Playdate games in Lua to D3 dashboards, SwiftUI tools and design systems.</p>
+        <p>Ten years across visual design, UI/UX and frontend, working with distributed teams from Santiago to Tokyo, Spain and the US. I tend to live where design meets engineering: prototyping in real code, bridging handoff, and shipping the interaction — not just the mockup.</p>
+        <p>Lately that means building <span class="pk">Dinopirates from Inner Space</span> — a game universe spanning a hand-built Playdate title and a Unity roguelike — and obsessing over how constraints make interactions better.</p>
+      </div>
+      <div class="kv">
+        <div><span class="k">based in</span><span class="v">Tokyo, JP 🗼</span></div>
+        <div><span class="k">role</span><span class="v">Designer · Dev</span></div>
+        <div><span class="k">stack</span><span class="v">SwiftUI · Lua · CSS · D3</span></div>
+        <div><span class="k">tools</span><span class="v">Figma · Unity · Playdate</span></div>
+        <div><span class="k">langs</span><span class="v">ES · EN · 日本語</span></div>
+        <div><span class="k">status</span><span class="v gn">● open to work</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="sec" id="contact">
+    <div class="sec-h"><span class="hash">$ ./</span><h2>contact</h2></div>
+    <div class="about">
+      <div>
+        <p class="lead">Got an interaction worth building? <a href="mailto:hi@dactrtr.com" style="color:var(--cyan);text-decoration:none">hi@dactrtr.com →</a></p>
+      </div>
+      <div class="kv">
+        <div><span class="k">github</span><span class="v"><a href="https://github.com/dactrtr">@dactrtr ↗</a></span></div>
+        <div><span class="k">linkedin</span><span class="v"><a href="https://www.linkedin.com/in/dactrtr/">in/dactrtr ↗</a></span></div>
+        <div><span class="k">studio</span><span class="v"><a href="https://tangara.studio/">tangara.studio ↗</a></span></div>
+        <div><span class="k">cv</span><span class="v"><a href="#">CV.pdf ↓</a></span></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="big-jp"><ruby>さば<rt>saba</rt></ruby>と申します</div>
+  <div>dactrtr — Sebastian Zúñiga Rivas · designed &amp; coded in Tokyo · 2026</div>
+</footer>
+
+<a class="back" href="index.html">← all directions</a>
+<div class="peek" id="peek"><img id="peekimg" alt="" /></div>
+
+<div id="tweaks-root"></div>
+
+<script src="portfolio.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "theme": "paper",
+  "atmosphere": "hyper",
+  "layout": "balanced"
+}/*EDITMODE-END*/;
+
+function applyTweaks(t){
+  const r = document.documentElement;
+  r.dataset.theme = t.theme;
+  r.dataset.atmosphere = t.atmosphere;
+  r.dataset.layout = t.layout;
+  window.__bootSpeed = ({calm:1.6, live:1, hyper:0.55})[t.atmosphere] || 1;
+  window.dispatchEvent(new Event('pf-change'));
+}
+
+function App(){
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  React.useEffect(() => { applyTweaks(t); }, [t.theme, t.atmosphere, t.layout]);
+  const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+  return (
+    <TweaksPanel title="Tweaks">
+      <TweakSection label="Look & feel" />
+      <TweakRadio label="Theme" value={t.theme}
+        options={['midnight','phosphor','paper'].map(v => ({value:v, label:cap(v)}))}
+        onChange={v => setTweak('theme', v)} />
+      <TweakRadio label="Atmosphere" value={t.atmosphere}
+        options={['calm','live','hyper'].map(v => ({value:v, label:cap(v)}))}
+        onChange={v => setTweak('atmosphere', v)} />
+      <TweakSection label="Layout" />
+      <TweakRadio label="Composition" value={t.layout}
+        options={['terminal','balanced','portrait'].map(v => ({value:v, label:cap(v)}))}
+        onChange={v => setTweak('layout', v)} />
+    </TweaksPanel>
+  );
+}
+ReactDOM.createRoot(document.getElementById('tweaks-root')).render(<App />);
+</script>
+</body>
+</html>

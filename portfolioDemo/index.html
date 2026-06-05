@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>dactrtr — portfolio directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#e4e2d8;
+  --card:#f4f2ea;
+  --ink:#1a1714;
+  --dim:#79746c;
+  --line:rgba(26,23,20,.14);
+  --accent:#d83a2b;
+  --sans:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --mono:"JetBrains Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1340px;margin:0 auto;padding:40px 36px 80px}
+
+/* header */
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;
+  border-bottom:1.5px solid var(--ink);padding-bottom:16px}
+.top .l{font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+.top .l b{font-weight:700}
+.top .r{font-family:var(--mono);font-size:11.5px;color:var(--dim);letter-spacing:.04em}
+.intro{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;padding:40px 0 16px;align-items:start}
+.intro h1{font-weight:800;font-size:clamp(34px,5.6vw,68px);letter-spacing:-.03em;line-height:.95}
+.intro h1 em{font-style:italic;font-weight:400;color:var(--accent)}
+.intro .note{font-family:var(--mono);font-size:13px;line-height:1.75;color:#403c36}
+.intro .note p{margin-bottom:12px}
+.intro .note .tag{color:var(--accent)}
+.intro .note b{color:var(--ink);font-weight:700}
+
+/* grid of directions */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:36px}
+.opt{background:var(--card);border:1.5px solid var(--ink);display:flex;flex-direction:column;
+  box-shadow:7px 7px 0 rgba(26,23,20,.12);transition:.18s}
+.opt:hover{transform:translate(-2px,-2px);box-shadow:11px 11px 0 var(--accent)}
+.opt .head{display:flex;align-items:baseline;gap:10px;padding:16px 18px 12px;border-bottom:1.5px solid var(--ink)}
+.opt .head .no{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:700}
+.opt .head .code{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.opt .head .dots{margin-left:auto;display:flex;gap:5px}
+.opt .head .dots i{width:11px;height:11px;border-radius:50%;display:block;border:1px solid rgba(0,0,0,.15)}
+
+/* live preview */
+.frame{position:relative;height:280px;overflow:hidden;border-bottom:1.5px solid var(--ink);background:#111}
+.frame iframe{position:absolute;top:0;left:0;width:1280px;height:875px;border:0;
+  transform:scale(.336);transform-origin:top left;pointer-events:none}
+.frame a.cover{position:absolute;inset:0;z-index:3;display:flex;align-items:flex-end;justify-content:flex-end;
+  padding:14px;text-decoration:none;background:linear-gradient(to top,rgba(0,0,0,.28),transparent 38%);opacity:0;transition:.2s}
+.frame:hover a.cover{opacity:1}
+.frame a.cover span{font-family:var(--mono);font-size:11px;background:#fff;color:#111;padding:7px 12px;border-radius:2px;font-weight:500}
+
+.opt .body{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1}
+.opt .body h2{font-weight:800;font-size:22px;letter-spacing:-.02em;line-height:1.05;margin-bottom:8px}
+.opt .body .desc{font-size:13.5px;line-height:1.55;color:#42403a;margin-bottom:14px}
+.opt .body .spec{font-family:var(--mono);font-size:11px;line-height:1.7;color:var(--dim);border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
+.opt .body .spec div{display:flex;gap:8px}
+.opt .body .spec div span:first-child{color:var(--accent);min-width:62px}
+.opt .open{display:flex;align-items:center;justify-content:space-between;margin:14px 18px 18px;
+  font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;
+  color:#fff;background:var(--ink);padding:12px 15px;transition:.15s}
+.opt .open:hover{background:var(--accent)}
+.opt .open .ar{transition:.18s}
+.opt .open:hover .ar{transform:translateX(4px)}
+
+.foot{margin-top:42px;border-top:1.5px solid var(--ink);padding-top:18px;display:flex;justify-content:space-between;
+  flex-wrap:wrap;gap:14px;font-family:var(--mono);font-size:11.5px;color:var(--dim)}
+.foot b{color:var(--ink)}
+@media(max-width:980px){.grid{grid-template-columns:1fr 1fr}.intro{grid-template-columns:1fr;gap:22px}}
+@media(max-width:680px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <span class="l"><b>dactrtr</b> — Sebastian Zúñiga Rivas · Portfolio redesign</span>
+    <span class="r">3 directions · June 2026</span>
+  </div>
+
+  <div class="intro">
+    <h1>An <em>interaction&nbsp;coder's</em> portfolio, three ways.</h1>
+    <div class="note">
+      <p><span class="tag">// brief</span> &nbsp;Modern redesign positioned around <b>creative / interaction coding</b> — the work where you design AND ship the interaction (Playdate &amp; Lua, SwiftUI, D3, design systems).</p>
+      <p><span class="tag">// approach</span> &nbsp;Each direction keeps your DNA — the <b>dactrtr</b> wordmark, cream &amp; near-black base, the purple/pink/cyan arcade accents, さば/Tokyo — but commits to a different personality and <b>one signature interaction</b> built in real code. Same projects &amp; content throughout.</p>
+      <p><span class="tag">// next</span> &nbsp;Pick a direction (or mix). I'll build it out into the full site — case-study &amp; about pages included.</p>
+    </div>
+  </div>
+
+  <div class="grid">
+    <!-- A -->
+    <article class="opt">
+      <div class="head">
+        <span class="no">01</span><span class="code">CONSOLE</span>
+        <span class="dots"><i style="background:#0d0b0f"></i><i style="background:#06d2ff"></i><i style="background:#f95ba7"></i></span>
+      </div>
+      <div class="frame">
+        <iframe src="console.html" title="Console direction" scrolling="no" tabindex="-1"></iframe>
+        <a class="cover" href="console.html"><span>Open live →</span></a>
+      </div>
+      <div class="body">
+        <h2>The Creative-Coder Console</h2>
+        <p class="desc">A dark terminal that boots, runs <code>whoami</code>, and types out who you are. Reads as "this person lives in code" before you've said a word.</p>
+        <div class="spec">
+          <div><span>signature</span><span>live terminal boot + reactive dot-field</span></div>
+          <div><span>mood</span><span>technical · precise · confident</span></div>
+          <div><span>type</span><span>JetBrains Mono + Inter</span></div>
+        </div>
+      </div>
+      <a class="open" href="console.html">Open direction <span class="ar">→</span></a>
+    </article>
+
+    <!-- B -->
+    <article class="opt">
+      <div class="head">
+        <span class="no">02</span><span class="code">ARCADE</span>
+        <span class="dots"><i style="background:#f3f1e7"></i><i style="background:#f95ba7"></i><i style="background:#06d2ff"></i></span>
+      </div>
+      <div class="frame">
+        <iframe src="arcade.html" title="Arcade direction" scrolling="no" tabindex="-1"></iframe>
+        <a class="cover" href="arcade.html"><span>Open live →</span></a>
+      </div>
+      <div class="body">
+        <h2>1-Bit Arcade</h2>
+        <p class="desc">Leans all the way into the game-dev DNA: pixel wordmark, hard-shadow cartridges, and a cursor-reactive 1-bit dither field straight out of the Playdate.</p>
+        <div class="spec">
+          <div><span>signature</span><span>Bayer-dither halftone follows your cursor</span></div>
+          <div><span>mood</span><span>playful · loud · memorable</span></div>
+          <div><span>type</span><span>Pixelify Sans + Space Mono</span></div>
+        </div>
+      </div>
+      <a class="open" href="arcade.html">Open direction <span class="ar">→</span></a>
+    </article>
+
+    <!-- C -->
+    <article class="opt">
+      <div class="head">
+        <span class="no">03</span><span class="code">EDITORIAL</span>
+        <span class="dots"><i style="background:#eceae1"></i><i style="background:#181513"></i><i style="background:#d83a2b"></i></span>
+      </div>
+      <div class="frame">
+        <iframe src="editorial.html" title="Editorial direction" scrolling="no" tabindex="-1"></iframe>
+        <a class="cover" href="editorial.html"><span>Open live →</span></a>
+      </div>
+      <div class="body">
+        <h2>Swiss Editorial</h2>
+        <p class="desc">The grown-up option. Huge Helvetica-style masthead, a strict grid, one red accent, and a generative flow-field that bends away from your cursor.</p>
+        <div class="spec">
+          <div><span>signature</span><span>generative ink flow-field, cursor-repelled</span></div>
+          <div><span>mood</span><span>refined · minimal · art-directed</span></div>
+          <div><span>type</span><span>Archivo (Helvetica-grade)</span></div>
+        </div>
+      </div>
+      <a class="open" href="editorial.html">Open direction <span class="ar">→</span></a>
+    </article>
+  </div>
+
+  <div class="foot">
+    <span>Tip — each preview is <b>live</b>. Open one and move your cursor around the hero.</span>
+    <span>さばと申します · built in HTML / CSS / JS</span>
+  </div>
+</div>
+</body>
+</html>

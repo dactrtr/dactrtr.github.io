@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>dactrtr — console</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#0d0b0f;
+  --panel:#141118;
+  --ink:#f4f1ea;
+  --dim:#8a8290;
+  --line:rgba(244,241,234,.10);
+  --cyan:#06d2ff;
+  --pink:#f95ba7;
+  --purple:#8b7be8;
+  --green:#7ee787;
+  --amber:#ffcd6b;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sans:"Inter",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--mono);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+/* reactive dot field */
+#field{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.55}
+.scanlines{position:fixed;inset:0;z-index:1;pointer-events:none;
+  background:repeating-linear-gradient(to bottom,rgba(255,255,255,.018) 0 1px,transparent 1px 3px);mix-blend-mode:overlay}
+.wrap{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:0 28px}
+
+/* top bar */
+.topbar{position:sticky;top:0;z-index:30;backdrop-filter:blur(8px);
+  background:rgba(13,11,15,.72);border-bottom:1px solid var(--line)}
+.topbar .row{max-width:1080px;margin:0 auto;padding:13px 28px;display:flex;align-items:center;gap:14px}
+.dot{width:11px;height:11px;border-radius:50%;flex:none}
+.dots{display:flex;gap:7px;margin-right:6px}
+.tb-title{font-size:12.5px;color:var(--dim);letter-spacing:.04em}
+.tb-title b{color:var(--ink);font-weight:500}
+.tb-nav{margin-left:auto;display:flex;gap:4px}
+.tb-nav a{font-size:12px;color:var(--dim);text-decoration:none;padding:6px 11px;border-radius:7px;letter-spacing:.02em;transition:.15s}
+.tb-nav a:hover{color:var(--ink);background:rgba(255,255,255,.05)}
+.tb-nav a .pre{color:var(--cyan)}
+
+/* hero terminal */
+.hero{padding:64px 0 30px}
+.term{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+  box-shadow:0 40px 100px -40px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.02) inset;overflow:hidden}
+.term-head{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.015)}
+.term-head .nm{margin-left:8px;font-size:12px;color:var(--dim)}
+.term-body{padding:30px 30px 34px;font-size:15px;line-height:1.95;min-height:320px}
+.ln{white-space:pre-wrap;word-break:break-word}
+.muted{color:var(--dim)}
+.cy{color:var(--cyan)}.pk{color:var(--pink)}.pu{color:var(--purple)}.gn{color:var(--green)}.am{color:var(--amber)}
+.prompt .u{color:var(--green)}.prompt .at{color:var(--dim)}.prompt .h{color:var(--cyan)}.prompt .p{color:var(--purple)}
+.cursor{display:inline-block;width:9px;height:1.05em;background:var(--cyan);vertical-align:-2px;margin-left:2px;animation:bl 1.05s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.big{font-family:var(--sans);font-weight:800;letter-spacing:-.02em;line-height:1.02}
+.name-xl{font-size:clamp(38px,7vw,76px);margin:6px 0 2px}
+.role-xl{font-size:clamp(15px,2.2vw,21px);color:var(--dim);font-family:var(--mono);font-weight:400}
+.role-xl .hl{color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chip{font-size:11.5px;color:var(--dim);border:1px solid var(--line);padding:5px 11px;border-radius:20px;letter-spacing:.02em}
+.chip b{color:var(--ink);font-weight:500}
+.run{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.cmd{font-family:var(--mono);font-size:12.5px;color:var(--ink);background:rgba(255,255,255,.04);
+  border:1px solid var(--line);padding:9px 14px;border-radius:9px;cursor:pointer;transition:.15s;letter-spacing:.01em}
+.cmd:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(6,210,255,.06)}
+.cmd .pre{color:var(--pink)}
+
+/* sections */
+.sec{padding:60px 0 10px}
+.sec-h{display:flex;align-items:baseline;gap:14px;margin-bottom:30px}
+.sec-h .hash{color:var(--pink);font-size:13px}
+.sec-h h2{font-family:var(--sans);font-weight:800;font-size:clamp(22px,3.4vw,32px);letter-spacing:-.01em}
+.sec-h .n{margin-left:auto;color:var(--dim);font-size:12px}
+
+/* project list */
+.plist{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.prow{display:grid;grid-template-columns:54px 1.5fr 1.1fr auto;gap:20px;align-items:center;
+  padding:20px 12px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);
+  position:relative;transition:.18s;cursor:pointer}
+.prow:hover{background:rgba(255,255,255,.025);padding-left:22px}
+.prow .idx{color:var(--dim);font-size:12px}
+.prow .nm{font-family:var(--sans);font-weight:700;font-size:18px;letter-spacing:-.01em}
+.prow .nm .yr{color:var(--dim);font-weight:400;font-size:12px;margin-left:9px;font-family:var(--mono)}
+.prow .rl{color:var(--dim);font-size:13px;line-height:1.4}
+.prow .tg{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.prow .tg span{font-size:10.5px;color:var(--cyan);border:1px solid rgba(6,210,255,.25);padding:3px 8px;border-radius:6px;white-space:nowrap}
+.prow .arr{position:absolute;right:12px;opacity:0;color:var(--cyan);transition:.18s;font-size:15px}
+.prow:hover .arr{opacity:1;right:6px}
+.prow.feat{background:linear-gradient(90deg,rgba(249,91,167,.06),transparent 60%)}
+.prow.feat .tag-feat{position:absolute;top:10px;left:12px;font-size:9.5px;color:var(--pink);letter-spacing:.1em}
+
+/* preview thumb on hover */
+.peek{position:fixed;z-index:40;width:280px;border-radius:10px;overflow:hidden;border:1px solid var(--line);
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.8);pointer-events:none;opacity:0;transform:translateY(8px) scale(.97);
+  transition:opacity .18s,transform .18s;background:var(--panel)}
+.peek.on{opacity:1;transform:translateY(0) scale(1)}
+.peek img{display:block;width:100%}
+
+/* about / footer */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:start;padding:10px 0 30px}
+.about p{font-family:var(--sans);font-size:16px;line-height:1.7;color:#d8d3dc;margin-bottom:16px}
+.about .lead{font-size:19px;color:var(--ink)}
+.kv{border-top:1px solid var(--line)}
+.kv div{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px}
+.kv div .k{color:var(--dim)}
+.kv div .v{color:var(--ink);text-align:right}
+.kv div .v a{color:var(--cyan);text-decoration:none}
+.kv div .v a:hover{text-decoration:underline}
+footer{padding:60px 0 50px;text-align:center;color:var(--dim);font-size:12px;line-height:2}
+footer .big-jp{font-family:var(--sans);font-size:13px;color:var(--ink)}
+.back{position:fixed;left:20px;bottom:20px;z-index:50;font-size:11.5px;color:var(--dim);text-decoration:none;
+  border:1px solid var(--line);padding:8px 13px;border-radius:8px;background:rgba(13,11,15,.8);backdrop-filter:blur(6px);transition:.15s}
+.back:hover{color:var(--cyan);border-color:var(--cyan)}
+@media(max-width:720px){
+  .prow{grid-template-columns:30px 1fr;gap:8px}
+  .prow .rl,.prow .tg{display:none}
+  .about{grid-template-columns:1fr;gap:24px}
+  .term-body{padding:22px}
+}
+</style>
+</head>
+<body>
+<canvas id="field"></canvas>
+<div class="scanlines"></div>
+
+<div class="topbar">
+  <div class="row">
+    <div class="dots"><span class="dot" style="background:#f95ba7"></span><span class="dot" style="background:#ffcd6b"></span><span class="dot" style="background:#7ee787"></span></div>
+    <span class="tb-title">dactrtr@tokyo: <b>~/portfolio</b></span>
+    <nav class="tb-nav">
+      <a href="#work"><span class="pre">cd </span>work</a>
+      <a href="#about"><span class="pre">cat </span>about</a>
+      <a href="#contact"><span class="pre">./</span>contact</a>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="term">
+      <div class="term-head">
+        <div class="dots"><span class="dot" style="background:#f95ba7"></span><span class="dot" style="background:#ffcd6b"></span><span class="dot" style="background:#7ee787"></span></div>
+        <span class="nm">— zsh — dactrtr — 96×30</span>
+      </div>
+      <div class="term-body" id="termbody"></div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="sec" id="work">
+    <div class="sec-h">
+      <span class="hash">~/work $</span>
+      <h2>Selected work</h2>
+      <span class="n" id="projcount"></span>
+    </div>
+    <div class="plist" id="plist"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="sec" id="about">
+    <div class="sec-h"><span class="hash">$ cat</span><h2>about.md</h2></div>
+    <div class="about">
+      <div>
+        <p class="lead">I'm a designer who codes the things I design — from 1-bit Playdate games in Lua to D3 dashboards, SwiftUI tools, and design systems.</p>
+        <p>Ten years across visual design, UI/UX and frontend, working with distributed teams from Santiago to Tokyo, Spain and the US. I tend to live where design meets engineering: prototyping in real code, bridging handoff, and shipping the interaction — not just the mockup.</p>
+        <p>Lately that means building <span class="pk">Dinopirates from Inner Space</span> — a game universe spanning a hand-built Playdate title and a Unity roguelike — and obsessing over how constraints make interactions better.</p>
+      </div>
+      <div class="kv">
+        <div><span class="k">based in</span><span class="v">Tokyo, JP 🗼</span></div>
+        <div><span class="k">role</span><span class="v">Designer · Dev</span></div>
+        <div><span class="k">stack</span><span class="v">SwiftUI · Lua · CSS · D3</span></div>
+        <div><span class="k">tools</span><span class="v">Figma · Unity · Playdate</span></div>
+        <div><span class="k">langs</span><span class="v">ES · EN · 日本語</span></div>
+        <div><span class="k">status</span><span class="v gn">● open to work</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="sec" id="contact">
+    <div class="sec-h"><span class="hash">$ ./</span><h2>contact</h2></div>
+    <div class="about">
+      <div>
+        <p class="lead">Got an interaction worth building? <a href="mailto:hi@dactrtr.com" style="color:var(--cyan);text-decoration:none">hi@dactrtr.com →</a></p>
+      </div>
+      <div class="kv">
+        <div><span class="k">itch.io</span><span class="v"><a href="#">dactrtr.itch.io</a></span></div>
+        <div><span class="k">github</span><span class="v"><a href="#">@dactrtr</a></span></div>
+        <div><span class="k">cv</span><span class="v"><a href="#">CV.pdf ↓</a></span></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="big-jp">さばと申します</div>
+  <div>dactrtr — Sebastian Zúñiga Rivas · designed &amp; coded in Tokyo · 2026</div>
+</footer>
+
+<a class="back" href="index.html">← all directions</a>
+<div class="peek" id="peek"><img id="peekimg" alt="" /></div>
+
+<script src="console.js"></script>
+</body>
+</html>

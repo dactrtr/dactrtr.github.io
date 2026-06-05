@@ -1,6 +1,26 @@
 // Portfolio — Dark + Accent design
 // Spec: docs/superpowers/specs/2026-05-18-portfolio-design.md
 
+// ── Reactive dot-field background + cursor glow (portfolioDemo) ──
+// Dot colors as "R,G,B" strings consumed by rgba() in assets/js/dot-field.js.
+// Uses the demo's light/"paper" palette to suit the landing's paper background.
+:root {
+  --dot-base: "120,112,126";
+  --dot-near: "10,134,172";
+  --dot-mid:  "106,79,208";
+  --dot-far:  "216,65,126";
+}
+
+// z-index:-1 keeps the canvas above the body background but behind all page
+// content, so nothing else needs a stacking change.
+#field {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
 body.portfolio-landing,
 body.portfolio-full {
   background-color: $bonedThrone;
@@ -26,10 +46,11 @@ body.portfolio-full .main-header {
   width: 100%;
   height: 74dvh;
   padding-bottom: 80px;
-  background-color: $bonedThrone;
+  // transparent so the dot-field shows through (body bg is the same paper color)
+  background-color: transparent;
 
   .header-inner {
-    background-color: $bonedThrone;
+    background-color: transparent;
   }
 
   .header-icon {
@@ -1206,4 +1227,248 @@ body.portfolio-full {
 
     &:hover { color: $bonedThrone; }
   }
+}
+
+// ─── About section (ported from portfolioDemo, adapted to the paper theme) ──────
+
+.portfolio-about {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 20px 56px;
+  font-family: $helveticaNeue;
+
+  .pa-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 26px;
+
+    .pa-hash {
+      color: $blinkyPinky;
+      font-size: 13px;
+    }
+
+    h2 {
+      font-weight: 800;
+      font-size: clamp(22px, 3.4vw, 32px);
+      letter-spacing: -0.01em;
+      color: $blackestNight;
+      margin: 0;
+    }
+  }
+
+  .pa-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: start;
+
+    @include media-medium {
+      grid-template-columns: 1.4fr 1fr;
+      gap: 40px;
+    }
+  }
+
+  .pa-copy p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba($blackestNight, 0.85);
+    margin-bottom: 16px;
+  }
+
+  .pa-copy .pa-lead {
+    font-size: 19px;
+    color: $blackestNight;
+  }
+
+  .pa-kv {
+    border-top: 1px solid rgba($blackestNight, 0.15);
+
+    > div {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba($blackestNight, 0.15);
+      font-size: 13px;
+    }
+
+    .k {
+      color: rgba($blackestNight, 0.6);
+    }
+
+    .v {
+      color: $blackestNight;
+      text-align: right;
+
+      &.gn {
+        color: #1f8a5b;
+      }
+
+      a {
+        color: $cyanTyrant;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// ─── whoami terminal (landing header, ported from portfolioDemo) ───────────────
+
+// hidden by default so the shared header still works as the compact project bar
+.whoami-term { display: none; }
+
+// on the landing the terminal replaces the static identity text
+.portfolio-landing .logo {
+  h1, h2, .mind, .who-iam { display: none; }
+  .whoami-term { display: block; }
+}
+
+.whoami-term {
+  width: 100%;
+  max-width: 540px;
+  text-align: left;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: #fff;
+  border: 1px solid rgba($blackestNight, 0.14);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 30px 70px -45px rgba($blackestNight, 0.6);
+
+  .term-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 14px;
+    border-bottom: 1px solid rgba($blackestNight, 0.1);
+    background: rgba($blackestNight, 0.02);
+  }
+
+  .term-dots {
+    display: inline-flex;
+    gap: 6px;
+
+    i {
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+
+      &:nth-child(1) { background: $blinkyPinky; }
+      &:nth-child(2) { background: #ffcd6b; }
+      &:nth-child(3) { background: #7ee787; }
+    }
+  }
+
+  .term-nm {
+    font-size: 11.5px;
+    color: rgba($blackestNight, 0.5);
+  }
+
+  .term-body {
+    padding: 20px 22px 22px;
+    font-size: 14px;
+    line-height: 1.85;
+    min-height: 280px;
+    color: $blackestNight;
+  }
+
+  .ln { white-space: pre-wrap; word-break: break-word; }
+
+  .term-where {
+    display: inline-block;
+    height: 26px;
+    width: auto;
+    vertical-align: -8px;
+    margin-left: 3px;
+    border-radius: 3px;
+    transform: rotate(2deg);
+  }
+
+  .muted { color: rgba($blackestNight, 0.5); }
+  .cy { color: $cyanTyrant; }
+  .pk { color: $blinkyPinky; }
+  .pu { color: $purpleBack; }
+
+  .prompt {
+    .u  { color: #1f8a5b; }
+    .at { color: rgba($blackestNight, 0.45); }
+    .h  { color: $cyanTyrant; }
+    .p  { color: $purpleBack; }
+  }
+
+  .big {
+    font-family: $helveticaNeue;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+  .name-xl {
+    font-size: clamp(26px, 4vw, 40px);
+    margin: 6px 0 2px;
+  }
+
+  .role-xl {
+    font-size: clamp(13px, 1.6vw, 15px);
+    line-height: 1.55;
+    color: rgba($blackestNight, 0.82);
+
+    .hl { color: $blackestNight; font-weight: 600; }
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 14px;
+  }
+  .chip {
+    font-size: 11px;
+    color: rgba($blackestNight, 0.6);
+    border: 1px solid rgba($blackestNight, 0.14);
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+
+  .run {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 16px;
+  }
+  .cmd {
+    font-size: 12px;
+    color: $blackestNight;
+    background: rgba($blackestNight, 0.04);
+    border: 1px solid rgba($blackestNight, 0.14);
+    padding: 8px 12px;
+    border-radius: 9px;
+    text-decoration: none;
+    transition: 0.15s;
+
+    .pre { color: $blinkyPinky; }
+
+    &:hover {
+      border-color: $cyanTyrant;
+      color: $cyanTyrant;
+    }
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1.05em;
+    background: $cyanTyrant;
+    vertical-align: -2px;
+    margin-left: 2px;
+    animation: whoamiBlink 1.05s steps(1) infinite;
+  }
+}
+
+@keyframes whoamiBlink {
+  50% { opacity: 0; }
 }
