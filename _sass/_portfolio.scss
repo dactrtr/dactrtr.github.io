@@ -151,125 +151,112 @@ body.portfolio-full #swup {
 
 .portfolio-featured {
   margin-bottom: 12px;
-  border-radius: 24px;
-  overflow: hidden;
-  transition: opacity 0.2s;
-
-  &:hover {
-    opacity: 0.92;
-  }
 
   > a {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     position: relative;
-    border-radius: 4px;
+    border: 1px solid rgba($blackestNight, 0.1);
+    border-radius: 14px;
     overflow: hidden;
+    background: #fff;
+    box-shadow: 0 30px 70px -45px rgba($blackestNight, 0.6);
     text-decoration: none;
+    transition: border-color 0.2s ease, transform 0.2s ease;
 
     @include media-medium {
-      flex-direction: row;
-      min-height: 220px;
+      grid-template-columns: 1.15fr 1fr;
     }
+  }
+
+  > a:hover {
+    border-color: rgba($blinkyPinky, 0.4);
+    transform: translateY(-2px);
   }
 
   .featured-screenshot {
-    flex: 1;
-    min-width: 80px;
-    min-height: 180px;
-    background: darken(#fbfbf7, 8%);
+    position: relative;
+    min-height: 240px;
+    background: #000;
+    overflow: hidden;
 
     @include media-medium {
-      min-height: 0;
+      min-height: 300px;
+    }
+
+    // ★ FEATURED tag over the image (demo style)
+    &::before {
+      content: "★ FEATURED";
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 2;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      font-weight: 700;
+      color: $bonedThrone;
+      background: $blinkyPinky;
+      padding: 4px 10px;
+      border-radius: 20px;
     }
 
     img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
       display: block;
     }
 
     .placeholder-screenshot {
       width: 100%;
       height: 100%;
-      min-height: 160px;
       background: darken(#fbfbf7, 8%);
     }
   }
 
   .featured-meta {
-    width: 100%;
-    flex-shrink: 0;
-    background: darken(#fbfbf7, 8%);
-    padding: 20px;
+    background: transparent;
+    padding: 26px 28px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 4px;
-
-    @include media-medium {
-      padding: 28px;
-      width: 50%;
-    }
-
-    &::before {
-      content: "★ FEATURED";
-      color: darken($blinkyPinky, 20%);
-      font-size: 10px;
-      letter-spacing: 2px;
-      margin-bottom: 6px;
-    }
   }
 
   .featured-logo,
   .placeholder-logo {
     display: none;
-
-    @include media-medium {
-      display: block;
-      width: 40px;
-      height: 40px;
-      border-radius: 6px;
-      margin-bottom: 8px;
-    }
-  }
-
-  .placeholder-logo {
-    background: rgba($purpleBack, 0.4);
-    display: block;
   }
 
   .featured-title {
     color: $blackestNight;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin: 0 0 4px;
-    // text-shadow: 1px 1px 0px #f95ba7, -1px -1px 0px #06d2ff;
-
-    @include media-medium {
-      font-size: 22px;
-    }
+    font-family: $helveticaNeue;
+    font-weight: 800;
+    font-size: clamp(22px, 2.6vw, 30px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin: 0 0 12px;
   }
 
   .featured-role {
-    color: $cyanTyrant;
-    font-size: 13px;
-    margin: 0 0 8px;
-    font-weight: 800;
+    color: rgba($blackestNight, 0.55);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 11.5px;
+    font-weight: 400;
+    margin: 0 0 9px;
+
+    &::before {
+      content: "$ ";
+      color: #1f8a5b;
+    }
   }
 
   .featured-challenge {
-    color: rgba($blackestNight, 1);
-    font-size: 15px;
-    margin: 0 0 12px;
-    font-weight: 300;
-    display: none;
-
-    @include media-medium {
-      display: block;
-    }
+    color: rgba($blackestNight, 0.78);
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0 0 16px;
+    font-weight: 400;
   }
 
   .featured-link {
@@ -279,7 +266,7 @@ body.portfolio-full #swup {
     border-radius: 20px;
     border: 1px solid darken($blinkyPinky, 18%);
     width: fit-content;
-    margin-top: 32px;
+    margin-top: auto;
     cursor: pointer;
 
     .btn-mas {
@@ -330,18 +317,15 @@ body.portfolio-full #swup {
 .portfolio-list-item {
   grid-column: 1 / -1;
   overflow: hidden;
-  border-radius: 24px;
-  transition: opacity 0.2s;
-  background: rgba($blackestNight, 0.9);
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid rgba($blackestNight, 0.1);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+
   &:hover {
-    opacity: 0.92;
-    background: rgba($blackestNight, 0.9);
+    border-color: rgba($blinkyPinky, 0.45);
+    transform: translateY(-2px);
   }
-
-  &:hover .list-item-panel {
-    background: rgba($blackestNight, 1);
-  }
-
 
   > a {
     display: flex;
@@ -351,7 +335,7 @@ body.portfolio-full #swup {
 
     @include media-medium {
       flex-direction: row;
-      height: 230px;
+      height: 220px;
     }
   }
 
@@ -363,7 +347,7 @@ body.portfolio-full #swup {
     min-width: 0;
 
     @include media-medium {
-      width: 42%;
+      width: 40%;
       height: auto;
       min-width: 60px;
     }
@@ -378,47 +362,43 @@ body.portfolio-full #swup {
     .placeholder-screenshot {
       width: 100%;
       height: 100%;
+      background: darken(#fbfbf7, 8%);
     }
   }
 
   .list-item-panel {
     flex: 1;
-    background: rgba($blackestNight, 0.9);
-    padding: 16px;
+    background: transparent;
+    padding: 22px 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 4px;
-    transition: background 0.2s;
-
-    @include media-medium {
-      padding: 0 16px;
-    }
+    gap: 6px;
   }
 
   .list-item-meta {
-    color: $cyanTyrant;
-    font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    color: rgba($blackestNight, 0.55);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px;
+    letter-spacing: 0.02em;
   }
 
   .list-item-title {
-    color: $bonedThrone;
-    font-size: 16px;
+    color: $blackestNight;
+    font-size: 18px;
     font-weight: 700;
+    letter-spacing: -0.01em;
     margin: 0;
-    line-height: 1.3;
+    line-height: 1.25;
   }
 
   .list-item-desc {
-    color: rgba($bonedThrone, 1);
-    font-size: 16px;
-    line-height: 1.4;
+    color: rgba($blackestNight, 0.65);
+    font-size: 14px;
+    line-height: 1.55;
     margin: 0;
     display: none;
-    font-weight: 300;
-    
+    font-weight: 400;
 
     @include media-medium {
       display: block;
@@ -432,7 +412,7 @@ body.portfolio-full #swup {
     border-radius: 20px;
     border: 1px solid $blinkyPinky;
     width: fit-content;
-    margin-top: 32px;
+    margin-top: 16px;
     cursor: pointer;
 
     .btn-mas {
@@ -496,6 +476,7 @@ body.portfolio-full #swup {
   &:hover {
     border-color: transparent;
     background: transparent;
+    transform: none;
   }
 
   img {
@@ -513,8 +494,9 @@ body.portfolio-full #swup {
   flex-direction: column;
   height: auto;
 
-  &:hover .list-item-panel {
-    background: transparent;
+  &:hover {
+    transform: none;
+    border-color: rgba($blackestNight, 0.1);
   }
 
   .list-item-screenshot {
@@ -527,23 +509,24 @@ body.portfolio-full #swup {
   }
 
   .list-item-static-meta {
-    background: rgba($blackestNight, 0.9);
-    padding: 10px 16px 12px;
+    background: transparent;
+    padding: 14px 16px 16px;
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 4px;
 
     .list-item-meta {
-      color: $cyanTyrant;
-      font-size: 11px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      color: rgba($blackestNight, 0.55);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      letter-spacing: 0.02em;
     }
 
     .list-item-title {
-      color: $bonedThrone;
+      color: $blackestNight;
       font-size: 16px;
       font-weight: 700;
+      letter-spacing: -0.01em;
       margin: 0;
       line-height: 1.3;
     }
