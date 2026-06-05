@@ -44,7 +44,9 @@ body.portfolio-full .main-header {
 
 .portfolio-landing .main-header {
   width: 100%;
-  height: 74dvh;
+  min-height: 74dvh;
+  height: auto;
+  overflow: visible;
   padding-bottom: 80px;
   // transparent so the dot-field shows through (body bg is the same paper color)
   background-color: transparent;
@@ -145,6 +147,64 @@ body.portfolio-full #swup {
 
 .portfolio-landing .dots {
   opacity: 0.5;
+}
+
+// ─── illu-me wrapped in a Preview window ─────────────────────────────────────
+
+.portfolio-landing .illustration {
+  // .illu-window takes over the grid position that .illu-me had in _theme.scss
+  .illu-window {
+    grid-column: 1/4;
+    grid-row: 1/4;
+    z-index: 2;
+    align-self: center;
+    justify-self: center;
+    width: 78%;
+    background: #fff;
+    border: 1px solid rgba($blackestNight, 0.12);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px -45px rgba($blackestNight, 0.5);
+
+    @include media-small  { width: 54%; grid-column: 3/5; }
+    @include media-medium { grid-column: 1/5; grid-row: 1/4; width: 48%; }
+  }
+
+  .illu-win-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba($blackestNight, 0.1);
+    background: rgba($blackestNight, 0.02);
+  }
+
+  .illu-win-dots {
+    display: inline-flex;
+    gap: 6px;
+
+    i {
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      &:nth-child(1) { background: $blinkyPinky; }
+      &:nth-child(2) { background: #ffcd6b; }
+      &:nth-child(3) { background: #7ee787; }
+    }
+  }
+
+  .illu-win-nm {
+    font-size: 11px;
+    color: rgba($blackestNight, 0.45);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
+  // inside the window, img fills the container
+  .illu-window .illu-me {
+    width: 100%;
+    display: block;
+  }
 }
 
 // ─── Featured card ────────────────────────────────────────────────────────────
@@ -1476,17 +1536,18 @@ body.portfolio-full {
   50% { opacity: 0; }
 }
 
-// ── Landing header on small screens: stack the whoami above the photo ──────────
-@media (max-width: 767px) {
+// ── Landing header: stack whoami above photo up to 1023px (mobile + tablet) ───
+@media (max-width: 1023px) {
   .portfolio-landing .main-header {
     height: auto;
+    overflow: visible;
   }
 
   .portfolio-landing .header-inner {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding: 16px 14px 28px;
+    gap: 24px;
+    padding: 24px 20px 36px;
   }
 
   // .logo comes before .illustration in the DOM, so the whoami renders first
@@ -1495,14 +1556,14 @@ body.portfolio-full {
     width: 100%;
   }
 
-  // center the photo on mobile
+  // center the window on tablet/mobile
   .portfolio-landing .illustration {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    .illu-me {
-      width: 60%;
+    .illu-window {
+      width: 54%;
       margin: 0 auto;
     }
   }
@@ -1512,9 +1573,22 @@ body.portfolio-full {
   }
 }
 
+// ── On phones, shrink the image window more ────────────────────────────────────
+@media (max-width: 575px) {
+  .portfolio-landing .header-inner {
+    gap: 16px;
+    padding: 16px 14px 28px;
+  }
+
+  .portfolio-landing .illustration .illu-window {
+    width: 72%;
+  }
+}
+
 // ── Shrink the whoami text a bit on phones ─────────────────────────────────────
 @media (max-width: 575px) {
   .whoami-term {
+
     .term-head { padding: 9px 12px; }
     .term-nm { font-size: 10.5px; }
 
