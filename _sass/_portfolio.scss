@@ -230,7 +230,6 @@ body.portfolio-full #swup {
 
   .featured-title {
     color: $blackestNight;
-    font-family: $helveticaNeue;
     font-weight: 800;
     font-size: clamp(22px, 2.6vw, 30px);
     line-height: 1.02;
@@ -1227,7 +1226,7 @@ body.portfolio-full {
     margin-bottom: 26px;
 
     .pa-hash {
-      color: $blinkyPinky;
+      color: #b21e5b; // darkened $blinkyPinky for AA contrast on paper
       font-size: 13px;
     }
 
@@ -1255,7 +1254,7 @@ body.portfolio-full {
   .pa-copy p {
     font-size: 16px;
     line-height: 1.7;
-    color: rgba($blackestNight, 0.85);
+    color: rgba($blackestNight, 0.92);
     margin-bottom: 16px;
   }
 
@@ -1277,7 +1276,7 @@ body.portfolio-full {
     }
 
     .k {
-      color: rgba($blackestNight, 0.6);
+      color: rgba($blackestNight, 0.72);
     }
 
     .v {
@@ -1285,11 +1284,11 @@ body.portfolio-full {
       text-align: right;
 
       &.gn {
-        color: #1f8a5b;
+        color: #15663f;
       }
 
       a {
-        color: $cyanTyrant;
+        color: #0a6d8c;
         text-decoration: none;
 
         &:hover {
@@ -1454,4 +1453,63 @@ body.portfolio-full {
 
 @keyframes whoamiBlink {
   50% { opacity: 0; }
+}
+
+// ── Landing header on small screens: stack the whoami above the photo ──────────
+@media (max-width: 767px) {
+  .portfolio-landing .main-header {
+    height: auto;
+  }
+
+  .portfolio-landing .header-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 14px 28px;
+  }
+
+  // .logo comes before .illustration in the DOM, so the whoami renders first
+  .portfolio-landing .logo,
+  .portfolio-landing .illustration {
+    width: 100%;
+  }
+
+  // center the photo on mobile
+  .portfolio-landing .illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .illu-me {
+      width: 60%;
+      margin: 0 auto;
+    }
+  }
+
+  .portfolio-landing .whoami-term {
+    max-width: none;
+  }
+}
+
+// ── Shrink the whoami text a bit on phones ─────────────────────────────────────
+@media (max-width: 575px) {
+  .whoami-term {
+    .term-head { padding: 9px 12px; }
+    .term-nm { font-size: 10.5px; }
+
+    .term-body {
+      font-size: 12.5px;
+      line-height: 1.7;
+      min-height: 0;
+      padding: 16px 16px 18px;
+    }
+
+    .name-xl { font-size: 24px; }
+    .role-xl { font-size: 12.5px; }
+
+    .chip { font-size: 10px; padding: 3px 8px; }
+    .cmd { font-size: 11px; padding: 7px 10px; }
+
+    .term-where { height: 22px; vertical-align: -7px; }
+  }
 }

@@ -40,8 +40,8 @@
     const r = line('<span class="role-xl"></span>').firstChild;
     await typeText(r, '> ', 16);
     const segs = [
-      { t: 'UI Designer', c: 'pk' }, { t: ' · ' },
-      { t: 'Illustrator', c: 'pu' }, { t: ' · ' },
+      { t: 'UI/UX Designer', c: 'pk' }, { t: ' · ' },
+      { t: 'Frontend', c: 'pu' }, { t: ' · ' },
       { t: 'Indie Game Developer', c: 'cy' },
       { t: '  (' }, { t: 'HTML/CSS/SwiftUI/Lua', hl: true }, { t: ')' }
     ];
@@ -58,7 +58,7 @@
     await typeInto(l3, 'cat what.txt', 22); await sleep(110);
     const r2 = line('<span class="role-xl"></span>').firstChild;
     await typeText(r2, '> ', 14);
-    const e1 = document.createElement('span'); r2.appendChild(e1); await typeText(e1, 'I design the interaction, then I ', 14);
+    const e1 = document.createElement('span'); r2.appendChild(e1); await typeText(e1, 'I design , then I ', 14);
     const e2 = document.createElement('span'); e2.className = 'hl'; r2.appendChild(e2); await typeText(e2, 'code it', 14);
     const e3 = document.createElement('span'); r2.appendChild(e3); await typeText(e3, '.', 14);
     await sleep(140);
