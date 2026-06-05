@@ -1389,9 +1389,25 @@ body.portfolio-full {
     letter-spacing: -0.02em;
     line-height: 1.05;
   }
-  .name-xl {
+  .handle-xl {
     font-size: clamp(26px, 4vw, 40px);
-    margin: 6px 0 2px;
+    margin: 6px 0 0;
+    text-shadow: 1px 1px 0 $blinkyPinky, -1px -1px 0 $cyanTyrant;
+  }
+
+  .term-mind {
+    display: block;
+    font-family: 'Mochiy Pop One', sans-serif;
+    font-size: 11px;
+    color: rgba($blackestNight, 0.5);
+    margin: 1px 0 2px;
+
+    rt { font-size: 8px; }
+  }
+
+  .name-xl {
+    font-size: clamp(20px, 3vw, 28px);
+    margin: 0 0 2px;
   }
 
   .role-xl {
@@ -1504,7 +1520,8 @@ body.portfolio-full {
       padding: 16px 16px 18px;
     }
 
-    .name-xl { font-size: 24px; }
+    .handle-xl { font-size: 24px; }
+    .name-xl { font-size: 18px; }
     .role-xl { font-size: 12.5px; }
 
     .chip { font-size: 10px; padding: 3px 8px; }

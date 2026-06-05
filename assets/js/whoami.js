@@ -30,8 +30,10 @@
   async function run() {
     const l1 = line(promptStr); await sleep(240);
     await typeInto(l1, 'whoami', 28); await sleep(130);
+    line('<span class="big handle-xl">DACTRTR</span>');
+    line('<span class="term-mind"><ruby>さば<rt>さばの魚</rt></ruby>と申します</span>');
     line('<span class="big name-xl">Sebastian Zúñiga</span>');
-    line('<span class="muted">aka</span> <span class="cy">dactrtr</span> <span class="muted">— based in Tokyo</span> <img class="term-where" src="/assets/where.png" alt="Tokyo" />');
+    line('<span class="muted">based in Tokyo</span> <img class="term-where" src="/assets/where.png" alt="Tokyo" />');
     await sleep(150);
 
     // roles
