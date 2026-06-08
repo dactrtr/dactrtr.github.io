@@ -67,23 +67,23 @@
 
     // chips
     const c = line('<div class="chips"></div>').firstChild;
-    const chips = ['10 yrs', 'Design ↔ Engineering', 'Playdate · Unity', '日本語', '● open to work'];
+    const chips = ['10 yrs', 'Design ↔ Engineering', 'Playdate · Unity', '日本語', '<span class="gn-dot">●</span> open to work'];
     for (const t of chips) {
       const s = document.createElement('span'); s.className = 'chip'; s.innerHTML = t; c.appendChild(s); await sleep(60);
     }
     await sleep(90);
 
     // commands → real destinations on the blog
-    const lr = line(promptStr); await sleep(90);
-    await typeInto(lr, 'ls --help', 20);
-    const runEl = line('<div class="run"></div>').firstChild;
-    const cmds = [['cat ', 'about', '#about'], ['open ', 'blog', '/blog/']];
-    for (const [pre, word, href] of cmds) {
-      const a = document.createElement('a');
-      a.className = 'cmd'; a.href = href;
-      a.innerHTML = `<span class="pre">${pre}</span>${word}`;
-      runEl.appendChild(a); await sleep(55);
-    }
+    // const lr = line(promptStr); await sleep(90);
+    // await typeInto(lr, 'ls --help', 20);
+    // const runEl = line('<div class="run"></div>').firstChild;
+    // const cmds = [['cat ', 'about', '#about'], ['open ', 'blog', '/blog/']];
+    // for (const [pre, word, href] of cmds) {
+    //   const a = document.createElement('a');
+    //   a.className = 'cmd'; a.href = href;
+    //   a.innerHTML = `<span class="pre">${pre}</span>${word}`;
+    //   runEl.appendChild(a); await sleep(55);
+    // }
     line(promptStr).innerHTML += '<span class="cursor"></span>';
   }
   run();
