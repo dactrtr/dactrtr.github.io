@@ -29,3 +29,51 @@ class GhContribs extends HTMLElement {
 }
 
 customElements.define('gh-contribs', GhContribs);
+
+// Holo effect — tracks mouse over .gh-cal-wrap and updates CSS vars for
+// the rainbow shine + glare + 3D tilt.
+(function () {
+  const MAX_TILT = 12; // degrees
+
+  function attachHolo(card) {
+    function onMove(e) {
+      const rect = card.getBoundingClientRect();
+      const x    = (e.clientX - rect.left) / rect.width;
+      const y    = (e.clientY - rect.top)  / rect.height;
+
+      const rx = (x - 0.5) * MAX_TILT * 2;
+      const ry = -(y - 0.5) * MAX_TILT * 2;
+
+      // constrain to 37–63% so the background-position never reaches the tile edge
+      const bx = 37 + x * 26;
+      const by = 37 + y * 26;
+
+      card.style.setProperty('--gh-px', `${x * 100}%`);
+      card.style.setProperty('--gh-py', `${y * 100}%`);
+      card.style.setProperty('--gh-bx', `${bx}%`);
+      card.style.setProperty('--gh-by', `${by}%`);
+      card.style.setProperty('--gh-rx', `${rx}deg`);
+      card.style.setProperty('--gh-ry', `${ry}deg`);
+      card.style.setProperty('--gh-opacity', '0.65');
+    }
+
+    function onLeave() {
+      card.style.setProperty('--gh-rx',      '0deg');
+      card.style.setProperty('--gh-ry',      '0deg');
+      card.style.setProperty('--gh-opacity', '0');
+    }
+
+    card.addEventListener('mousemove',  onMove);
+    card.addEventListener('mouseleave', onLeave);
+  }
+
+  function init() {
+    document.querySelectorAll('.gh-cal-wrap').forEach(attachHolo);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
