@@ -76,4 +76,7 @@ customElements.define('gh-contribs', GhContribs);
   } else {
     init();
   }
+
+  // Re-attach after Swup replaces the page content
+  document.addEventListener('swup:page:view', init);
 })();
