@@ -6,7 +6,7 @@ body_class: portfolio-landing blog-landing
 ---
 <div class="posts">
   <h2 class="blog-title">↓blog↓</h2>
-  {% for post in site.posts limit:15 %}
+  {% for post in site.posts %}
     <article class="post">
       {% if post.feature %}
         <a href="{{ site.baseurl }}{{ post.url }}"

@@ -1752,7 +1752,9 @@ body.portfolio-full {
   body.blog-landing {
     display: grid;
     grid-template-columns: 1fr 400px;
-    grid-template-rows: 100dvh auto;
+    grid-template-rows: 100dvh;
+    height: 100dvh;
+    overflow: hidden;
   }
 
   body.blog-landing .main-header {
@@ -1769,11 +1771,5 @@ body.portfolio-full {
     grid-row: 1 / 2;
     height: 100dvh;
     overflow-y: auto;
-  }
-
-  // footer spans the full width below the split
-  body.blog-landing .portfolio-contact-footer {
-    grid-column: 1 / 3;
-    grid-row: 2 / 3;
   }
 }
