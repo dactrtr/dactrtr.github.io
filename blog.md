@@ -2,6 +2,7 @@
 layout: default
 title: Blog
 permalink: /blog/
+body_class: portfolio-landing blog-landing
 ---
 <div class="posts">
   <h2 class="blog-title">↓blog↓</h2>
