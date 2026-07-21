@@ -4,7 +4,6 @@ title: Dinopirates from Inner Space
 role: Game Designer · Developer · Art Director
 place: Tokyo, Japan
 challenge: "Build a game universe across two distinct platforms from scratch: a hardware-constrained 1-bit Playdate game and a commercial action roguelike for Steam, as sole designer, developer, and art director on both. Each version required owning a completely different part of the stack under completely different constraints."
-learnings: Shipping a demo at BitSummit 2025 and watching people play it for the first time was worth more than any amount of polish. Constraint-driven design, forced by a 1-bit palette, a tiny screen, or a rogue progression arc, led to more interesting decisions than open-ended tools ever had. And someone paid for it. That was unexpected.
 featured: true
 logo: "/assets/projects/icon-playdate.png"
 challenge_icon: "/assets/challenge.png"
