@@ -25,7 +25,7 @@ The design system was already in place when I joined. The work was making it sca
 <figure class="figimg">
   <img src="/assets/projects/braveup-designsystem.png" alt="braveup design system">
   <figcaption>
-    [generate] Component library overview: a grid of UI components showing the system's coverage: buttons, inputs, cards, navigation, and data elements. Clean, light background.
+    Design system overview. The main challenge was cleaning up the files, building consistency, and making it future-proof, translating pieces of the product that had shipped without prior design work, and converting standalone elements into reusable components.
   </figcaption>
 </figure>
 
