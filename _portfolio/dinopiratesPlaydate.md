@@ -3,7 +3,7 @@ layout: portfolio-item
 title: Dinopirates from Inner Space
 role: Game Designer · Developer · Art Director
 place: Tokyo, Japan
-challenge: "Build a game universe across two distinct platforms from scratch: a hardware-constrained 1-bit Playdate game and a commercial action roguelike for Steam, as sole designer, developer, and art director on both. Each version required owning a completely different part of the stack under completely different constraints."
+challenge: "Build a game universe across two distinct platforms from scratch: a hardware-constrained 1-bit Playdate game as sole designer, developer and art director, and a commercial action roguelike for Steam where I led art direction, character design and UI alongside a team in Chile. Each version required owning a completely different part of the stack under completely different constraints."
 featured: true
 logo: "/assets/projects/icon-playdate.png"
 challenge_icon: "/assets/challenge.png"
